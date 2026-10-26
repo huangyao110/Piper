@@ -6,8 +6,8 @@ import pytest
 import torch
 from torch import nn
 
-from flashppi.frozen_embedding_cache import FrozenEmbeddingCache
-from flashppi.frozen_prott5 import FrozenProtT5
+from piper.frozen_embedding_cache import FrozenEmbeddingCache
+from piper.frozen_prott5 import FrozenProtT5
 from test_gated_ensemble import PrimaryTokenizer, T5Tokenizer
 
 

@@ -1,0 +1,451 @@
+{
+  "date": "2026-10-26",
+  "source_commit": "619b186465c4b4a7a8c1b5e77b81753042021f29",
+  "archive": "artifacts/cleanup/piper_consolidation_20261026/source_before.tar.gz",
+  "moved": {
+    "flashppi/frozen_prott5.py": "piper/frozen_prott5.py",
+    "flashppi/frozen_embedding_cache.py": "piper/frozen_embedding_cache.py",
+    "flashppi/coverage_migration.py": "piper/coverage_migration.py",
+    "flashppi/model.py": "piper/model.py",
+    "flashppi/gated_modules.py": "piper/gated_modules.py",
+    "flashppi/finetune.py": "piper/training_utils.py",
+    "flashppi/research_model.py": "piper/ensemble.py",
+    "flashppi/gated_warm_start.py": "piper/gated_warm_start.py",
+    "flashppi/research_distributed.py": "piper/distributed.py",
+    "flashppi/residue_warm_start.py": "piper/residue_warm_start.py",
+    "flashppi/lora.py": "piper/lora.py",
+    "flashppi/cropping.py": "piper/cropping.py",
+    "flashppi/config.py": "piper/config.py",
+    "flashppi/patch_contact.py": "piper/patch_contact.py",
+    "flashppi/indexed_data.py": "piper/indexed_data.py",
+    "flashppi/mixed_sampling.py": "piper/mixed_sampling.py",
+    "flashppi/sequence_masking.py": "piper/sequence_masking.py",
+    "flashppi/full_finetune.py": "piper/full_finetune.py",
+    "flashppi/layers.py": "piper/layers.py",
+    "flashppi/frozen_prefix_cache.py": "piper/frozen_prefix_cache.py",
+    "flashppi/improvement_objectives.py": "piper/improvement_objectives.py",
+    "flashppi/ddi_common.py": "piper/ddi_common.py",
+    "flashppi/research_train.py": "piper/train.py",
+    "flashppi/data_protocol.py": "piper/data_protocol.py",
+    "flashppi/glm_initialization.py": "piper/glm_initialization.py",
+    "flashppi/research_eval.py": "piper/evaluation.py",
+    "flashppi/dataset.py": "piper/dataset.py",
+    "flashppi/indexed_training.py": "piper/indexed_training.py",
+    "flashppi/negative_sampling.py": "piper/negative_sampling.py",
+    "flashppi/loss.py": "piper/loss.py",
+    "tools/evaluate_research_checkpoint.py": "piper/evaluate.py",
+    "tools/evaluate_official_ecoli.py": "examples/upstream/evaluate_ecoli.py",
+    "tools/server_preflight.py": "piper/preflight.py",
+    "tools/check_research_replay.py": "piper/checkpoint.py"
+  },
+  "retired": [
+    {
+      "path": "flashppi/train.py",
+      "sha256": "9b053a31ed4bdef658e7671fa33bc9ef2dab7a46920a012ffdf85df15774e5fa",
+      "bytes": 17027
+    },
+    {
+      "path": "flashppi/eval.py",
+      "sha256": "0466dbfe24f029e7163c63486fb272d49204c0bc4a138abbd5c38d31d867d7ae",
+      "bytes": 6458
+    },
+    {
+      "path": "tools/download_original_glm2.py",
+      "sha256": "96c3d10ae067644fbfe5388197ff096e7b1a8bc407612051ac3107a9bafffb1b",
+      "bytes": 4504
+    },
+    {
+      "path": "resercher/summarize_experiment.py",
+      "sha256": "3adc0cf8495fca0bab6ab04d85ea69e84e49752776dfd9fece53e23017a95850",
+      "bytes": 8171
+    },
+    {
+      "path": "examples/upstream/flashppi.yaml",
+      "sha256": "7330ed5fe97b3ce158aab1a26dae80c092199fd136fc6fe9d0f07265dd3b70fc",
+      "bytes": 1105
+    },
+    {
+      "path": "examples/upstream/flashppi_esm_small.yaml",
+      "sha256": "1ea7de66dcec4ad2dbe0d907c70902acadd97d9e9c2c420e2f815a2a97bf5e0e",
+      "bytes": 1153
+    }
+  ],
+  "protected": {
+    "configs_data/expanded_conglab_pinder_teddymer_legacy_v1.json": "180f6a717bd80972dd610c73908d58917a2c966360d71ff87ceece9c3fd8b839",
+    "configs_data/conglab_distilled_ecoli_rf2ppi_v3.lock.json": "c7b87860e08c17a911eae7a01f13b973c34dcd60ff36ffd5998ef9c731f7f7b0",
+    "configs_data/conglab_distilled_ecoli_strict_v2.json": "2bb3ac743e8cbb37b5cf04847a855c81cc0a8741a247e0620f34114ce12d24dc",
+    "configs_data/multispecies_test_v1.json": "5696716812f8c496e30a5103d996efe27cf1397cf3faeda80238094dbbbddcf4",
+    "configs_data/conglab_mixture_v1.json": "da18f72966590cd87e0f85f4bdf04ed942e636be5d1034a6ee1a991a24593422",
+    "configs_data/conglab_ecoli_audit_v1.json": "20696862157ed8c725f979b6dae85adc800b452d03ab2a166d717a8bd4456101",
+    "configs_data/conglab_distilled_ecoli_rf2ppi_v3.json": "6e8a6e12b6dae6fd89f977e6f804ef2e1a94aa025a8a72c1ee6467392b17ef3f",
+    "configs_data/ddi_validation_v1.json": "ba3a2aacbc56aaa38130e0ab68cbacf1d346d25d270f532464f04ac4d464a3a8",
+    "configs_data/conglab_ecoli_v1.json": "5d977349f429f0716aa3e6af38ea7e734c868bbf7a5144cfbf386672242e16a3",
+    "configs_data/conglab_ecoli_filter.lock.json": "125e80a50007beeea0bd987dd843c4fc94fdcda81b51456264847e05004b4fea",
+    "configs_data/conglab_distilled_ecoli_strict_v2.lock.json": "b8a3a133238ac99c09a817241d77fade696d91266b67b4c0fab9b373b10b5a4f",
+    "configs_data/ddi_pretrain_v1.json": "85749b5045519eac133b5b02db2e9d952a62d71472790cbbfccaefd99456b6ce",
+    "tools/audit_conglab_ecoli.py": "e47fffdc7bc08097e2abf3a393c015676a1391ce8d53abf034e4ab23f5954373",
+    "tools/prepare_conglab_ecoli.py": "427be55939152690a4de604764ac982987d5d781d17e5ab0cc6c7e4fa46a1b2d",
+    "tools/prepare_conglab_mixture.py": "ee734d190518afe3de888b1f4293631f99861f41c08ade9f4428079b9fa5378a",
+    "tools/prepare_ppi_finetune_split.py": "5bd816d3d36b182c48fc57f6e20b8d86d87541a1a5ab9e5a8b0059a74fdbe24c",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/tools/prepare_conglab_ecoli.py": "427be55939152690a4de604764ac982987d5d781d17e5ab0cc6c7e4fa46a1b2d",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/tools/prepare_conglab_mixture.py": "ee734d190518afe3de888b1f4293631f99861f41c08ade9f4428079b9fa5378a",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/tools/server_preflight.py": "807205bd72f6b9c0053c52ef71883eb6db4e566593cb6ab7b288983a076fb0f5",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/tools/check_research_replay.py": "1db976f406a03f74dbef78c0ed86d9fdb9c0a74b5f891afe70a31866a2b24ab1",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/tools/build_ppi_distance_archives.py": "792a4351f3ca8aa25de48fd53731350a86eae2f6ebdc120401192a96698e6102",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/tools/download_esmc_for_fusion.py": "b4978e8f02368319b1c8dc141c04657afe96def6755a78707d0bd0ec7b6a335a",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/tools/audit_conglab_ecoli.py": "e47fffdc7bc08097e2abf3a393c015676a1391ce8d53abf034e4ab23f5954373",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/tools/check_original_glm2.py": "055c452a959b904d594e9e1165bac8540febbd615be0857054b1733fc6a12d37",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/tools/prepare_ppi_finetune_split.py": "5bd816d3d36b182c48fc57f6e20b8d86d87541a1a5ab9e5a8b0059a74fdbe24c",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/tools/check_research_model.py": "c764fb76af22179a18eaf524e2a2867cf8e6a8850ba4c4e9d08f4f91c71e4e60",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/tools/download_original_glm2.py": "96c3d10ae067644fbfe5388197ff096e7b1a8bc407612051ac3107a9bafffb1b",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/tools/evaluate_research_checkpoint.py": "3278a6773b38f5e26188c4fb78f3fe055b731f20ee1dceb65b32755b97073571",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/tools/compare_ddi_contact_readouts.py": "6b19bc85ed369054bf91cd61e0970824ed9702788e9482796d4e38a488f9043d",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/tools/download_official_flashppi.py": "388c67aa193ba6d0dc8c38d7b385195a0c49cadb3b76ddd03218fe6bd0c6c09a",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/tools/audit_expanded_index_split.py": "86eaca8b74d32607fc8c54dd38cf19b4ac5676bfb239399ee76f7eb104a69210",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/tools/prepare_ddi_pretrain.py": "974d9e8e942b674b07370760b6521e8c754b48becf5deb92865ccd573eee933e",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/tools/train_test.py": "028b60190a85caec3e149c4b17e30c26bbc88088195065199f935cee98064dd4",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/tools/evaluate_ddi_checkpoint.py": "593088b28d90f82c76bc1dcb6e332c21210caebe731e25c184b7751ab5ef5618",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/tools/evaluate_official_ecoli.py": "09bffe945a6f896633dd54a26aa35620353404787cc3c10a3a8dff3d398ab5c4",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/tools/evaluate_ddi_validation.py": "b410f1fbcfdaaa83ed25f823c20699616c63dd3dadc6b7737e19b6bd7134eda2",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/tools/evaluate_rf2ppi.py": "09f79b697dc7967f0f7a84202521f709d130d7db7733b9fd0282e035abb6a4d6",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/configs_data/expanded_conglab_pinder_teddymer_legacy_v1.json": "180f6a717bd80972dd610c73908d58917a2c966360d71ff87ceece9c3fd8b839",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/configs_data/conglab_distilled_ecoli_rf2ppi_v3.lock.json": "c7b87860e08c17a911eae7a01f13b973c34dcd60ff36ffd5998ef9c731f7f7b0",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/configs_data/conglab_distilled_ecoli_strict_v2.json": "2bb3ac743e8cbb37b5cf04847a855c81cc0a8741a247e0620f34114ce12d24dc",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/configs_data/multispecies_test_v1.json": "5696716812f8c496e30a5103d996efe27cf1397cf3faeda80238094dbbbddcf4",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/configs_data/conglab_mixture_v1.json": "da18f72966590cd87e0f85f4bdf04ed942e636be5d1034a6ee1a991a24593422",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/configs_data/conglab_ecoli_audit_v1.json": "20696862157ed8c725f979b6dae85adc800b452d03ab2a166d717a8bd4456101",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/configs_data/conglab_distilled_ecoli_rf2ppi_v3.json": "6e8a6e12b6dae6fd89f977e6f804ef2e1a94aa025a8a72c1ee6467392b17ef3f",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/configs_data/ddi_validation_v1.json": "ba3a2aacbc56aaa38130e0ab68cbacf1d346d25d270f532464f04ac4d464a3a8",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/configs_data/conglab_ecoli_v1.json": "5d977349f429f0716aa3e6af38ea7e734c868bbf7a5144cfbf386672242e16a3",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/configs_data/conglab_ecoli_filter.lock.json": "125e80a50007beeea0bd987dd843c4fc94fdcda81b51456264847e05004b4fea",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/configs_data/conglab_distilled_ecoli_strict_v2.lock.json": "b8a3a133238ac99c09a817241d77fade696d91266b67b4c0fab9b373b10b5a4f",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/configs_data/ddi_pretrain_v1.json": "85749b5045519eac133b5b02db2e9d952a62d71472790cbbfccaefd99456b6ce",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/flashppi/frozen_prott5.py": "cd83bd69b0aa6eb325e9ec52fce337b33c2d3e3fd447be7ce9687e190a8fccc7",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/flashppi/frozen_embedding_cache.py": "09b8a1a69881e77fa78cbdae00deea151aeae54a5fea66aa3a0b47b8cebb7a26",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/flashppi/coverage_migration.py": "6eab5bd15595fd75049ae3a4601c2d9da5af08c2700a104f9a2679298d256027",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/flashppi/model.py": "44455ac0e9d779ac2cae10de715358ee1bfe7dc1e6be2d2aaaf0ee6da64b924e",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/flashppi/gated_modules.py": "7aea46f2ba86b304d7d27f043039a49e548519dd026364ac49f4e34b0d1cb4d9",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/flashppi/finetune.py": "d0640ddc42304319f184964ecafa8732158d04e8e079036354a8ece773e3df4b",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/flashppi/__init__.py": "55e91f33f74b464674584645be08be8fe7998904ca32bdc1710da6d3fdda610f",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/flashppi/research_model.py": "592f06fbd90a094924305252df0546082472a472a0255dabcabe3b55bc628e21",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/flashppi/gated_warm_start.py": "1e6ec868d061c0b8ea6e526e3bf21bae3674ee067d392dadad45d780f54994fb",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/flashppi/research_distributed.py": "ec63066e80a7fca9043fc14a7d9ad6b7d80d7e882b17ea75e44e5ed3e3ee77a5",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/flashppi/residue_warm_start.py": "e80a46d7b03a2959c054f24fff6a1249fe420297af79ab24f3b11a8bf3e11d8f",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/flashppi/lora.py": "e72c9a10acce7354d399ac077c072d9debea81d4a99e6dc30a85e4425543dc18",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/flashppi/cropping.py": "64a7f914601beb6b71aa82a9ba11f98423ac8a933ddb29e6b4a58553b4cf95e5",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/flashppi/config.py": "f705a4740d87428af62da9986973d15fbac111fe8e7063a3758591645b7cb3ed",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/flashppi/ddi_engine.py": "0c12c292541f503c0aba16a923d597d7907071577a6cd6e78f59d31989985329",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/flashppi/patch_contact.py": "fcb16a825caced297d2edb528789cc62a77436a42dbbe319aadb7ebc91d1e031",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/flashppi/ddi_objectives.py": "ba1e96161a1c9b20cd5e34138400f73f9e1eb87efd2743b2cdbeca2278cba0fc",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/flashppi/ddi_eval.py": "a7c58a4fc171a34636f425c5c1f9610bc77b4f8f70144ea836cd6e082893c953",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/flashppi/train.py": "9b053a31ed4bdef658e7671fa33bc9ef2dab7a46920a012ffdf85df15774e5fa",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/flashppi/indexed_data.py": "caa2baa03b257d87b4c009c2b14ca484287cbab20fdf43fcc84888025af3e3cd",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/flashppi/mixed_sampling.py": "d3f41cda492bfd00e769573f48b6f084e318c369f88c716822460b2ac17445a1",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/flashppi/sequence_masking.py": "1f1db9fc9f5ac45c6c0a380e76931df14407b5e112266986e38512fce578ed42",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/flashppi/full_finetune.py": "406562edf5d5a91a59a7bfd1cc7ce613b12ebe8913abbf2f5443119c8bc4c883",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/flashppi/layers.py": "e3490ca26e51edf92bd8b7d3aac1eb8c2118d4f40a4906070927f797dc3f6984",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/flashppi/frozen_prefix_cache.py": "243aba046afb1231c1be0e5af5ce2d36d314fe6cc9dca56fce2d4177ed1566dc",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/flashppi/ddi_model.py": "59b07f8fd1fd17d85a3a93cc05b83cfdc037f42c3c366b2cc1d054036c1b05a5",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/flashppi/improvement_objectives.py": "6b6d81a0fed6f5f62ce146b43ccb1979c31762b97eb493a32ea49d2201059033",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/flashppi/ddi_common.py": "abe625555dffaf2bbf46eeade737a04c27d30c7224730ba7cc85916f5bd0407d",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/flashppi/ddi_train.py": "9d9a0eabae2dd66533dd1a4753f62862c03d4665452bb9de5c115ee63b2c295b",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/flashppi/research_train.py": "9b532e7ab7508ceb7fc33f430cb10ba879f41eb308b41ff485e520926e9b46f5",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/flashppi/data_protocol.py": "3e4584d304fba16b9676ab08692147f592fa3ad162ff2708d6d2c34fd9efb28e",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/flashppi/eval.py": "0466dbfe24f029e7163c63486fb272d49204c0bc4a138abbd5c38d31d867d7ae",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/flashppi/glm_initialization.py": "3675bb81a09b078609895c041bc12eaca735ab89dd546bb63041911031979cd0",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/flashppi/research_eval.py": "10b1b2f122b7884650f39ef80598686aed85d3233b85798b45fa35c1950d9ec1",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/flashppi/ddi_data.py": "cd2558f83aefaa8e20c7e2b489019547ed3a7a1821326155c70310a4b6ac641a",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/flashppi/dataset.py": "a5a60793e55043194445d2992ea9f2b0d42b75b1d9f555475418e8519624e0a3",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/flashppi/indexed_training.py": "2326aae4d9c7ea6f0d27ebaf7cca97d174fdfeca60698218209e1ecf48141aa2",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/flashppi/negative_sampling.py": "d4070b438da2dd8c4cba217229c5aff9fd73ac3551ee4b2a80688af4a13131fd",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime/flashppi/loss.py": "4581542b871ec4b27536af0b98d1a4e495af770966a6606036383b96b73715e2",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/control.py": "64b5c0079b621e2674080fe97bb5a80f7b32a2658f33af84c4c48e6565bc912d",
+    "/media/zlab/lexar4t/FlashPPI/experiments/rf2ppi_v3_fresh_4epochs_20261024/config.json": "87b21cad3aca627bc5777db5f7a0a723580e90e21254440f1e831952192604ba"
+  },
+  "exact_resume": "Use original runtime snapshot for checkpoints created before source reorganization; strict source-hash checking is retained.",
+  "implementation_check": {
+    "method": "Compare function/class ASTs after import relocation; only imports are ignored. Retired standalone helper functions are listed explicitly. Shared classification_metrics AST is identical.",
+    "moved_modules": {
+      "flashppi/frozen_prott5.py": {
+        "target": "piper/frozen_prott5.py",
+        "unchanged_function_class_count": 2,
+        "removed_definitions": [],
+        "added_definitions": []
+      },
+      "flashppi/frozen_embedding_cache.py": {
+        "target": "piper/frozen_embedding_cache.py",
+        "unchanged_function_class_count": 4,
+        "removed_definitions": [],
+        "added_definitions": []
+      },
+      "flashppi/coverage_migration.py": {
+        "target": "piper/coverage_migration.py",
+        "unchanged_function_class_count": 2,
+        "removed_definitions": [],
+        "added_definitions": []
+      },
+      "flashppi/model.py": {
+        "target": "piper/model.py",
+        "unchanged_function_class_count": 7,
+        "removed_definitions": [],
+        "added_definitions": []
+      },
+      "flashppi/gated_modules.py": {
+        "target": "piper/gated_modules.py",
+        "unchanged_function_class_count": 5,
+        "removed_definitions": [],
+        "added_definitions": []
+      },
+      "flashppi/finetune.py": {
+        "target": "piper/training_utils.py",
+        "unchanged_function_class_count": 7,
+        "removed_definitions": [
+          "_evaluate",
+          "evaluate",
+          "main"
+        ],
+        "added_definitions": []
+      },
+      "flashppi/research_model.py": {
+        "target": "piper/ensemble.py",
+        "unchanged_function_class_count": 7,
+        "removed_definitions": [],
+        "added_definitions": []
+      },
+      "flashppi/gated_warm_start.py": {
+        "target": "piper/gated_warm_start.py",
+        "unchanged_function_class_count": 3,
+        "removed_definitions": [],
+        "added_definitions": []
+      },
+      "flashppi/research_distributed.py": {
+        "target": "piper/distributed.py",
+        "unchanged_function_class_count": 8,
+        "removed_definitions": [],
+        "added_definitions": []
+      },
+      "flashppi/residue_warm_start.py": {
+        "target": "piper/residue_warm_start.py",
+        "unchanged_function_class_count": 3,
+        "removed_definitions": [],
+        "added_definitions": []
+      },
+      "flashppi/lora.py": {
+        "target": "piper/lora.py",
+        "unchanged_function_class_count": 6,
+        "removed_definitions": [],
+        "added_definitions": []
+      },
+      "flashppi/cropping.py": {
+        "target": "piper/cropping.py",
+        "unchanged_function_class_count": 3,
+        "removed_definitions": [],
+        "added_definitions": []
+      },
+      "flashppi/config.py": {
+        "target": "piper/config.py",
+        "unchanged_function_class_count": 2,
+        "removed_definitions": [],
+        "added_definitions": []
+      },
+      "flashppi/patch_contact.py": {
+        "target": "piper/patch_contact.py",
+        "unchanged_function_class_count": 10,
+        "removed_definitions": [],
+        "added_definitions": []
+      },
+      "flashppi/indexed_data.py": {
+        "target": "piper/indexed_data.py",
+        "unchanged_function_class_count": 4,
+        "removed_definitions": [],
+        "added_definitions": []
+      },
+      "flashppi/mixed_sampling.py": {
+        "target": "piper/mixed_sampling.py",
+        "unchanged_function_class_count": 1,
+        "removed_definitions": [],
+        "added_definitions": []
+      },
+      "flashppi/sequence_masking.py": {
+        "target": "piper/sequence_masking.py",
+        "unchanged_function_class_count": 2,
+        "removed_definitions": [],
+        "added_definitions": []
+      },
+      "flashppi/full_finetune.py": {
+        "target": "piper/full_finetune.py",
+        "unchanged_function_class_count": 6,
+        "removed_definitions": [],
+        "added_definitions": []
+      },
+      "flashppi/layers.py": {
+        "target": "piper/layers.py",
+        "unchanged_function_class_count": 12,
+        "removed_definitions": [],
+        "added_definitions": []
+      },
+      "flashppi/frozen_prefix_cache.py": {
+        "target": "piper/frozen_prefix_cache.py",
+        "unchanged_function_class_count": 2,
+        "removed_definitions": [],
+        "added_definitions": []
+      },
+      "flashppi/improvement_objectives.py": {
+        "target": "piper/improvement_objectives.py",
+        "unchanged_function_class_count": 2,
+        "removed_definitions": [],
+        "added_definitions": []
+      },
+      "flashppi/ddi_common.py": {
+        "target": "piper/ddi_common.py",
+        "unchanged_function_class_count": 3,
+        "removed_definitions": [],
+        "added_definitions": []
+      },
+      "flashppi/research_train.py": {
+        "target": "piper/train.py",
+        "unchanged_function_class_count": 12,
+        "removed_definitions": [],
+        "added_definitions": []
+      },
+      "flashppi/data_protocol.py": {
+        "target": "piper/data_protocol.py",
+        "unchanged_function_class_count": 17,
+        "removed_definitions": [],
+        "added_definitions": []
+      },
+      "flashppi/glm_initialization.py": {
+        "target": "piper/glm_initialization.py",
+        "unchanged_function_class_count": 1,
+        "removed_definitions": [],
+        "added_definitions": []
+      },
+      "flashppi/research_eval.py": {
+        "target": "piper/evaluation.py",
+        "unchanged_function_class_count": 6,
+        "removed_definitions": [],
+        "added_definitions": [
+          "classification_metrics"
+        ]
+      },
+      "flashppi/dataset.py": {
+        "target": "piper/dataset.py",
+        "unchanged_function_class_count": 4,
+        "removed_definitions": [],
+        "added_definitions": []
+      },
+      "flashppi/indexed_training.py": {
+        "target": "piper/indexed_training.py",
+        "unchanged_function_class_count": 9,
+        "removed_definitions": [],
+        "added_definitions": []
+      },
+      "flashppi/negative_sampling.py": {
+        "target": "piper/negative_sampling.py",
+        "unchanged_function_class_count": 2,
+        "removed_definitions": [],
+        "added_definitions": []
+      },
+      "flashppi/loss.py": {
+        "target": "piper/loss.py",
+        "unchanged_function_class_count": 6,
+        "removed_definitions": [],
+        "added_definitions": []
+      },
+      "tools/evaluate_research_checkpoint.py": {
+        "target": "piper/evaluate.py",
+        "unchanged_function_class_count": 1,
+        "removed_definitions": [],
+        "added_definitions": []
+      },
+      "tools/evaluate_official_ecoli.py": {
+        "target": "examples/upstream/evaluate_ecoli.py",
+        "unchanged_function_class_count": 3,
+        "removed_definitions": [
+          "classification_metrics"
+        ],
+        "added_definitions": []
+      },
+      "tools/server_preflight.py": {
+        "target": "piper/preflight.py",
+        "unchanged_function_class_count": 2,
+        "removed_definitions": [],
+        "added_definitions": []
+      },
+      "tools/check_research_replay.py": {
+        "target": "piper/checkpoint.py",
+        "unchanged_function_class_count": 2,
+        "removed_definitions": [],
+        "added_definitions": []
+      }
+    }
+  },
+  "protected_hash_check": {
+    "files": 90,
+    "changed": 0
+  },
+  "merged": {
+    "tools/download_esmc_for_fusion.py": "piper/download.py",
+    "tools/download_official_flashppi.py": "piper/download.py",
+    "resercher/annotate.py": "resercher/run.py",
+    "resercher/tests/fixtures/before_1616_gated_modules.py": "resercher/tests/fixtures/historical_gated_modules.py",
+    "resercher/tests/fixtures/after_2182_gated_modules.py": "resercher/tests/fixtures/historical_gated_modules.py"
+  },
+  "merged_sources": {
+    "tools/download_esmc_for_fusion.py": {
+      "sha256": "b4978e8f02368319b1c8dc141c04657afe96def6755a78707d0bd0ec7b6a335a",
+      "bytes": 2177
+    },
+    "tools/download_official_flashppi.py": {
+      "sha256": "388c67aa193ba6d0dc8c38d7b385195a0c49cadb3b76ddd03218fe6bd0c6c09a",
+      "bytes": 2110
+    },
+    "resercher/annotate.py": {
+      "sha256": "e2daa3f4c8ca3443dfeea579eb770f3104f7fe779a93e39ea44ab1ad83868146",
+      "bytes": 807
+    },
+    "resercher/tests/fixtures/before_1616_gated_modules.py": {
+      "sha256": "7aea46f2ba86b304d7d27f043039a49e548519dd026364ac49f4e34b0d1cb4d9",
+      "bytes": 3940
+    },
+    "resercher/tests/fixtures/after_2182_gated_modules.py": {
+      "sha256": "7aea46f2ba86b304d7d27f043039a49e548519dd026364ac49f4e34b0d1cb4d9",
+      "bytes": 3940
+    }
+  },
+  "builder_audit_check": "Both complete module ASTs match before/after after only namespace and source-path substitutions; predicates, MMseqs arguments, lock validation and membership logic unchanged.",
+  "code_file_counts": {
+    "piper": {
+      "before": 4,
+      "after": 38
+    },
+    "flashppi": {
+      "before": 33,
+      "after": 1
+    },
+    "tools": {
+      "before": 17,
+      "after": 10
+    },
+    "resercher": {
+      "before": 16,
+      "after": 13
+    }
+  },
+  "validation": {
+    "offline_cpu": {
+      "passed": 208,
+      "skipped_gpu": 2,
+      "deselected_integration": 13
+    },
+    "independent_research": {
+      "passed": 27
+    },
+    "real_mmseqs_integration": {
+      "passed": 2
+    },
+    "clean_source_export": true,
+    "wheel": "piper_contact-0.2.0",
+    "gpu_model_inference": "not run; active training uses the unchanged frozen runtime"
+  }
+}

@@ -8,8 +8,8 @@ import numpy as np
 import pyarrow as pa
 import torch
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
-from flashppi.cropping import interface_crop, valid_contacts, valid_contact_counts
-from flashppi.dataset import DataCollatorForPPI, build_interaction_keys
+from piper.cropping import interface_crop, valid_contacts, valid_contact_counts
+from piper.dataset import DataCollatorForPPI, build_interaction_keys
 from test_finetune_training import Tokenizer
 
 

@@ -1,5 +1,6 @@
 """CPU regressions; synthetic inputs only, never reported as biological results."""
 import importlib.util
+import hashlib
 import json
 from pathlib import Path
 import sys
@@ -27,11 +28,43 @@ from clip_gate.statistics import pair_scores, residue_metrics, top_enrichment
 
 
 def native_module(alias):
-    path = RESEARCH / f"tests/fixtures/{alias}_gated_modules.py"
+    fixtures = RESEARCH / "tests/fixtures"
+    records = json.loads((fixtures / "provenance.json").read_text())
+    record = next(item for item in records if f"/{alias}/" in item["source"])
+    path = fixtures / record["fixture"]
     spec = importlib.util.spec_from_file_location(f"snapshot_gate_{alias}", path)
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
     return module
+
+
+class ResearchEntryTests(unittest.TestCase):
+    def test_merged_annotation_dispatch_does_not_load_model_or_study(self):
+        from run import main
+        with patch("run.setup_environment"), patch("run.read_json") as read:
+            with patch("clip_gate.annotations.annotate") as annotate:
+                main(["sasa", "--workers", "3"])
+                annotate.assert_called_once_with("sasa", 3)
+            with patch("clip_gate.annotations.assemble") as assemble:
+                main(["assemble"])
+                assemble.assert_called_once_with()
+            read.assert_not_called()
+
+    def test_invalid_annotation_workers_fail_before_work(self):
+        from run import main
+        with patch("run.setup_environment") as setup, patch("sys.stderr"):
+            with self.assertRaises(SystemExit) as error:
+                main(["conservation", "--workers", "5"])
+            self.assertEqual(error.exception.code, 2)
+            setup.assert_not_called()
+
+    def test_shared_fixture_preserves_both_historical_hashes(self):
+        fixtures = RESEARCH / "tests/fixtures"
+        records = json.loads((fixtures / "provenance.json").read_text())
+        self.assertEqual(len(records), 2)
+        for record in records:
+            self.assertEqual(hashlib.sha256((fixtures / record["fixture"]).read_bytes()).hexdigest(),
+                             record["sha256"])
 
 
 class GateMathTests(unittest.TestCase):

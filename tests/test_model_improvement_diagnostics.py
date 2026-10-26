@@ -6,8 +6,8 @@ from types import SimpleNamespace
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import torch
-from flashppi.research_eval import score_rows
-from flashppi.improvement_objectives import listwise_distillation, tail_ranking
+from piper.evaluation import score_rows
+from piper.improvement_objectives import listwise_distillation, tail_ranking
 
 
 class Tokens(SimpleNamespace):

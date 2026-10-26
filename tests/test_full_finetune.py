@@ -6,15 +6,15 @@ import pytest
 import torch
 from torch import nn
 
-from flashppi.full_finetune import (configure_full_finetune, full_finetune_config,
+from piper.full_finetune import (configure_full_finetune, full_finetune_config,
                                     merge_lora_and_unfreeze, migrate_optimizer,
                                     check_full_block_gradients)
-from flashppi.lora import QVLoRALinear, load_trainable, save_trainable
-from flashppi.model import ContactHead, ContrastiveHead
-from flashppi.research_model import build_model
-from flashppi.research_train import build_optimizer, set_step_learning_rate
-from flashppi.research_distributed import GlobalGradientCache
-from tools.check_research_replay import compare
+from piper.lora import QVLoRALinear, load_trainable, save_trainable
+from piper.model import ContactHead, ContrastiveHead
+from piper.ensemble import build_model
+from piper.train import build_optimizer, set_step_learning_rate
+from piper.distributed import GlobalGradientCache
+from piper.checkpoint import compare
 from test_frozen_embedding_cache import tiny_model, batches
 
 
@@ -156,7 +156,7 @@ def test_production_builder_enables_backbone_autograd_and_gates(monkeypatch):
     released = SimpleNamespace(plm=Primary(), config=SimpleNamespace(plm_dim=16, clip_embed_dim=8),
                                contact_head=ContactHead(16, 16, 2), head_q=ContrastiveHead(16, 8),
                                head_k=ContrastiveHead(16, 8), logit_scale=nn.Parameter(torch.tensor(.3)))
-    monkeypatch.setattr("flashppi.research_model.load_released", lambda _: (released, None, {}))
+    monkeypatch.setattr("piper.ensemble.load_released", lambda _: (released, None, {}))
     config = full_finetune_config(source_config())
     config.update(model="unused", swap_self_negative=True, contact_random_neg_ratio=0.,
                   contact_self_neg_ratio=0., contact_hard_neg_ratio=2.,

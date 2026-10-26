@@ -1,6 +1,6 @@
 # Maintained tools
 
-Piper keeps a single maintained split builder and preserves the historical source paths that are pinned by protocol locks and training checkpoints. Temporary diagnostics belong in local `experiments/<name>/`, not here.
+This directory contains the single maintained split builder, its audit/dependencies, and two server shell launchers. Model, evaluation and checkpoint utilities live in `piper/`. The four historical filters remain byte-for-byte at the paths pinned by protocol locks. Temporary diagnostics belong in local `experiments/<name>/`, not here.
 
 ## Data
 
@@ -19,23 +19,24 @@ python tools/train_test.py --mode check --config configs_data/conglab_distilled_
 
 See [the active data protocol](../docs/DATA_PROTOCOL.md) and [historical v1 policy](../docs/DATA_FILTERING_POLICY.md). Checking updates audit reports and acceptance state, never split membership or lock parameters. Build/check does not start training.
 
-## Evaluation and recovery
+## Model commands
 
 | Entry point | Purpose |
 |---|---|
-| `evaluate_research_checkpoint.py` | Full-length fixed E. coli evaluation of a Piper/research checkpoint |
-| `evaluate_official_ecoli.py` | Pinned upstream baseline evaluation and shared classification metrics |
-| `check_research_replay.py` | Gradient-cache/replay verification used by regression tests and checkpoint source manifests |
+| `python -m piper evaluate` | Full-length fixed E. coli evaluation of a Piper checkpoint |
+| `python -m piper check-replay` | Compare trainable tensors, optimizer and RNG states after resume |
+| `python -m piper preflight` | GPU topology/NCCL checks; requires free devices and the requested world size |
+| `python -m piper download esmc` | Checksum-verified pinned ESM C 300M download |
+| `python -m piper download official` | Pinned upstream weights and E. coli benchmark |
+| `python examples/upstream/evaluate_ecoli.py` | Upstream baseline evaluation, sharing classification metrics with `piper.evaluation` |
 
-Current public aliases are `python -m piper evaluate` and `python -m piper split`. Both dispatch to these existing scripts. Use matching model source snapshots for historical checkpoints.
+These commands support `--help`. The old model utility scripts have been moved or merged; there is one implementation per command. Use matching frozen source snapshots for exact resume of historical checkpoints.
 
 ## Assets and execution
 
-- `download_esmc_for_fusion.py`: checksum-verified, pinned ESM C 300M download.
-- `download_official_flashppi.py`: pinned upstream baseline weights and E. coli benchmark.
-- `download_original_glm2.py`: historical range download of gLM2 weights; requires the small config/tokenizer files first. The complete fresh setup is documented in [configs_models/README.md](../configs_models/README.md).
 - `setup_server_env.sh`: create a separate CUDA 12.8 Python environment using the root `requirements.txt`; record the resolved versions inside that environment.
-- `server_preflight.py`: explicit GPU topology/NCCL checks; requires free devices and the requested world size.
-- `run_server_training.sh CONFIG OUTPUT GPU_IDS`: explicit torchrun launcher for the research trainer. Default environment: `.venv/server`.
+- `run_server_training.sh CONFIG OUTPUT GPU_IDS`: explicit torchrun launcher for `piper.train`. Default environment: `.venv/server`.
 
-Standalone DDI model training/evaluation, obsolete RF2-PPI benchmark evaluation, old real-checkpoint probes and pilot configs were retired on 2026-10-26. File hashes and local recovery archives are recorded in [the cleanup manifest](../docs/PIPER_CLEANUP_20261026.json). This does not remove DDI examples from Piper training and does not change the RF2-PPI isolation implementation.
+The complete model setup, including gLM2, is documented in [configs_models/README.md](../configs_models/README.md).
+
+Standalone DDI model training/evaluation, obsolete RF2-PPI benchmark evaluation, old real-checkpoint probes, pilot configs and the gLM2 range downloader were retired on 2026-10-26. File hashes and recovery archives are recorded in the [initial cleanup](../docs/PIPER_CLEANUP_20261026.json) and [consolidation](../docs/CODE_CONSOLIDATION_20261026.json) manifests. DDI examples remain in Piper training, and the RF2-PPI isolation rules and locks are unchanged.

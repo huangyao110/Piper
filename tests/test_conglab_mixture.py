@@ -9,8 +9,8 @@ import pyarrow as pa
 import pyarrow.compute as pc
 import torch
 
-from flashppi.mixed_sampling import BalancedKindSampler
-from flashppi.research_distributed import GlobalGradientCache
+from piper.mixed_sampling import BalancedKindSampler
+from piper.distributed import GlobalGradientCache
 from tools.prepare_conglab_mixture import joint_clusters, lookup
 
 

@@ -5,7 +5,7 @@ from pathlib import Path
 import torch
 from safetensors.torch import load_file
 
-from .finetune import sha256
+from .training_utils import sha256
 
 
 NEW_PARAMETERS = {'fusion.alpha_esmc', 'fusion.alpha_prott5', 'contact_head.patch_gate.beta'}

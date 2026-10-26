@@ -6,13 +6,13 @@ import torch
 from torch import nn
 from torch.utils.checkpoint import checkpoint
 
-from flashppi.frozen_embedding_cache import FrozenEmbeddingCache
-from flashppi.frozen_prefix_cache import frozen_prefix_replay
-from flashppi.full_finetune import merge_lora_and_unfreeze
-from flashppi.research_distributed import GlobalGradientCache
+from piper.frozen_embedding_cache import FrozenEmbeddingCache
+from piper.frozen_prefix_cache import frozen_prefix_replay
+from piper.full_finetune import merge_lora_and_unfreeze
+from piper.distributed import GlobalGradientCache
 from test_frozen_embedding_cache import Frozen, batches
 from test_full_finetune import source_model
-from tools.check_research_replay import compare
+from piper.checkpoint import compare
 
 
 @pytest.fixture(autouse=True)

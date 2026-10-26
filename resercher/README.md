@@ -25,10 +25,9 @@
 | 路径 | 用途 |
 |---|---|
 | `study.json` | 固定 checkpoint、val 文件哈希、随机种子和分析参数 |
-| `run.py` / `clip_gate/` | 独立入口、提取、界面关联、CLIP 干预、比较 |
+| `run.py` / `clip_gate/` | 统一研究入口：提取、关联、干预、比较、注释和报告 |
 | 本地 `control/` | 已完成实验的控制记录；一次性暂停/恢复脚本已退役，不作为发布入口 |
-| `summarize_experiment.py` | 历史分数回放、配对变化、续训核验与比较图 |
-| `annotate.py` / `clip_gate/annotations.py` | 原始坐标 SASA、ConSurfDB 真实 MSA/保守性、精确残基映射和质量控制 |
+| `clip_gate/annotations.py` | 原始坐标 SASA、ConSurfDB 真实 MSA/保守性、精确残基映射和质量控制 |
 | `annotation_report.py` | 注释关联、氨基酸/RSA 调整、按结构依赖块汇总与图 |
 | `vendor/before_1616/`、`vendor/after_2182/` | 对应模型源代码的本地快照；不导入工作区生产代码 |
 | `data/` | val 小文件逐字节副本、唯一序列清单、标签分析视图 |
@@ -90,13 +89,15 @@ batch 1 和 FP16 autocast；不为了节省显存裁剪序列。结果目录已�
 ConSurfDB 只获取公开既有结果；这不涉及重新生成训练集或修改同源过滤条件。
 
 ```bash
-OPENBLAS_NUM_THREADS=1 "$research_python" -B resercher/annotate.py sasa --workers 2
-OPENBLAS_NUM_THREADS=1 "$research_python" -B resercher/annotate.py conservation --workers 4
-"$research_python" -B resercher/annotate.py assemble
+OPENBLAS_NUM_THREADS=1 "$research_python" -B resercher/run.py sasa --workers 2
+OPENBLAS_NUM_THREADS=1 "$research_python" -B resercher/run.py conservation --workers 4
+"$research_python" -B resercher/run.py assemble
 OPENBLAS_NUM_THREADS=1 "$research_python" -B resercher/run.py analyze --checkpoint before_1616 --annotations data/annotations.csv
 OPENBLAS_NUM_THREADS=1 "$research_python" -B resercher/run.py analyze --checkpoint after_2182 --annotations data/annotations.csv
-OPENBLAS_NUM_THREADS=1 "$research_python" -B resercher/annotation_report.py
+OPENBLAS_NUM_THREADS=1 "$research_python" -B resercher/run.py report
 ```
 
 固定面板 200 条链中，RSA 关联合格 196 条，保守性关联合格 155 条，
 联合调整合格 145 条；缺失位置没有用零填充。全部数值及来源见上述注释报告。
+
+2026-10-26 整理：原 `annotate.py` 入口已合入 `run.py`；两个字节相同的历史门控测试文件合并为一个，保留两份来源记录和原 SHA-256。已完成的一次性 `summarize_experiment.py` 从活动目录退役，历史版本和本地备份保留。研究计算仍独立于 `piper/`，不会导入当前生产模型替代历史快照。

@@ -13,10 +13,10 @@ from torch import nn
 from torch.nn import functional as F
 from transformers import BatchEncoding
 
-from flashppi.loss import GradCacheClipLoss, ContactLoss
-from flashppi.research_distributed import GlobalGradientCache, assigned_chunks, chunk_seed, broadcast_trainable
-from flashppi.research_model import ResidualFusion, align_secondary_tokens
-from flashppi.research_eval import score_rows
+from piper.loss import GradCacheClipLoss, ContactLoss
+from piper.distributed import GlobalGradientCache, assigned_chunks, chunk_seed, broadcast_trainable
+from piper.ensemble import ResidualFusion, align_secondary_tokens
+from piper.evaluation import score_rows
 
 
 class Toy(nn.Module):

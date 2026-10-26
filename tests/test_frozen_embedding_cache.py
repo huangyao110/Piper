@@ -7,13 +7,13 @@ import torch.distributed as dist
 import torch.multiprocessing as mp
 from torch import nn
 
-from flashppi.frozen_embedding_cache import FrozenEmbeddingCache, frozen_embedding_replay
-from flashppi.gated_modules import EnsembleResidualFusion, GatedContrastiveHead, ResidueGatedContactHead
-from flashppi.model import ContactHead, ContrastiveHead
-from flashppi.negative_sampling import POLICY
-from flashppi.research_distributed import GlobalGradientCache, chunk_seed
-from flashppi.research_model import ResearchModel
-from tools.check_research_replay import compare
+from piper.frozen_embedding_cache import FrozenEmbeddingCache, frozen_embedding_replay
+from piper.gated_modules import EnsembleResidualFusion, GatedContrastiveHead, ResidueGatedContactHead
+from piper.model import ContactHead, ContrastiveHead
+from piper.negative_sampling import POLICY
+from piper.distributed import GlobalGradientCache, chunk_seed
+from piper.ensemble import ResearchModel
+from piper.checkpoint import compare
 
 
 class Frozen(nn.Module):

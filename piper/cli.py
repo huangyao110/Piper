@@ -7,10 +7,13 @@ import sys
 from . import __version__
 
 COMMANDS = {
-    "train": ("module", "flashppi.research_train"),
-    "evaluate": ("script", "tools/evaluate_research_checkpoint.py"),
+    "train": ("module", "piper.train"),
+    "evaluate": ("module", "piper.evaluate"),
     "split": ("script", "tools/train_test.py"),
     "predict": ("module", "piper.predict"),
+    "download": ("module", "piper.download"),
+    "preflight": ("module", "piper.preflight"),
+    "check-replay": ("module", "piper.checkpoint"),
 }
 
 

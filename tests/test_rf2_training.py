@@ -9,10 +9,10 @@ import pyarrow as pa
 import pytest
 import torch
 
-from flashppi.data_protocol import RF2_PROTOCOL_ID, RF2_LOCK_SHA256
-from flashppi.indexed_training import (IndexedSequenceQuotaSampler, RF2_SAMPLING_POLICY,
+from piper.data_protocol import RF2_PROTOCOL_ID, RF2_LOCK_SHA256
+from piper.indexed_training import (IndexedSequenceQuotaSampler, RF2_SAMPLING_POLICY,
                                        RF2_SOURCE_QUOTA, verify_indexed_inputs)
-from flashppi.research_train import (evaluation_due, set_step_learning_rate,
+from piper.train import (evaluation_due, set_step_learning_rate,
                                     test_monitoring_context as monitoring_context)
 
 
@@ -171,7 +171,7 @@ def test_monitor_restores_rng_adam_and_training_mode(device, fail):
 
 
 def test_test_metrics_keep_full_rows_and_historical_scoring(tmp_path, monkeypatch):
-    from flashppi import research_eval
+    from piper import evaluation as research_eval
     rows = [dict(seq1='A' * 1200, seq2='C', label=label) for label in (1, 1, 0, 0)]
     results = [dict(label=label, contact_score=score, clip_score=score,
                     contacts_precision_at_k=pk, contacts_8A_precision_at_k=p8,

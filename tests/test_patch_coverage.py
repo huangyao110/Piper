@@ -6,8 +6,8 @@ import sys
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import torch
 from torch.nn import functional as F
-from flashppi.model import ContactHead
-from flashppi.patch_contact import (PatchSpec, PatchContactHead, patch_coverage_targets,
+from piper.model import ContactHead
+from piper.patch_contact import (PatchSpec, PatchContactHead, patch_coverage_targets,
                                     coverage_loss_sum, structural_patch_metrics)
 
 torch.set_num_threads(1)
@@ -103,8 +103,8 @@ def test_perfect_coverage_metric_and_small_patch_recall():
 
 def test_coverage_gradient_cache_matches_direct_global_objective():
     from test_research_multigpu import Toy, make_batches
-    from flashppi.research_distributed import GlobalGradientCache
-    from flashppi.loss import GradCacheClipLoss, ContactLoss
+    from piper.distributed import GlobalGradientCache
+    from piper.loss import GradCacheClipLoss, ContactLoss
 
     class CoverageToy(Toy):
         coverage_weight = 0.1
@@ -146,8 +146,8 @@ def test_coverage_gradient_cache_matches_direct_global_objective():
 
 
 def test_checkpoint_migration_preserves_moments_with_shifted_parameter_order():
-    from flashppi.coverage_migration import restore_existing_parameters, migrate_adam_state
-    from flashppi.research_train import build_optimizer, cpu_state
+    from piper.coverage_migration import restore_existing_parameters, migrate_adam_state
+    from piper.train import build_optimizer, cpu_state
     old = torch.nn.Module()
     old.adapter = torch.nn.Module()
     old.adapter.lora_b_q = torch.nn.Parameter(torch.ones(2, 2))

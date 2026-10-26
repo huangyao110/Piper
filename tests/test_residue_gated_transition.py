@@ -7,10 +7,10 @@ import pytest
 import torch
 from torch import nn
 
-from flashppi.gated_modules import ResidueGatedContactHead, GatedContrastiveHead, EnsembleResidualFusion
-from flashppi.model import ContactHead, ContrastiveHead
-from flashppi.patch_contact import PatchContactHead, PatchSpec
-from flashppi.residue_warm_start import restore_residue_parameters, validate_transition_config, DROPPED
+from piper.gated_modules import ResidueGatedContactHead, GatedContrastiveHead, EnsembleResidualFusion
+from piper.model import ContactHead, ContrastiveHead
+from piper.patch_contact import PatchContactHead, PatchSpec
+from piper.residue_warm_start import restore_residue_parameters, validate_transition_config, DROPPED
 
 
 @pytest.fixture(autouse=True)
@@ -105,8 +105,8 @@ def test_pinned_transition_configs_keep_gates_and_change_only_contact_resolution
 
 
 def test_collator_does_not_expand_single_residue_label():
-    from flashppi.dataset import DataCollatorForPPI
-    from flashppi.sequence_masking import SequenceMaskingCollator
+    from piper.dataset import DataCollatorForPPI
+    from piper.sequence_masking import SequenceMaskingCollator
     from test_sequence_masking import Tokenizer
     row = dict(seq1='ACDEF', seq2='ACDEFGH', contacts=[(2, 3)],
                valid1=[True, True, True, True, False], valid2=[True]*7,

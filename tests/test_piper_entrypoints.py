@@ -17,8 +17,8 @@ def test_training_arguments_and_help_are_forwarded_without_reinterpretation(monk
     monkeypatch.setattr('piper.cli.runpy.run_module',
                         lambda target, **kw: seen.append((target, sys.argv[:], kw)))
     cli(['train', '--config', 'path with spaces/config.json', '--resume', 'saved', '--help'])
-    assert seen == [('flashppi.research_train',
-                     ['flashppi.research_train', '--config', 'path with spaces/config.json',
+    assert seen == [('piper.train',
+                     ['piper.train', '--config', 'path with spaces/config.json',
                       '--resume', 'saved', '--help'], {'run_name': '__main__'})]
     assert sys.argv == original
 
@@ -66,9 +66,9 @@ class TinyModel(nn.Module):
 
 
 def test_pair_prediction_masks_padding_and_refuses_overwrite(tmp_path, monkeypatch):
-    import flashppi.research_model
+    import piper.ensemble
     tokenizer = lambda seqs, **kw: Tokens(seqs)
-    monkeypatch.setattr(flashppi.research_model, 'load_checkpoint',
+    monkeypatch.setattr(piper.ensemble, 'load_checkpoint',
                         lambda *a: (TinyModel(), tokenizer, {}))
     source, output = tmp_path/'input.csv', tmp_path/'output.csv'
     source.write_text('pair_id,seq1,seq2\npair0,ac,ACDE\n')
@@ -83,10 +83,10 @@ def test_pair_prediction_masks_padding_and_refuses_overwrite(tmp_path, monkeypat
 
 
 def test_invalid_input_header_fails_before_loading_checkpoint(tmp_path, monkeypatch):
-    import flashppi.research_model
+    import piper.ensemble
     def forbidden(*a):
         pytest.fail('Checkpoint loading must not occur for invalid CSV headers')
-    monkeypatch.setattr(flashppi.research_model, 'load_checkpoint', forbidden)
+    monkeypatch.setattr(piper.ensemble, 'load_checkpoint', forbidden)
     source = tmp_path/'invalid.csv'
     source.write_text('sequence\nACD\n')
     with pytest.raises(ValueError, match='seq1 and seq2'):

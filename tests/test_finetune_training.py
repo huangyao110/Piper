@@ -7,9 +7,9 @@ sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 import unittest
 from unittest.mock import patch
 import torch
-from flashppi.model import get_contact_negatives
-from flashppi.dataset import DataCollatorForPPI
-from flashppi.loss import ContactLoss, GradCacheClipLoss, PPIGradientCache
+from piper.model import get_contact_negatives
+from piper.dataset import DataCollatorForPPI
+from piper.loss import ContactLoss, GradCacheClipLoss, PPIGradientCache
 
 
 class Tokenizer:
@@ -91,7 +91,7 @@ class Tests(unittest.TestCase):
 
 class ResumeConfigurationTests(unittest.TestCase):
     def test_two_epochs_preserve_all_draws_and_partial_batches(self):
-        from flashppi.finetune import sample_window
+        from piper.training_utils import sample_window
         windows = [sample_window(step,1024,1120675) for step in range(2190)]
         self.assertEqual(windows[0][0],0)
         self.assertEqual(windows[-1][1],2241350)
@@ -101,7 +101,7 @@ class ResumeConfigurationTests(unittest.TestCase):
         self.assertEqual(windows[1095][0],1120675)
 
     def test_extension_preserves_optimizer_settings(self):
-        from flashppi.finetune import validate_resume_config
+        from piper.training_utils import validate_resume_config
         state = {'config': {'steps': 63, 'learning_rate': 1e-5}, 'step': 63, 'smoke': False}
         validate_resume_config(state, {'steps': 126, 'learning_rate': 1e-5}, False, extend=True)
         with self.assertRaises(ValueError):

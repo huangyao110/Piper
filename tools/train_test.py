@@ -27,9 +27,9 @@ import pyarrow as pa
 import pyarrow.parquet as pq
 import duckdb
 
-from flashppi.ddi_common import write_json
-from flashppi.indexed_data import file_sha256, sequence_id, contact_fingerprint
-from flashppi.data_protocol import (validate_config, verify_baseline, original_record,
+from piper.ddi_common import write_json
+from piper.indexed_data import file_sha256, sequence_id, contact_fingerprint
+from piper.data_protocol import (validate_config, verify_baseline, original_record,
     reference_fasta, locked_command, verify_search_log, legacy_decisions,
     restore_known_decisions, LOCK_PATH, STRICT_PROTOCOL_ID, STRICT_LOCK_PATH,
     RF2_PROTOCOL_ID, RF2_LOCK_PATH, FRESH_PROTOCOL_IDS,
@@ -451,7 +451,7 @@ class Build:
                   empty_contact_rows=self.scalar('SELECT count(*) FROM payloads WHERE valid_contacts=0'))
 
     def finalize(self):
-        from flashppi.indexed_data import IndexedSplit
+        from piper.indexed_data import IndexedSplit
         self.status('deduplicate_and_write_split_indexes')
         self.db.execute("""CREATE OR REPLACE TABLE eligible AS SELECT c.*,p.supervision_hash,p.valid_contacts,
             coalesce(p.supervision_hash,from_hex(sha256('singleton:'||c.sample_id))) AS supervision_group_id
@@ -555,7 +555,7 @@ class Build:
                 'The data contain structural positive examples. Real interaction negatives are not supplied by this expansion.',
                 'PPI structure clusters are unavailable; sequence-pair/sequence clustering is not an interface-structure leakage proof.'],
             code={'builder':str(Path(__file__).resolve()),'builder_sha256':file_sha256(__file__),
-                  'reader':str(ROOT/'flashppi/indexed_data.py'),'reader_sha256':file_sha256(ROOT/'flashppi/indexed_data.py')},
+                  'reader':str(ROOT/'piper/indexed_data.py'),'reader_sha256':file_sha256(ROOT/'piper/indexed_data.py')},
             versions={'python':sys.version,'numpy':np.__version__,'pyarrow':pa.__version__,'duckdb':duckdb.__version__})
         write_json(self.output/'manifest.json',manifest)
         # Exercise the public reader with shuffled accesses and bounded caches.
@@ -660,7 +660,7 @@ class Build:
             '未追加未经验证的 pLDDT/PAE 筛选；结构正例扩充不等于补充实验确认的互作负例。','',
             '## 读取与复现','',
             '在 FlashPPI 项目根目录中：','',
-            '    from flashppi.indexed_data import IndexedSplit',
+            '    from piper.indexed_data import IndexedSplit',
             f"    train = IndexedSplit({str(self.output)!r}, 'train')",
             '    sample = train[0]',
             "    print(sample['seq1'], sample['split_annotation']['legacy_train'])",'',
@@ -698,7 +698,7 @@ class StrictBuild(Build):
         identity = dict(config=self.config, filter_protocol=self.protocol,
             code_sha256={name: file_sha256(ROOT / name) for name in (
                 'tools/train_test.py', 'tools/audit_expanded_index_split.py',
-                'flashppi/data_protocol.py', 'flashppi/indexed_data.py')},
+                'piper/data_protocol.py', 'piper/indexed_data.py')},
             versions=dict(python=sys.version, numpy=np.__version__, pyarrow=pa.__version__, duckdb=duckdb.__version__))
         path = self.output / 'build_identity.json'
         if path.exists() and json.loads(path.read_text()) != identity:
@@ -986,7 +986,7 @@ class StrictBuild(Build):
         self.table('legacy_payloads', pa.Table.from_pylist([], schema=schema))
 
     def finalize(self):
-        from flashppi.indexed_data import IndexedSplit
+        from piper.indexed_data import IndexedSplit
         self.status('deduplicate_and_write_strict_indexes')
         self.db.execute("""CREATE OR REPLACE TABLE eligible AS SELECT c.*,p.supervision_hash,p.valid_contacts,
             coalesce(p.supervision_hash,from_hex(sha256('singleton:'||c.sample_id))) AS supervision_group_id
@@ -1150,7 +1150,7 @@ class StrictBuild(Build):
             '- *.tsv.gz、*.search.json、*_mmseqs.log：原始比对、完整命令与日志。',
             '- legacy_before_after.index.parquet：每条旧训练成员在新规则下的去向，不再保证 100% 保留。',
             '- verification.json / independent_audit.json：数据对应关系、读取一致性与独立验收。','',
-            '```python','from flashppi.indexed_data import IndexedSplit',
+            '```python','from piper.indexed_data import IndexedSplit',
             f"train = IndexedSplit({str(self.output)!r}, 'train')", "sample = train[0]",'```','',
             '```bash','PYTHONPATH=artifacts/environments/data_index_deps \\',
             'artifacts/environments/esmc_prott5_gated_py312/bin/python \\',

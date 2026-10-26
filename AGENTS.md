@@ -40,7 +40,7 @@ The historical CongLab/PINDER/Teddymer expansion remains governed by the origina
 
 ## Project Structure & Module Organization
 
-Piper is the current research project derived from FlashPPI. `piper/` provides public train/evaluate/split/predict entry points; `flashppi/` retains model, loss, sampling, evaluation and training implementations at checkpoint-compatible paths. Current JSON configurations live in `configs_train/`, immutable data protocols in `configs_data/`, and pretrained manifests in `configs_models/`. Original FlashPPI screening scripts and YAML examples are under `examples/upstream/`. Regression checks belong in `tests/`; the isolated biological gate study remains in `resercher/`. Historical documentation is under `docs/history/`. Local `experiments/`, data, weights and deployment bundles are excluded from publication.
+Piper is the current research project. `piper/` contains the model, loss, sampling, training, evaluation, prediction and asset utilities, with public commands routed by `piper.cli`. `flashppi/__init__.py` is a legacy import adapter to those same modules, not another implementation. `tools/` retains the single split builder, audits, locked historical filters and server shell launchers. Current JSON configurations live in `configs_train/`, immutable data protocols in `configs_data/`, and pretrained manifests in `configs_models/`. Upstream FlashPPI screening and baseline evaluation examples are under `examples/upstream/`; preserve their license and attribution. Regression checks belong in `tests/`; the isolated biological gate study uses `resercher/run.py` and its own historical snapshots. Historical documentation is under `docs/history/`. Local `experiments/`, data, weights and deployment bundles are excluded from publication. Pre-0.2 checkpoints require their original frozen runtime for exact resume; do not refresh source hashes to bypass this boundary.
 
 ## Build, Test, and Development Commands
 
@@ -53,11 +53,11 @@ Run commands from the repository root in a virtual environment. There is no sepa
 - `CUDA_VISIBLE_DEVICES='' OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 python -m pytest -q -m 'not integration'` runs the offline-compatible CPU regressions; integration tests require local historical artifacts.
 - `python tests/test_contact_score_padding.py` runs the contact-score regression check.
 
-Training requires the configured datasets and pinned pretrained models. Use the root README for the current research trainer. The original upstream YAML trainer has separate optional dataset/screening/logging dependencies; it is not the Piper training entry point.
+Training requires the configured datasets and pinned pretrained models. Use the root README for the current trainer. The obsolete standalone upstream YAML trainer was retired; original screening examples may need optional dependencies in a separate environment.
 
 ## Coding Style & Naming Conventions
 
-Use four-space indentation, `snake_case` for functions and variables, and `PascalCase` for classes. Follow nearby code and use relative imports within `flashppi/`. Keep configuration fields aligned with the dataclasses in `flashppi/config.py`. Explain tensor shapes and masking assumptions where they affect correctness. No formatter or linter configuration is currently checked in.
+Use four-space indentation, `snake_case` for functions and variables, and `PascalCase` for classes. Follow nearby code and use relative imports within `piper/`. Keep configuration fields aligned with the dataclasses in `piper/config.py`. Explain tensor shapes and masking assumptions where they affect correctness. No formatter or linter configuration is currently checked in.
 
 ## Testing Guidelines
 

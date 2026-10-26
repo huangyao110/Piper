@@ -7,10 +7,10 @@ from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import torch
-from flashppi.dataset import DataCollatorForPPI
-from flashppi.model import get_contact_negatives
-from flashppi.negative_sampling import unique_heteroprotein_indices, validate_policy, POLICY
-from flashppi.loss import ContactLoss, focal_loss
+from piper.dataset import DataCollatorForPPI
+from piper.model import get_contact_negatives
+from piper.negative_sampling import unique_heteroprotein_indices, validate_policy, POLICY
+from piper.loss import ContactLoss, focal_loss
 from test_finetune_training import Tokenizer
 
 

@@ -8,9 +8,9 @@ import torch
 from torch import nn
 from torch.utils.checkpoint import checkpoint
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from flashppi.lora import QVLoRALinear, merged_for_inference, merged_state_dict, save_trainable, load_trainable
+from piper.lora import QVLoRALinear, merged_for_inference, merged_state_dict, save_trainable, load_trainable
 from test_finetune_training import Accelerator, Toy
-from flashppi.loss import PPIGradientCache, GradCacheClipLoss, ContactLoss
+from piper.loss import PPIGradientCache, GradCacheClipLoss, ContactLoss
 
 
 class DropoutToy(Toy):

@@ -14,7 +14,7 @@ from transformers import AutoConfig, AutoTokenizer
 from transformers.dynamic_module_utils import get_class_from_dynamic_module
 
 from .model import ContactHead, ContrastiveHead
-from .finetune import sha256
+from .training_utils import sha256
 
 
 def load_original_glm(config):

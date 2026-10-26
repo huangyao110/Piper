@@ -15,9 +15,9 @@ import pyarrow as pa
 import pyarrow.compute as pc
 import pyarrow.parquet as pq
 
-from flashppi.ddi_common import write_json
-from flashppi.indexed_data import file_sha256,sequence_id
-from flashppi.data_protocol import (verify_baseline, verify_strict_inputs, STRICT_PROTOCOL_ID,
+from piper.ddi_common import write_json
+from piper.indexed_data import file_sha256,sequence_id
+from piper.data_protocol import (verify_baseline, verify_strict_inputs, STRICT_PROTOCOL_ID,
     RF2_PROTOCOL_ID, FRESH_PROTOCOL_IDS, read_strict_lock)
 
 
@@ -149,7 +149,7 @@ def audit_strict(directory):
     classifier. This intentionally provides an independent boundary/axis check.
     """
     import duckdb
-    from flashppi.data_protocol import strict_command, verify_strict_search_log
+    from piper.data_protocol import strict_command, verify_strict_search_log
     directory = Path(directory).resolve()
     manifest = json.loads((directory/'manifest.json').read_text())
     protocol = verify_strict_inputs(manifest['config'])

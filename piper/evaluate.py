@@ -7,10 +7,10 @@ import sys
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import torch
 
-from flashppi.finetune import sha256
-from flashppi.research_eval import evaluate_test, atomic_json
-from flashppi.research_model import load_checkpoint
-from flashppi.research_train import verify_inputs
+from piper.training_utils import sha256
+from piper.evaluation import evaluate_test, atomic_json
+from piper.ensemble import load_checkpoint
+from piper.train import verify_inputs
 
 
 def main():

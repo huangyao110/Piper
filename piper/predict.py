@@ -17,8 +17,8 @@ def main(argv=None):
     args.output = args.output.resolve()
     args.checkpoint = args.checkpoint.resolve()
     import torch
-    from flashppi.research_model import load_checkpoint
-    from flashppi.lora import merged_for_inference
+    from piper.ensemble import load_checkpoint
+    from piper.lora import merged_for_inference
     torch.set_num_threads(4)
     if args.output.exists():
         raise FileExistsError(args.output)

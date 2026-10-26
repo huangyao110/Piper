@@ -11,7 +11,7 @@ import os
 from pathlib import Path
 import time
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 os.environ.setdefault("HF_HOME", str(ROOT / "artifacts/hf_cache"))
 os.environ.setdefault("HF_HUB_OFFLINE", "1")
 
@@ -21,8 +21,8 @@ import torch
 from torch.nn.utils.rnn import pad_sequence
 import transformers
 from transformers import AutoModel, AutoTokenizer
-from sklearn.metrics import (average_precision_score, roc_auc_score,
-                             precision_recall_curve, auc, confusion_matrix)
+from sklearn.metrics import average_precision_score, precision_recall_curve
+from piper.evaluation import classification_metrics
 
 
 def write_json(path, value):
@@ -37,21 +37,6 @@ def sha256(path):
         for block in iter(lambda: handle.read(8 * 1024 * 1024), b""):
             h.update(block)
     return h.hexdigest()
-
-
-def classification_metrics(y, score, threshold):
-    precision, recall, _ = precision_recall_curve(y, score)
-    tn, fp, fn, tp = confusion_matrix(y, score >= threshold, labels=[0, 1]).ravel()
-    return {
-        "average_precision": float(average_precision_score(y, score)),
-        "auprc_trapezoidal": float(auc(recall, precision)),
-        "auroc": float(roc_auc_score(y, score)),
-        "threshold": threshold,
-        "tp": int(tp), "fp": int(fp), "tn": int(tn), "fn": int(fn),
-        "precision": float(tp / max(tp + fp, 1)),
-        "recall": float(tp / max(tp + fn, 1)),
-        "f1": float(2 * tp / max(2 * tp + fp + fn, 1)),
-    }
 
 
 def main():

@@ -29,7 +29,7 @@ def test_original_chain_case_is_preserved():
 
 def test_separate_lora_head_rates_and_cosine():
     import torch
-    from flashppi.research_train import build_optimizer,set_step_learning_rate
+    from piper.train import build_optimizer,set_step_learning_rate
     model=torch.nn.Module()
     model.adapter=torch.nn.Module()
     model.adapter.lora_b_q=torch.nn.Parameter(torch.ones(2,2))

@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "Please cite the Piper repository and exact commit, and acknowledge the upstream FlashPPI publication."
 type: software
 title: "Piper: gated protein language model fusion for residue contact prediction"
-version: 0.1.0
+version: 0.2.0
 date-released: 2026-10-26
 authors:
   - name: "Piper contributors"

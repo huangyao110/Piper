@@ -18,7 +18,7 @@ hf download tattabio/gLM2_650M_UR50 \
     --include '*.json' '*.py' '*.safetensors' --local-dir artifacts/glm2_650m_ur50
 cp configs_models/glm2_650m_ur50.manifest.json artifacts/glm2_650m_ur50/manifest.json
 
-python tools/download_esmc_for_fusion.py --output artifacts/esmc_300m
+python -m piper download esmc --output artifacts/esmc_300m
 cp configs_models/esmc_300m.manifest.json artifacts/esmc_300m/manifest.json
 
 hf download Rostlab/prot_t5_xl_half_uniref50-enc \
@@ -39,4 +39,4 @@ These commands download several GB and are intentionally not run by installation
 
 Training and full benchmark evaluation validate input hashes before running. A checkpoint-only pair prediction checks the trainable tensor checksum and model-specific loader requirements; it is not a substitute for the full dataset/input audit. For a relocated existing checkpoint, preserve the original asset locations or provide equivalent mounts; do not change a checkpoint config and call it an exact resume.
 
-`tools/download_official_flashppi.py` remains available for upstream baseline comparison and downloads the pinned upstream weights as well as the benchmark. `tools/download_original_glm2.py` is the historical range-download utility: it requires the backbone directory and small pinned config/tokenizer files to have been prepared first. The `hf download` route above is the recommended fresh setup.
+`python -m piper download official` downloads the pinned upstream weights and benchmark for baseline comparisons. The two asset download scripts are consolidated in `piper/download.py`; repository revisions, file filters and checksum checks are preserved. The obsolete gLM2 range-download helper was retired; use the complete `hf download` setup above.

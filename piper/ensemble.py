@@ -1,8 +1,8 @@
-"""Independent research models: released FlashPPI plus optional residue fusion.
+"""Piper residue-aligned encoder fusion, gated heads and checkpoint loading.
 
-The original training entrypoint and downloaded model sources are not modified.
-ESM C is frozen in this first experiment; both branches encode the SAME cropped
-sequence. BOS/EOS are removed before alignment with the original contact labels.
+gLM2, frozen ESM C and frozen ProtT5 encode the same cropped sequence.
+BOS/EOS are removed before alignment with residue contact labels.
+Legacy single-encoder, patch and LoRA configurations remain loadable.
 """
 from contextlib import nullcontext
 import json
@@ -11,7 +11,7 @@ from pathlib import Path
 import torch
 from torch import nn
 
-from .finetune import ReleasedTrainingModel, load_released, sha256
+from .training_utils import ReleasedTrainingModel, load_released, sha256
 from .lora import install_lora, load_trainable
 from .patch_contact import PatchContactHead, PatchSpec
 from .gated_modules import EnsembleResidualFusion, GatedContrastiveHead, ResidueGatedContactHead

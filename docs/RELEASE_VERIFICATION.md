@@ -48,3 +48,23 @@ The six requirements files were consolidated into one root `requirements.txt`, w
 The initial GitHub runs exposed two real-MMseqs end-to-end tests incorrectly included in the offline test selection, and a one-ULP FP32 loss reduction difference across CPU builds. The two external-binary cases are now explicitly marked `integration`, with `PIPER_MMSEQS` selecting the test executable. The loss comparison uses `rtol=1e-7, atol=1e-7`; exact token/mask replay and the existing gradient assertions remain in place. No production numerical or filtering implementation was changed.
 
 After these corrections, the local offline suite passed **202 tests**, with **2 GPU cases skipped** and **13 integration cases deselected**. The two real-MMseqs integrations were run separately with the pinned local executable: **2 passed**. This accounts for the change in the offline count from the initial 204. The 55 protected source/data hashes remain unchanged. The only data-builder edit updates the dependency filename in its generated README text; its executable logic is unchanged.
+
+## Follow-up: consolidated source layout, version 0.2.0
+
+The current implementation now lives in `piper/`. `flashppi/` contains one legacy import adapter, with module/class identity preserved in either import order. Model evaluation, preflight and checkpoint comparison moved out of `tools/`; the two pinned downloaders share one command. The obsolete YAML trainer, duplicate finetune CLI/evaluation, range downloader and completed one-off study summary were retired. Research annotations use the existing `resercher/run.py` entry point, and two byte-identical historical gate fixtures share one file with both provenance records.
+
+| Check | Result |
+|---|---|
+| Clean source export, offline CPU regressions | **208 passed, 2 GPU cases skipped, 13 integrations deselected** |
+| Independent research tests in clean export | **27 passed** |
+| Real MMseqs build/check integrations | **2 passed** |
+| Relocated model/training/evaluation functions and classes | **166 definitions across 34 moved modules match their original ASTs after import relocation** |
+| Shared classification metrics | Identical function AST; no duplicated implementation |
+| Builder and independent audit | Complete module ASTs match after namespace/source-path substitutions |
+| Original filters, configuration/locks and active frozen runtime | **90 protected files, zero hash changes** |
+| New checkpoint source snapshot | Standalone trainer help imports successfully without the original checkout |
+| Package | `piper_contact-0.2.0` wheel; only `flashppi/__init__.py` under the old package; the same 21 dependency pins |
+
+New regressions cover legacy import identity, standalone source snapshots, pinned download/checksum behavior, merged annotation dispatch and both historical fixture hashes. The two existing SentencePiece deprecation warnings remain non-fatal. All tests used CPU/offline settings; no production GPU job was stopped or started.
+
+The [consolidation manifest](CODE_CONSOLIDATION_20261026.json) records moves, merges, retired source hashes, AST checks and this release's protected set. The earlier 55-file preservation statement describes the preceding release; those workspace implementation paths were intentionally reorganized in 0.2. **Exact resume of earlier checkpoints still requires their own frozen runtime.** Source-hash validation remains strict, parameter names and model computations are preserved, and no data membership, hyperparameter, label or mask semantics changed. Full-model GPU prediction/performance was not remeasured during this cleanup.

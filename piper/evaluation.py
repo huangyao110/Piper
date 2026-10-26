@@ -9,11 +9,26 @@ import numpy as np
 import pyarrow.parquet as pq
 import torch
 from torch.nn.utils.rnn import pad_sequence
-from sklearn.metrics import average_precision_score, roc_auc_score
+from sklearn.metrics import average_precision_score, roc_auc_score, precision_recall_curve, auc, confusion_matrix
 
-from .finetune import clear_rotary_cache, sha256
+from .training_utils import clear_rotary_cache, sha256
 from .lora import merged_for_inference
 from .patch_contact import PatchContactHead, PatchSpec, structural_patch_metrics
+
+
+def classification_metrics(y, score, threshold):
+    precision, recall, _ = precision_recall_curve(y, score)
+    tn, fp, fn, tp = confusion_matrix(y, score >= threshold, labels=[0, 1]).ravel()
+    return {
+        "average_precision": float(average_precision_score(y, score)),
+        "auprc_trapezoidal": float(auc(recall, precision)),
+        "auroc": float(roc_auc_score(y, score)),
+        "threshold": threshold,
+        "tp": int(tp), "fp": int(fp), "tn": int(tn), "fn": int(fn),
+        "precision": float(tp / max(tp + fp, 1)),
+        "recall": float(tp / max(tp + fn, 1)),
+        "f1": float(2 * tp / max(2 * tp + fp + fn, 1)),
+    }
 
 
 def atomic_json(path, value):
@@ -209,7 +224,6 @@ def evaluate_test(model, tokenizer, config, output):
     Uses the historical scoring convention without cropping, symmetrization,
     retrieval prefiltering, or using test labels to build training negatives.
     """
-    from tools.evaluate_official_ecoli import classification_metrics
     rows = pq.read_table(config['test']).to_pylist()
     settings = config.get('patch_evaluation')
     spec = PatchSpec(**settings) if settings else None

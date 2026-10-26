@@ -16,5 +16,5 @@ export OMP_NUM_THREADS=4
 export CUBLAS_WORKSPACE_CONFIG=:4096:8
 export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
 exec "$server_python" -m torch.distributed.run --standalone --nnodes=1 \
-    --nproc_per_node="${#server_gpu_ids[@]}" -m flashppi.research_train \
+    --nproc_per_node="${#server_gpu_ids[@]}" -m piper.train \
     --config "$server_config" --output "$server_output" "$@"

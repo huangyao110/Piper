@@ -11,9 +11,9 @@ import pytest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path[:0] = [str(ROOT),str(ROOT/'tools')]
-from flashppi.indexed_data import contact_fingerprint, file_sha256, sequence_id, IndexedSplit
+from piper.indexed_data import contact_fingerprint, file_sha256, sequence_id, IndexedSplit
 from train_test import Build, payload_buffers
-from flashppi.data_protocol import PROTOCOL_ID, validate_config
+from piper.data_protocol import PROTOCOL_ID, validate_config
 
 
 def make_strict_fixture(tmp_path, monkeypatch, rf2=False):
@@ -22,7 +22,7 @@ def make_strict_fixture(tmp_path, monkeypatch, rf2=False):
     import gzip
     import os
     import shutil
-    from flashppi.data_protocol import (read_strict_lock, STRICT_PROTOCOL_ID, STRICT_LOCK_SHA256,
+    from piper.data_protocol import (read_strict_lock, STRICT_PROTOCOL_ID, STRICT_LOCK_SHA256,
                                        RF2_PROTOCOL_ID, RF2_LOCK_SHA256)
     executable = os.environ.get('PIPER_MMSEQS') or shutil.which('mmseqs')
     if executable is None and Path('/home/zlab/miniconda3/bin/mmseqs').is_file():

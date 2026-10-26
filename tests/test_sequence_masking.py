@@ -8,10 +8,10 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import torch
 from transformers import BatchEncoding
 
-from flashppi.dataset import DataCollatorForPPI
-from flashppi.research_distributed import GlobalGradientCache, assigned_chunks, chunk_seed
-from flashppi.research_model import align_secondary_tokens, secondary_token_mapping
-from flashppi.sequence_masking import ResidueMasker, SequenceMaskingCollator
+from piper.dataset import DataCollatorForPPI
+from piper.distributed import GlobalGradientCache, assigned_chunks, chunk_seed
+from piper.ensemble import align_secondary_tokens, secondary_token_mapping
+from piper.sequence_masking import ResidueMasker, SequenceMaskingCollator
 from test_research_multigpu import Toy, reference
 
 

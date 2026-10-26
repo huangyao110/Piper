@@ -90,7 +90,7 @@ python -m piper evaluate --checkpoint runs/piper/checkpoints/step_000200 \
     --output runs/test_step_000200
 ```
 
-For multiple GPUs, use `torchrun --standalone --nproc_per_node=2 -m flashppi.research_train --config ... --output ...`. Changing GPU count is a new execution setting; it is not an exact resume.
+For multiple GPUs, use `torchrun --standalone --nproc_per_node=2 -m piper.train --config ... --output ...`. Changing GPU count is a new execution setting; it is not an exact resume. Checkpoints created before the 0.2 source consolidation require their original frozen runtime for exact resume; see [reproducibility](docs/REPRODUCIBILITY.md).
 
 | Setting | Current protocol |
 |---|---|
@@ -126,19 +126,21 @@ This entry point scores full sequences one pair at a time, keeps the input orien
 ## Repository layout
 
 ```text
-piper/             Public CLI and pair inference
-flashppi/          Model, gates, losses and training; internal name kept for checkpoint compatibility
+piper/            Model, gates, losses, training, evaluation, prediction and asset utilities
+flashppi/         One compatibility module for legacy imports; implementations live in piper
 configs_train/    Current original config and portable example
 configs_data/     Versioned isolation configurations and immutable locks
 configs_models/   Pretrained artifact manifests and preparation instructions
-tools/            Maintained build/check, evaluation and environment utilities
+tools/            Maintained data build/check scripts and server launchers
 tests/            CPU regression tests and explicitly marked local integrations
 resercher/        Isolated CLIP residue-gate biology study (historical name retained)
 docs/             Model/data/reproducibility docs; historical records in history/
-examples/upstream/ Original FlashPPI screening examples, separate from Piper inference
+examples/upstream/ Original FlashPPI screening examples and baseline evaluation
 ```
 
-Local `data/`, `artifacts/`, `runs/`, `experiments/` and the historical server bundle are not published. [The cleanup manifest](docs/PIPER_CLEANUP_20261026.json) records retired files and hashes; local compressed backups preserve their provenance. Locked filters and current training source files were retained.
+Local `data/`, `artifacts/`, `runs/`, `experiments/` and the historical server bundle are not published. The [initial cleanup](docs/PIPER_CLEANUP_20261026.json) and [source consolidation](docs/CODE_CONSOLIDATION_20261026.json) manifests record file moves, retirements and protected hashes. Locked filters and the running job's frozen source snapshot remain unchanged.
+
+The public commands are `piper train`, `evaluate`, `predict`, `split`, `download`, `preflight` and `check-replay`; each supports `--help`. `PiperModel` and `load_checkpoint` are available from the `piper` Python package. The independent gate study uses only `python resercher/run.py COMMAND` and its own historical model snapshots.
 
 ## Tests
 

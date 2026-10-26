@@ -1,8 +1,8 @@
-"""Portable, synchronous multi-GPU fine-tuning with optional frozen ESM C.
+"""Piper synchronous training with residue contact and contrastive objectives.
 
-Launch with torchrun. This is a NEW experiment, not a bitwise continuation of
-the original single-GPU run: global CLIP logits use FP32 and crop/replay seeds
-are attached to global microbatches. Every validation checkpoint is retained.
+Launch with torchrun for multiple GPUs. Global CLIP logits use FP32 and
+crop/replay seeds are attached to global microbatches. Exact resume requires
+the recorded source, inputs, configuration and world size.
 """
 import argparse
 from contextlib import contextmanager
@@ -25,12 +25,12 @@ import torch.distributed as dist
 
 from .cropping import valid_contact_counts
 from .dataset import ClusterSampler, DataCollatorForPPI, build_interaction_keys
-from .finetune import sha256, sample_window
+from .training_utils import sha256, sample_window
 from .lora import save_trainable, load_trainable
-from .research_distributed import (GlobalGradientCache, assigned_chunks, chunk_seed,
+from .distributed import (GlobalGradientCache, assigned_chunks, chunk_seed,
                                    world_rank, distributed, broadcast_trainable)
-from .research_eval import atomic_json, evaluate_validation, evaluate_test
-from .research_model import build_model
+from .evaluation import atomic_json, evaluate_validation, evaluate_test
+from .ensemble import build_model
 from .sequence_masking import SequenceMaskingCollator
 from .patch_contact import PatchTargetCollator, PatchSpec
 from .mixed_sampling import BalancedKindSampler
@@ -41,14 +41,16 @@ ROOT = Path(__file__).resolve().parents[1]
 BASE_SHA = "047edbe0570eca424ea835e0a460248d2aa5077d95a024d149ac22ab78a44a49"
 TEST_SHA = "07dace691cac67561d264fbbcd8deb862ad6356998b129ae57dee7d983de7f6c"
 METRICS = {"clip": "clip_ap", "contact": "contact_precision_at_k", "interaction": "contact_score_ap"}
-SOURCE_FILES = ["flashppi/" + x for x in ["research_train.py", "research_model.py", "research_distributed.py",
-                "research_eval.py", "finetune.py", "lora.py", "loss.py", "model.py", "dataset.py", "cropping.py",
-                "sequence_masking.py", "patch_contact.py", "mixed_sampling.py", "glm_initialization.py", "layers.py",
-                "coverage_migration.py", "negative_sampling.py", "gated_modules.py", "frozen_prott5.py",
-                "gated_warm_start.py", "residue_warm_start.py", "frozen_embedding_cache.py", "full_finetune.py",
-                "indexed_data.py", "indexed_training.py", "data_protocol.py", "frozen_prefix_cache.py"]]
-SOURCE_FILES += ["tools/evaluate_research_checkpoint.py", "tools/check_research_replay.py",
-                 "tools/evaluate_official_ecoli.py", "configs_data/conglab_ecoli_filter.lock.json",
+SOURCE_FILES = ["piper/" + name for name in (
+    "__init__.py", "config.py", "coverage_migration.py", "cropping.py", "data_protocol.py",
+    "dataset.py", "ddi_common.py", "distributed.py", "ensemble.py", "evaluate.py", "evaluation.py",
+    "frozen_embedding_cache.py", "frozen_prefix_cache.py", "frozen_prott5.py", "full_finetune.py",
+    "gated_modules.py", "gated_warm_start.py", "glm_initialization.py", "improvement_objectives.py",
+    "indexed_data.py", "indexed_training.py", "layers.py", "lora.py", "loss.py", "mixed_sampling.py",
+    "model.py", "negative_sampling.py", "patch_contact.py", "residue_warm_start.py",
+    "sequence_masking.py", "train.py", "training_utils.py",
+)]
+SOURCE_FILES += ["configs_data/conglab_ecoli_filter.lock.json",
                  "configs_data/conglab_distilled_ecoli_rf2ppi_v3.lock.json"]
 
 

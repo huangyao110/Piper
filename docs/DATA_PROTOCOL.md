@@ -44,6 +44,8 @@ Outputs include:
 
 The source datasets remain read-only. A passing mechanical audit establishes compliance with this fixed implementation, not exhaustive biological homology exclusion.
 
+The 0.2 source consolidation moves the shared reader and protocol modules into `piper/`; the builder and independent checker remain at their existing paths. Predicate logic and protocol locks are unchanged. An unfinished build records its code hashes in `build_identity.json`: continue it using its original source version, rather than rewriting that identity to accept a different layout. Completed splits can still be checked through the maintained entry point.
+
 ## Sampling and labels
 
 The supplied 70/70 sequence cluster TSVs are sampling metadata for both PPI and DDI. They are distinct from the 30% isolation threshold. Draws are allocated 50% CongLab DDI, 25% CongLab PPI and 25% distilled PPI, then balanced over sequence clusters with within-cluster deduplication weights. The source mixture is not proportional to raw row count. Four epochs mean four budgets of balanced draws, not four exhaustive traversals.

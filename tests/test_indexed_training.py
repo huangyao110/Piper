@@ -8,9 +8,9 @@ import pyarrow as pa
 import pyarrow.parquet as pq
 import pytest
 
-from flashppi.data_protocol import PROTOCOL_ID, LOCK_SHA256
-from flashppi.indexed_data import IndexedSplit, file_sha256
-from flashppi.indexed_training import (IndexedKindSampler, IndexedTrainingPopulation,
+from piper.data_protocol import PROTOCOL_ID, LOCK_SHA256
+from piper.indexed_data import IndexedSplit, file_sha256
+from piper.indexed_training import (IndexedKindSampler, IndexedTrainingPopulation,
                                        POLICY, validate_continuation, prune_checkpoints)
 
 
@@ -103,7 +103,7 @@ def test_source_hash_checked_before_first_payload_read(tmp_path):
 
 
 def test_expanded_mask_keys_use_int64_without_cluster_hash_overflow(monkeypatch):
-    from flashppi import research_train
+    from piper import train as research_train
     monkeypatch.setattr(research_train, 'IndexedTrainingPopulation', lambda _: [0,1])
     pairs = pa.table({'cluster1':pa.array([13_000_000, 1], type=pa.int32()),
                       'cluster2':pa.array([13_000_001, 2], type=pa.int32())})

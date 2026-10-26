@@ -9,9 +9,9 @@ import pytest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from flashppi.data_protocol import (PROTOCOL_ID, read_lock, validate_config,
+from piper.data_protocol import (PROTOCOL_ID, read_lock, validate_config,
     restore_known_decisions, locked_command, verify_search_log)
-from flashppi.indexed_data import file_sha256
+from piper.indexed_data import file_sha256
 
 
 def configuration():
@@ -85,7 +85,7 @@ def test_actual_search_drift_is_rejected(tmp_path):
 
 
 def test_strict_integer_boundaries_and_directional_domain_coverage():
-    from flashppi.data_protocol import strict_hit, strict_pair_decision
+    from piper.data_protocol import strict_hit, strict_pair_decision
     # Exactly 50% on both sides counts; exactly 30% identity does not.
     f = ['ref','train','30','100','1','50','100','101','150','1000']
     assert not strict_hit(f, 'ppi', 'test_to_train')
@@ -110,7 +110,7 @@ def test_strict_integer_boundaries_and_directional_domain_coverage():
 
 
 def test_strict_lock_rejects_parameter_source_and_scope_drift():
-    from flashppi.data_protocol import read_strict_lock, validate_strict_config, strict_command
+    from piper.data_protocol import read_strict_lock, validate_strict_config, strict_command
     lock = read_strict_lock()
     config = copy.deepcopy(lock['required_config'])
     validate_strict_config(config)
@@ -135,7 +135,7 @@ def test_strict_lock_rejects_parameter_source_and_scope_drift():
 @pytest.mark.parametrize('kind', ['ppi', 'ddi'])
 @pytest.mark.parametrize('direction', ['test_to_train', 'train_to_test_nofilter'])
 def test_rf2ppi_significance_coverage_or_and_strict_boundaries(kind, direction):
-    from flashppi.data_protocol import rf2ppi_hit
+    from piper.data_protocol import rf2ppi_hit
     # 51/100 on the short sequence, 51/1000 on the long one: either side suffices.
     f=['q','t','31','51','1','51','100','1','51','1000','9.99e-6','40']
     assert rf2ppi_hit(f,kind,direction)
@@ -159,7 +159,7 @@ def test_rf2ppi_significance_coverage_or_and_strict_boundaries(kind, direction):
 
 
 def test_rf2ppi_empty_mmseqs_results_are_not_significant_hits():
-    from flashppi.data_protocol import rf2ppi_hit
+    from piper.data_protocol import rf2ppi_hit
     # Observed with MMseqs 18.8cc5c, A*139 versus the complete E. coli reference.
     # A zero-residue alignment has no defined identity or significance.
     f=['q','t','0','0','0','1','139','0','0','30','6.868E-322','4']
@@ -175,7 +175,7 @@ def test_rf2ppi_empty_mmseqs_results_are_not_significant_hits():
 
 
 def test_rf2ppi_pair_rule_and_locked_search_settings():
-    from flashppi.data_protocol import (RF2_PROTOCOL_ID, read_strict_lock, strict_pair_decision,
+    from piper.data_protocol import (RF2_PROTOCOL_ID, read_strict_lock, strict_pair_decision,
                                        validate_strict_config, strict_command)
     for h1,h2 in ((False,False),(True,False),(False,True),(True,True)):
         assert (strict_pair_decision(h1,h2,RF2_PROTOCOL_ID)!='candidate') == (h1 and h2)
@@ -203,7 +203,7 @@ def test_strict_direct_pass_recovers_historical_verified_homologs(tmp_path):
     """
     import subprocess
     import pyarrow.parquet as pq
-    from flashppi.data_protocol import strict_command, strict_hit, reference_fasta, verify_strict_search_log
+    from piper.data_protocol import strict_command, strict_hit, reference_fasta, verify_strict_search_log
     folder=ROOT/'experiments/homology_consistency_20261022'
     candidate=folder/'disputed_domains.fasta'
     evidence=folder/'nofilter_accepted.parquet'

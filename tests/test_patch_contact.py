@@ -8,8 +8,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import torch
 from torch import nn
 
-from flashppi.loss import ContactLoss
-from flashppi.patch_contact import (PatchSpec, PatchContactHead, PatchTargetCollator,
+from piper.loss import ContactLoss
+from piper.patch_contact import (PatchSpec, PatchContactHead, PatchTargetCollator,
     patch_mask, patch_targets, pool_embeddings, pool_matrix_max, structural_patch_metrics)
 
 

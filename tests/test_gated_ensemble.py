@@ -6,12 +6,12 @@ import pytest
 import torch
 from torch import nn
 
-from flashppi.gated_modules import (ResidueGatedPool, GatedContrastiveHead,
+from piper.gated_modules import (ResidueGatedPool, GatedContrastiveHead,
                                    PatchResidualGate, EnsembleResidualFusion)
-from flashppi.frozen_prott5 import FrozenProtT5, prott5_token_mapping
-from flashppi.gated_warm_start import restore_inherited_parameters, warm_start
-from flashppi.model import ContrastiveHead
-from flashppi.patch_contact import (PatchSpec, PatchContactHead, patch_coverage_targets,
+from piper.frozen_prott5 import FrozenProtT5, prott5_token_mapping
+from piper.gated_warm_start import restore_inherited_parameters, warm_start
+from piper.model import ContrastiveHead
+from piper.patch_contact import (PatchSpec, PatchContactHead, patch_coverage_targets,
                                     structural_patch_metrics)
 
 
@@ -208,7 +208,7 @@ def test_prott5_rejects_split_residue_tokenizer():
 def test_frozen_esmc_stays_eval_without_gradients(monkeypatch, tmp_path):
     import esm.models.esmc
     import esm.tokenization
-    from flashppi.research_model import FrozenESMC
+    from piper.ensemble import FrozenESMC
     class Tokenizer:
         cls_token_id, eos_token_id, pad_token_id, mask_token_id = 0, 2, 1, 6
         def get_vocab(self):
@@ -257,7 +257,7 @@ def test_warm_start_requires_every_inherited_tensor():
 
 
 def test_warm_start_checks_source_base_and_lora_hashes(monkeypatch, tmp_path):
-    from flashppi.finetune import sha256
+    from piper.training_utils import sha256
     from safetensors.torch import save_file
     monkeypatch.chdir(tmp_path)
     model = nn.Linear(4, 2)
@@ -299,8 +299,8 @@ def test_warm_start_checks_source_base_and_lora_hashes(monkeypatch, tmp_path):
 
 
 def test_verify_inputs_tracks_every_prott5_manifest_file(monkeypatch, tmp_path):
-    import flashppi.research_train as trainer
-    from flashppi.finetune import sha256
+    import piper.train as trainer
+    from piper.training_utils import sha256
     paths = {}
     for name in ('model', 'base', 'train', 'validation_structures', 'validation_interactions', 'test', 'esmc', 'prott5'):
         paths[name] = tmp_path / name
@@ -337,9 +337,9 @@ def test_verify_inputs_tracks_every_prott5_manifest_file(monkeypatch, tmp_path):
 
 
 def test_build_model_and_checkpoint_keep_legacy_and_gated_interfaces(monkeypatch, tmp_path):
-    import flashppi.research_model as research
-    from flashppi.finetune import sha256
-    from flashppi.lora import save_trainable
+    import piper.ensemble as research
+    from piper.training_utils import sha256
+    from piper.lora import save_trainable
     class Backbone(nn.Module):
         def __init__(self):
             super().__init__()
@@ -407,8 +407,8 @@ def test_validation_and_final_evaluation_share_configured_coverage_group(monkeyp
     import pyarrow as pa
     import pyarrow.parquet as pq
     from transformers import BatchEncoding
-    from flashppi.research_eval import evaluate_validation
-    import tools.evaluate_research_checkpoint as final_eval
+    from piper.evaluation import evaluate_validation
+    import piper.evaluate as final_eval
     class Tokenizer:
         def __call__(self, sequences, **kwargs):
             ids = torch.zeros(len(sequences), max(map(len, sequences)), dtype=torch.long)

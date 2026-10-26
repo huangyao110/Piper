@@ -6,7 +6,7 @@ Piper predicts residue contacts between protein sequences and contrastive repres
 
 ## Representation and heads
 
-Inputs use one token per residue, with explicit right-padding masks. Frozen encoders map supported ambiguous residues as documented in `flashppi/frozen_prott5.py`; the mapping and residue alignment have regression tests.
+Inputs use one token per residue, with explicit right-padding masks. Frozen encoders map supported ambiguous residues as documented in `piper/frozen_prott5.py`; the mapping and residue alignment have regression tests.
 
 For a residue, the fused representation is
 

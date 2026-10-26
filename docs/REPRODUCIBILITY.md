@@ -8,7 +8,7 @@ The current original configuration is `configs_train/conglab_distilled_rf2ppi_v3
 
 ## Starting and stopping
 
-`python -m piper train --config CONFIG --output NEW_DIRECTORY` calls the maintained `flashppi.research_train` module. The thin Piper entry point adds no optimizer, sampling, crop, gate or loss changes. `python -m piper split` calls the existing `tools/train_test.py`, without duplicating its logic.
+`python -m piper train --config CONFIG --output NEW_DIRECTORY` calls the maintained `piper.train` module. Model, training and evaluation implementations now live together in `piper/`. The 0.2 consolidation changes module paths and removes obsolete entry points; it adds no optimizer, sampling, crop, gate or loss changes. `python -m piper split` still calls the existing `tools/train_test.py`, without duplicating its logic.
 
 To stop at a reproducible step boundary, launch with the existing `--stop-after STEP` option while retaining the full schedule in the config. An abrupt kill may discard progress since the last saved checkpoint. Do not start concurrent evaluations on a GPU that is already full.
 
@@ -18,7 +18,9 @@ The current long-running workstation job uses an independent runtime snapshot un
 
 Each checkpoint contains `trainable.safetensors`, `training_state.pt`, `config.json`, and `manifest.json`. Frozen encoders and base weights are external. The training state records optimizer/RNG state, configuration, world size, input hashes and source hashes. The runtime saves selected source files alongside its output.
 
-`--resume CHECKPOINT` requires the original configuration, inputs, source hashes and GPU world size. Use that run's frozen source snapshot for historical checkpoint reproduction. The `flashppi` implementation namespace is deliberately retained: renaming every module would break this provenance and existing tooling.
+`--resume CHECKPOINT` requires the original configuration, inputs, source hashes and GPU world size. **Checkpoints created before the 0.2 consolidation must resume in their original frozen runtime**, not in a newly reorganized checkout. Commit `619b186465c4b4a7a8c1b5e77b81753042021f29` records the immediately preceding repository layout; a run's own saved hashes determine its required version. Source-hash checks are not relaxed or regenerated to hide this boundary.
+
+`flashppi/` contains only a legacy import adapter: for example, `flashppi.research_model` resolves to the same module object as `piper.ensemble`. It does not provide the original source bytes required for exact resume. Parameter names and model computation are preserved for checkpoint loading and prediction. The old standalone YAML trainer (`flashppi.train`) and old finetune CLI are retired. Historical runs retain their original executables in their frozen snapshots.
 
 `--continue-from CHECKPOINT` exists for explicitly configured new phases. It is not an escape hatch for a failed exact-resume check. Do not use it silently when a source, data or hardware change invalidates exact continuation.
 
@@ -30,7 +32,7 @@ Use Python 3.12 and the single [requirements.txt](../requirements.txt) for train
 
 [ENVIRONMENT_REFERENCE.json](ENVIRONMENT_REFERENCE.json) preserves the complete installed CUDA 12.8 environment previously captured in the server lock file. It is a historical record, not an installation input. The unified requirements pin direct dependencies rather than every transitive package; archive each run's resolved environment with `python -m pip freeze`, along with the source/model/data hashes. A reference package list alone does not promise bitwise equality across GPUs or drivers.
 
-`tools/setup_server_env.sh` creates a separate `.venv/server`, installs CUDA 12.8 PyTorch and the unified requirements, checks dependencies, and records the resolved versions in that environment's `installed-lock.txt`. `tools/run_server_training.sh CONFIG OUTPUT GPU_IDS` explicitly launches the research trainer with torchrun. These utilities must not be used to reinstall dependencies into a currently active training environment.
+`tools/setup_server_env.sh` creates a separate `.venv/server`, installs CUDA 12.8 PyTorch and the unified requirements, checks dependencies, and records the resolved versions in that environment's `installed-lock.txt`. `tools/run_server_training.sh CONFIG OUTPUT GPU_IDS` explicitly launches `piper.train` with torchrun. GPU topology checks use `python -m piper preflight`; checkpoint replay comparisons use `python -m piper check-replay`. These utilities must not be used to reinstall dependencies into a currently active training environment.
 
 Frozen-encoder reuse avoids recomputation within an optimizer step. Length bucketing and prefix caching are explicit config choices. Numerical equivalence should be established for the setting being compared; lower precision or changed padding shapes can alter hard-negative ranking and hence gradients.
 
