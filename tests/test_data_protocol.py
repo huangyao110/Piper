@@ -61,6 +61,46 @@ def test_original_filter_scripts_are_unchanged():
             assert file_sha256(ROOT/name) == expected, name
 
 
+def test_relocated_legacy_configs_keep_hash_verification_and_no_old_path_fallback(tmp_path, monkeypatch):
+    from piper import data_protocol
+    # The real immutable lock still records historical names and original hashes.
+    original = read_lock()
+    baseline = {name: digest for name, digest in original['baseline_files'].items()
+                if name.startswith('configs_data/')}
+    assert set(baseline) == {'configs_data/conglab_ecoli_v1.json',
+                             'configs_data/conglab_ecoli_audit_v1.json'}
+    for name, digest in baseline.items():
+        destination = tmp_path / 'config/data' / Path(name).name
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        destination.write_bytes((ROOT / 'config/data' / Path(name).name).read_bytes())
+        assert file_sha256(destination) == digest
+        old = tmp_path / name
+        old.parent.mkdir(parents=True, exist_ok=True)
+        old.write_bytes(destination.read_bytes())
+    test = tmp_path / 'test'
+    test.write_bytes(b'synthetic fixed test')
+    test_hash = file_sha256(test)
+    lock = dict(baseline_files=baseline, frozen_outputs={}, test_sha256=test_hash,
+                search=dict(mmseqs_version='18.8cc5c', threads=8))
+    config = dict(configuration(), legacy_directory=str(tmp_path), test=str(test),
+                  test_sha256=test_hash, expected_legacy={'ppi': 256596, 'ddi': 570709},
+                  mmseqs='synthetic-mmseqs', threads=8)
+    monkeypatch.setattr(data_protocol, 'ROOT', tmp_path)
+    monkeypatch.setattr(data_protocol, 'read_lock', lambda: lock)
+    monkeypatch.setattr(data_protocol.subprocess, 'check_output', lambda *args, **kwargs: '18.8cc5c\n')
+    data_protocol.verify_baseline(config)
+    for name in baseline:
+        destination = tmp_path / 'config/data' / Path(name).name
+        content = destination.read_bytes()
+        destination.write_bytes(content + b'\n')
+        with pytest.raises(ValueError, match='Frozen filtering baseline changed'):
+            data_protocol.verify_baseline(config)
+        destination.unlink()
+        with pytest.raises(FileNotFoundError):
+            data_protocol.verify_baseline(config)
+        destination.write_bytes(content)
+
+
 def test_known_positive_and_negative_decisions_both_survive_expansion():
     decisions = pa.table({'seq_id':['old_hit','old_nonhit','outside_val_scope'],
                           'test_known':[True,True,True],'val_known':[True,True,False],

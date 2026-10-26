@@ -19,16 +19,16 @@ from .indexed_data import file_sha256
 
 ROOT = Path(__file__).resolve().parents[1]
 PROTOCOL_ID = 'conglab_ecoli_v1_locked'
-LOCK_PATH = ROOT / 'configs_data/conglab_ecoli_filter.lock.json'
+LOCK_PATH = ROOT / 'config/data/conglab_ecoli_filter.lock.json'
 LOCK_SHA256 = '125e80a50007beeea0bd987dd843c4fc94fdcda81b51456264847e05004b4fea'
 
 # User-authorized fresh train/test protocol (2026-10-24). The legacy protocol
 # above, including its cached negative decisions, remains a separate version.
 STRICT_PROTOCOL_ID = 'conglab_distilled_ecoli_strict_v2'
-STRICT_LOCK_PATH = ROOT / 'configs_data/conglab_distilled_ecoli_strict_v2.lock.json'
+STRICT_LOCK_PATH = ROOT / 'config/data/conglab_distilled_ecoli_strict_v2.lock.json'
 STRICT_LOCK_SHA256 = 'b8a3a133238ac99c09a817241d77fade696d91266b67b4c0fab9b373b10b5a4f'
 RF2_PROTOCOL_ID = 'conglab_distilled_ecoli_rf2ppi_v3'
-RF2_LOCK_PATH = ROOT / 'configs_data/conglab_distilled_ecoli_rf2ppi_v3.lock.json'
+RF2_LOCK_PATH = ROOT / 'config/data/conglab_distilled_ecoli_rf2ppi_v3.lock.json'
 RF2_LOCK_SHA256 = 'c7b87860e08c17a911eae7a01f13b973c34dcd60ff36ffd5998ef9c731f7f7b0'
 FRESH_PROTOCOL_IDS = (STRICT_PROTOCOL_ID, RF2_PROTOCOL_ID)
 
@@ -179,11 +179,18 @@ def validate_config(config):
     return dict(id=PROTOCOL_ID, lock_sha256=LOCK_SHA256)
 
 
+def _baseline_path(name):
+    """Resolve historical lock keys without changing their bytes or expected hashes."""
+    if name.startswith('configs_data/'):
+        return ROOT / 'config/data' / name.removeprefix('configs_data/')
+    return ROOT / name
+
+
 def verify_baseline(config):
     protocol = validate_config(config)
     lock = read_lock()
     for name, expected in lock['baseline_files'].items():
-        if file_sha256(ROOT / name) != expected:
+        if file_sha256(_baseline_path(name)) != expected:
             raise ValueError('Frozen filtering baseline changed: ' + name)
     legacy = Path(config['legacy_directory'])
     for name, entry in lock['frozen_outputs'].items():

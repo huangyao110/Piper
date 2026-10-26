@@ -231,8 +231,8 @@ __marimo__/
 !.env.example
 *.pem
 *.key
-/configs_train/*.local.json
-/configs_data/*.local.json
+/config/train/*.local.json
+/config/data/*.local.json
 /resercher/vendor/
 /resercher/control/
 /resercher/manifests/

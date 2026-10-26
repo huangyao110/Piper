@@ -29,7 +29,7 @@
 PYTHONPATH=artifacts/environments/data_index_deps \
   artifacts/environments/esmc_prott5_gated_py312/bin/python \
   tools/train_test.py --mode build \
-  --config configs_data/conglab_distilled_ecoli_rf2ppi_v3.json
+  --config config/data/conglab_distilled_ecoli_rf2ppi_v3.json
 ```
 
 复验使用同一命令，将 `--mode build` 换为 `--mode check`。
@@ -40,7 +40,7 @@ PYTHONPATH=artifacts/environments/data_index_deps \
 
 ## 2026-10-24：用户明确授权的新 train–test 协议
 
-新协议 `conglab_distilled_ecoli_strict_v2` 使用 `configs_data/conglab_distilled_ecoli_strict_v2.lock.json`，通过**原有** `tools/train_test.py` 构建、`tools/audit_expanded_index_split.py` 验收。没有新增构建脚本，也不覆盖下面记录的历史 v1。
+新协议 `conglab_distilled_ecoli_strict_v2` 使用 `config/data/conglab_distilled_ecoli_strict_v2.lock.json`，通过**原有** `tools/train_test.py` 构建、`tools/audit_expanded_index_split.py` 验收。没有新增构建脚本，也不覆盖下面记录的历史 v1。
 
 | 项目 | 新 v2 固定规则 |
 |---|---|
@@ -66,7 +66,7 @@ PYTHONPATH=artifacts/environments/data_index_deps \
   artifacts/environments/esmc_prott5_gated_py312/bin/python \
   tools/train_test.py \
   --mode build \
-  --config configs_data/conglab_distilled_ecoli_strict_v2.json
+  --config config/data/conglab_distilled_ecoli_strict_v2.json
 ```
 
 同一入口还提供独立检查模式：
@@ -76,7 +76,7 @@ PYTHONPATH=artifacts/environments/data_index_deps \
   artifacts/environments/esmc_prott5_gated_py312/bin/python \
   tools/train_test.py \
   --mode check \
-  --config configs_data/conglab_distilled_ecoli_strict_v2.json
+  --config config/data/conglab_distilled_ecoli_strict_v2.json
 ```
 
 `build` 完成隔离并自动验收；`check` 要求已有完整划分，不构建、不改变 train/test 成员。检查器独立重算归档原始比对的 identity/coverage 和任一端点排除条件，核对全量搜索的参数、输入及日志、正式索引与源文件哈希、test 顺序/标签及去重权重。它不只读取既有的 passed 标记，也不重新运行 MMseqs。证据不完整、配置不同或发现违规均返回非零退出码；最新检查状态写入 `check_status.json`，通过后的详细结果写入 `independent_audit.json`。检查允许更新验收元数据，不允许自动修复成员或更新协议锁。
@@ -85,7 +85,7 @@ PYTHONPATH=artifacts/environments/data_index_deps \
 
 依据用户 2026-10-22 的明确要求：**必须使用旧的过滤条件。核心数据过滤脚本与条件不得未经用户同意改变。**
 
-本轮唯一基准是 `data/conglab_ecoli_v1`，协议标识为 `conglab_ecoli_v1_locked`。`configs_data/conglab_ecoli_filter.lock.json` 固定原始脚本、配置、命中记录、划分文件及其 SHA256。增加数据、清理文件、加速、诊断出更多相似序列，都不是修改过滤协议的授权。
+本轮唯一基准是 `data/conglab_ecoli_v1`，协议标识为 `conglab_ecoli_v1_locked`。`config/data/conglab_ecoli_filter.lock.json` 固定原始脚本、配置、命中记录、划分文件及其 SHA256。增加数据、清理文件、加速、诊断出更多相似序列，都不是修改过滤协议的授权。
 
 ## 必须保持的规则
 
@@ -140,7 +140,7 @@ PYTHONPATH=artifacts/environments/data_index_deps \
 PYTHONPATH=artifacts/environments/data_index_deps \
   artifacts/environments/esmc_prott5_gated_py312/bin/python \
   tools/train_test.py \
-  --config configs_data/expanded_conglab_pinder_teddymer_legacy_v1.json
+  --config config/data/expanded_conglab_pinder_teddymer_legacy_v1.json
 ```
 
 输出为 `data/expanded_conglab_pinder_teddymer_legacy_v1`。仍只生成索引、去重映射、过滤证据和说明，训练数据本体通过索引读取。

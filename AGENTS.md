@@ -2,7 +2,7 @@
 
 ## Active RF2-PPI Isolation Rebuild (User Approval, 2026-10-24)
 
-The latest user explicitly requested adopting the RF2-PPI isolation rules and rebuilding `train.index.parquet`. The active new protocol is `conglab_distilled_ecoli_rf2ppi_v3`, in `configs_data/conglab_distilled_ecoli_rf2ppi_v3.json` with its separately pinned `.lock.json`. Use the EXISTING build/check scripts. Do not change historical v1/v2 lock files or memberships.
+The latest user explicitly requested adopting the RF2-PPI isolation rules and rebuilding `train.index.parquet`. The active new protocol is `conglab_distilled_ecoli_rf2ppi_v3`, in `config/data/conglab_distilled_ecoli_rf2ppi_v3.json` with its separately pinned `.lock.json`. Use the EXISTING build/check scripts. Do not change historical v1/v2 lock files or memberships.
 
 Cleanup authorization on 2026-10-24 supersedes older instructions to retain obsolete output directories: the user explicitly requested deleting V2 and unused retired directories. The strict v2 output, its unpublished draft, and retired `expanded_conglab_pinder_teddymer_v1` output have been deleted; see `docs/DATA_CLEANUP_20261024.json`. Keep their small historical configuration/lock and comparison records. Retain original `conglab_ecoli_v1`, the valid legacy expansion, active v3, and original source distributions because they still have uses. Never infer permission to delete these from the obsolete-directory cleanup.
 
@@ -23,13 +23,13 @@ The maintained entrypoint must serve both requested functions: `--mode build` co
 - Train includes CongLab PPI/DDI and the eight specified distilled PPI sources in `ppidb-2026.10.3`; exclude PINDER/Teddymer. Test is the unchanged historical E. coli benchmark. No validation split.
 - Filter the pair CSV's corresponding full FASTA entries BEFORE training cropping. These entries may be source structure fragments/domains; do not invent canonical full-protein sequences or silently quarantine valid FASTA entries for lacking UniProt full-length metadata.
 - Identity `nident/alnlen > 0.30`; PPI both coverages `>= 0.50`; DDI training-domain coverage `>= 0.50`. Any training endpoint hitting any positive/negative test sequence excludes the entire pair. Recheck all source members, without legacy exemptions or cached legacy decisions.
-- Pin the new protocol in `configs_data/conglab_distilled_ecoli_strict_v2.lock.json`: MMseqs binary/version, arguments, input hashes, ordering, bidirectional k=6 search AND mandatory bidirectional full direct alignment (`prefilter-mode=2`), plus exact matches. K=6 alone misses already verified homologs; do not omit the direct passes. Reject drift; never automatically refresh this lock on rerun.
+- Pin the new protocol in `config/data/conglab_distilled_ecoli_strict_v2.lock.json`: MMseqs binary/version, arguments, input hashes, ordering, bidirectional k=6 search AND mandatory bidirectional full direct alignment (`prefilter-mode=2`), plus exact matches. K=6 alone misses already verified homologs; do not omit the direct passes. Reject drift; never automatically refresh this lock on rerun.
 - Use the supplied 70/70 sequence cluster TSVs for BOTH PPI and DDI sampling metadata. Do not confuse sampling clusters with 30% isolation.
 - Only index files, deduplication maps, evidence and documentation are built. No training starts automatically. Keep old locks, scripts, split artifacts and audit evidence intact.
 
 ## Frozen Data Filtering Protocol (User Requirement, 2026-10-22)
 
-The historical CongLab/PINDER/Teddymer expansion remains governed by the original `conglab_ecoli_v1` protocol. The following rules apply to v1, not the separately approved fresh v2 above. Read `docs/DATA_FILTERING_POLICY.md` and `configs_data/conglab_ecoli_filter.lock.json` before any v1 filtering change.
+The historical CongLab/PINDER/Teddymer expansion remains governed by the original `conglab_ecoli_v1` protocol. The following rules apply to v1, not the separately approved fresh v2 above. Read `docs/DATA_FILTERING_POLICY.md` and `config/data/conglab_ecoli_filter.lock.json` before any v1 filtering change.
 
 - Do not change identity/coverage boundaries, test/val endpoint logic, reference sequences, search direction, MMseqs version, candidate prefilter parameters, known-sequence decisions, or label/mask semantics without explicit user approval. Dataset expansion, cleanup, optimization, diagnostics, or an apparently more stringent filter is not permission to change these rules.
 - Preserve all 256,596 original CongLab PPI train rows and 570,709 DDI train rows. Validation/test files and their hashes are frozen. Reuse original cached decisions for sequences already evaluated by the original pipeline, including original negative search results.
@@ -40,7 +40,9 @@ The historical CongLab/PINDER/Teddymer expansion remains governed by the origina
 
 ## Project Structure & Module Organization
 
-Piper is the current research project. `piper/` contains the model, loss, sampling, training, evaluation, prediction and asset utilities, with public commands routed by `piper.cli`. `flashppi/__init__.py` is a legacy import adapter to those same modules, not another implementation. `tools/` retains the single split builder, audits, locked historical filters and server shell launchers. Current JSON configurations live in `configs_train/`, immutable data protocols in `configs_data/`, and pretrained manifests in `configs_models/`. Upstream FlashPPI screening and baseline evaluation examples are under `examples/upstream/`; preserve their license and attribution. Regression checks belong in `tests/`; the isolated biological gate study uses `resercher/run.py` and its own historical snapshots. Historical documentation is under `docs/history/`. Local `experiments/`, data, weights and deployment bundles are excluded from publication. Pre-0.2 checkpoints require their original frozen runtime for exact resume; do not refresh source hashes to bypass this boundary.
+Shared configuration directories were consolidated into `config/{train,data,models,accelerate}/` under explicit user authorization on 2026-10-26. Configuration and lock contents remain byte-identical. Historical lock keys using `configs_data/` are resolved by `piper.data_protocol` to `config/data/` and verified against the original hashes. Do not rewrite these keys or relax validation. The locked historical mixture utility requires an explicit `--config config/data/conglab_mixture_v1.json` when invoked directly. Run snapshots, checkpoint-local configs and `resercher/study.json` stay with their owning experiment.
+
+Piper is the current research project. `piper/` contains the model, loss, sampling, training, evaluation, prediction and asset utilities, with public commands routed by `piper.cli`. `flashppi/__init__.py` is a legacy import adapter to those same modules, not another implementation. `tools/` retains the single split builder, audits, locked historical filters and server shell launchers. Current JSON configurations live in `config/train/`, immutable data protocols in `config/data/`, and pretrained manifests in `config/models/`. Upstream FlashPPI screening and baseline evaluation examples are under `examples/upstream/`; preserve their license and attribution. Regression checks belong in `tests/`; the isolated biological gate study uses `resercher/run.py` and its own historical snapshots. Historical documentation is under `docs/history/`. Local `experiments/`, data, weights and deployment bundles are excluded from publication. Pre-0.2 checkpoints require their original frozen runtime for exact resume; do not refresh source hashes to bypass this boundary.
 
 ## Build, Test, and Development Commands
 
@@ -48,7 +50,7 @@ Run commands from the repository root in a virtual environment. There is no sepa
 
 - `pip install -r requirements.txt` installs the unified runtime, data-preparation and CPU test dependencies after installing the appropriate PyTorch wheels.
 - `pip install --no-deps -e .` installs the Piper CLI for use from the source checkout.
-- `python -m piper train --config configs_train/piper_rf2ppi_v3.example.json --output runs/piper` starts a new run only after assets/data are prepared and audited; never run this automatically during code cleanup.
+- `python -m piper train --config config/train/piper_rf2ppi_v3.example.json --output runs/piper` starts a new run only after assets/data are prepared and audited; never run this automatically during code cleanup.
 - `python -m piper evaluate --checkpoint CHECKPOINT --output NEW_DIRECTORY` evaluates the fixed test benchmark.
 - `CUDA_VISIBLE_DEVICES='' OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 python -m pytest -q -m 'not integration'` runs the offline-compatible CPU regressions; integration tests require local historical artifacts.
 - `python tests/test_contact_score_padding.py` runs the contact-score regression check.

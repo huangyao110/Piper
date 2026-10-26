@@ -204,7 +204,7 @@ def test_test_metrics_keep_full_rows_and_historical_scoring(tmp_path, monkeypatc
 
 
 def test_fresh_run_config_has_user_budget_and_unchanged_gate_design():
-    path = Path(__file__).resolve().parents[1] / 'configs_train/conglab_distilled_rf2ppi_v3_4epochs.json'
+    path = Path(__file__).resolve().parents[1] / 'config/train/conglab_distilled_rf2ppi_v3_4epochs.json'
     config = json.loads(path.read_text())
     assert config['epochs'] == 4 and config['steps'] == 4216
     assert config['initialization']['source'] == 'original_glm2'

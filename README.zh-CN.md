@@ -32,16 +32,19 @@ Interaction AP 衡量整对蛋白能否判为互作；Contact P@K 衡量接触�
 
 | 路径 | 用途 |
 |---|---|
-| `piper/` | `python -m piper train / evaluate / split / predict` |
-| `flashppi/` | 保持 checkpoint 兼容的核心实现；没有为改名改动训练源码 |
-| `configs_train/piper_rf2ppi_v3.example.json` | 相对路径的示例配置；原配置另行保留 |
-| `configs_data/` | 原版本配置与不可自动刷新的锁 |
-| `configs_models/` | 三个编码器的固定版本与哈希；权重不入 Git |
-| `tools/` | 保留的维护工具及锁定依赖 |
+| `piper/` | 模型、门控、训练、预测、评估与模型资产工具的统一实现 |
+| `flashppi/` | 仅一个旧导入兼容文件，指向同一份 Piper 实现 |
+| `config/` | 统一配置目录，下设 `train/`、`data/`、`models/`、`accelerate/` |
+| `config/train/piper_rf2ppi_v3.example.json` | 相对路径的训练示例；原始训练配置另行保留 |
+| `config/data/` | 各版本数据配置与不可自动刷新的协议锁 |
+| `config/models/` | 编码器固定版本、哈希与准备说明；权重不入 Git |
+| `tools/` | 数据构建、审计、锁定历史脚本及服务器启动 |
 | `resercher/` | 按原要求独立保存的 CLIP 门控生物学研究 |
 | `docs/history/` | 旧方案与诊断记录，不作为当前运行说明 |
 
 清理详情见 [清单](docs/PIPER_CLEANUP_20261026.json)，测试结果见 [验证报告](docs/RELEASE_VERIFICATION.md)。大型数据、checkpoint、训练日志、旧运行快照与服务器副本不上传 GitHub。
+
+配置目录整理仅移动文件，JSON/YAML 内容和锁文件哈希保持原样；迁移说明见 [config/README.md](config/README.md)。旧 checkpoint 严格续训使用原冻结源码及配置，不能靠刷新哈希绕过版本检查。独立研究的 `resercher/study.json` 与运行快照内的配置仍保留在各自目录。
 
 ## 致谢与许可证
 

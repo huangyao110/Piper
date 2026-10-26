@@ -173,7 +173,7 @@ def test_strict_end_to_end_fasta_clusters_test_and_deduplication(tmp_path, monke
 
 def test_check_mode_requires_existing_output_and_never_creates_it(tmp_path):
     import train_test as entrypoint
-    config = json.loads((ROOT/'configs_data/conglab_distilled_ecoli_strict_v2.json').read_text())
+    config = json.loads((ROOT/'config/data/conglab_distilled_ecoli_strict_v2.json').read_text())
     output = tmp_path/'absent_split'
     config['output'] = str(output)
     path = tmp_path/'config.json'
@@ -190,7 +190,7 @@ def test_check_mode_requires_existing_output_and_never_creates_it(tmp_path):
 @pytest.mark.parametrize('state,change_config', [('building', False), ('complete', True)])
 def test_check_mode_rejects_incomplete_or_other_configuration(tmp_path, state, change_config):
     import train_test as entrypoint
-    config = json.loads((ROOT/'configs_data/conglab_distilled_ecoli_strict_v2.json').read_text())
+    config = json.loads((ROOT/'config/data/conglab_distilled_ecoli_strict_v2.json').read_text())
     output = tmp_path/'split'
     output.mkdir()
     config['output'] = str(output)

@@ -1,0 +1,138 @@
+{
+  "date": "2026-10-26",
+  "source_commit": "690d6375d060f76142d75f242cd139bb9e5f0918",
+  "archive": "artifacts/cleanup/config_consolidation_20261026/configs_before.tar.gz",
+  "directory_mapping": {
+    "configs_train": "config/train",
+    "configs_data": "config/data",
+    "configs_models": "config/models",
+    "configs_accelerate": "config/accelerate"
+  },
+  "unchanged_files": [
+    {
+      "old": "configs_train/conglab_distilled_rf2ppi_v3_4epochs.json",
+      "new": "config/train/conglab_distilled_rf2ppi_v3_4epochs.json",
+      "sha256": "87b21cad3aca627bc5777db5f7a0a723580e90e21254440f1e831952192604ba"
+    },
+    {
+      "old": "configs_train/piper_rf2ppi_v3.example.json",
+      "new": "config/train/piper_rf2ppi_v3.example.json",
+      "sha256": "0eaaa88dfad8d742391d034b2b17deff1ab5b4fef4875734b74ba4761988e699"
+    },
+    {
+      "old": "configs_data/conglab_distilled_ecoli_rf2ppi_v3.json",
+      "new": "config/data/conglab_distilled_ecoli_rf2ppi_v3.json",
+      "sha256": "6e8a6e12b6dae6fd89f977e6f804ef2e1a94aa025a8a72c1ee6467392b17ef3f"
+    },
+    {
+      "old": "configs_data/conglab_distilled_ecoli_rf2ppi_v3.lock.json",
+      "new": "config/data/conglab_distilled_ecoli_rf2ppi_v3.lock.json",
+      "sha256": "c7b87860e08c17a911eae7a01f13b973c34dcd60ff36ffd5998ef9c731f7f7b0"
+    },
+    {
+      "old": "configs_data/conglab_distilled_ecoli_strict_v2.json",
+      "new": "config/data/conglab_distilled_ecoli_strict_v2.json",
+      "sha256": "2bb3ac743e8cbb37b5cf04847a855c81cc0a8741a247e0620f34114ce12d24dc"
+    },
+    {
+      "old": "configs_data/conglab_distilled_ecoli_strict_v2.lock.json",
+      "new": "config/data/conglab_distilled_ecoli_strict_v2.lock.json",
+      "sha256": "b8a3a133238ac99c09a817241d77fade696d91266b67b4c0fab9b373b10b5a4f"
+    },
+    {
+      "old": "configs_data/conglab_ecoli_audit_v1.json",
+      "new": "config/data/conglab_ecoli_audit_v1.json",
+      "sha256": "20696862157ed8c725f979b6dae85adc800b452d03ab2a166d717a8bd4456101"
+    },
+    {
+      "old": "configs_data/conglab_ecoli_filter.lock.json",
+      "new": "config/data/conglab_ecoli_filter.lock.json",
+      "sha256": "125e80a50007beeea0bd987dd843c4fc94fdcda81b51456264847e05004b4fea"
+    },
+    {
+      "old": "configs_data/conglab_ecoli_v1.json",
+      "new": "config/data/conglab_ecoli_v1.json",
+      "sha256": "5d977349f429f0716aa3e6af38ea7e734c868bbf7a5144cfbf386672242e16a3"
+    },
+    {
+      "old": "configs_data/conglab_mixture_v1.json",
+      "new": "config/data/conglab_mixture_v1.json",
+      "sha256": "da18f72966590cd87e0f85f4bdf04ed942e636be5d1034a6ee1a991a24593422"
+    },
+    {
+      "old": "configs_data/ddi_pretrain_v1.json",
+      "new": "config/data/ddi_pretrain_v1.json",
+      "sha256": "85749b5045519eac133b5b02db2e9d952a62d71472790cbbfccaefd99456b6ce"
+    },
+    {
+      "old": "configs_data/ddi_validation_v1.json",
+      "new": "config/data/ddi_validation_v1.json",
+      "sha256": "ba3a2aacbc56aaa38130e0ab68cbacf1d346d25d270f532464f04ac4d464a3a8"
+    },
+    {
+      "old": "configs_data/expanded_conglab_pinder_teddymer_legacy_v1.json",
+      "new": "config/data/expanded_conglab_pinder_teddymer_legacy_v1.json",
+      "sha256": "180f6a717bd80972dd610c73908d58917a2c966360d71ff87ceece9c3fd8b839"
+    },
+    {
+      "old": "configs_data/multispecies_test_v1.json",
+      "new": "config/data/multispecies_test_v1.json",
+      "sha256": "5696716812f8c496e30a5103d996efe27cf1397cf3faeda80238094dbbbddcf4"
+    },
+    {
+      "old": "configs_models/esmc_300m.manifest.json",
+      "new": "config/models/esmc_300m.manifest.json",
+      "sha256": "01f8e85c1998f4ae8a702eb5dbd8b0fd521d48b9f7f9ccb83b8c4b573588c799"
+    },
+    {
+      "old": "configs_models/glm2_650m_ur50.manifest.json",
+      "new": "config/models/glm2_650m_ur50.manifest.json",
+      "sha256": "941c4225bd4162869db570183d512bcd9fd2e1ce323243c88abea2c6572867bc"
+    },
+    {
+      "old": "configs_models/prot_t5_xl_half_uniref50_enc.manifest.json",
+      "new": "config/models/prot_t5_xl_half_uniref50_enc.manifest.json",
+      "sha256": "ba1a5bd62c645c4e27fd8813ad389b76de0a50b0106068279508b3ba730172c6"
+    },
+    {
+      "old": "configs_accelerate/cpu.yaml",
+      "new": "config/accelerate/cpu.yaml",
+      "sha256": "597d93920a05b58a3e3681f20fd07f6c020923749bf78789b2c4e67d59ac018b"
+    },
+    {
+      "old": "configs_accelerate/multi_gpu.yaml",
+      "new": "config/accelerate/multi_gpu.yaml",
+      "sha256": "39431695175fce12add5cd91c8a5ec6ee281c7454b2b3b3325096518c05d6531"
+    }
+  ],
+  "documentation_moved": {
+    "configs_models/README.md": "config/models/README.md"
+  },
+  "protected_hash_check": {
+    "files": 97,
+    "changed": 0,
+    "scope": "All JSON/YAML configs and manifests, all four locked scripts, active frozen runtime, controller and run configuration"
+  },
+  "protocol_check": "Full data_protocol AST identical after only lock-path substitutions, the baseline-file resolver call and its new helper. All predicate/search code and expected hashes unchanged.",
+  "training": "Active independent frozen runtime untouched; no pause or restart needed.",
+  "historical_paths": "Original lock keys and archived audit paths retained; canonical config/data files must match original expected hashes.",
+  "validation": {
+    "offline_cpu": {
+      "passed": 209,
+      "skipped_gpu": 2,
+      "deselected_integration": 13
+    },
+    "real_mmseqs_build_check": {
+      "passed": 2
+    },
+    "clean_export": true,
+    "parsed_config_files": 19,
+    "original_lock_hashes_validated": 3,
+    "cli": [
+      "version",
+      "train --help",
+      "split --help"
+    ],
+    "wheel_version": "0.2.1"
+  }
+}

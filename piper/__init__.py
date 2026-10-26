@@ -1,7 +1,7 @@
 """Piper models, training and inference; heavy dependencies load on demand."""
 from importlib import import_module
 
-__version__ = "0.2.0"
+__version__ = "0.2.1"
 
 _EXPORTS = {
     "ModelConfig": "config", "TrainingConfig": "config",

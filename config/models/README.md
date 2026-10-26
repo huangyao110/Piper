@@ -16,16 +16,16 @@ From the repository root, after installing dependencies:
 hf download tattabio/gLM2_650M_UR50 \
     --revision a5937fbb770bd8bae65e3034aacd823b041dcba3 \
     --include '*.json' '*.py' '*.safetensors' --local-dir artifacts/glm2_650m_ur50
-cp configs_models/glm2_650m_ur50.manifest.json artifacts/glm2_650m_ur50/manifest.json
+cp config/models/glm2_650m_ur50.manifest.json artifacts/glm2_650m_ur50/manifest.json
 
 python -m piper download esmc --output artifacts/esmc_300m
-cp configs_models/esmc_300m.manifest.json artifacts/esmc_300m/manifest.json
+cp config/models/esmc_300m.manifest.json artifacts/esmc_300m/manifest.json
 
 hf download Rostlab/prot_t5_xl_half_uniref50-enc \
     --revision 94a6abc029ae13029317b140b7424e012bf8dfbf \
     --include '*.json' README.md spiece.model pytorch_model.bin \
     --local-dir artifacts/prot_t5_xl_half_uniref50_enc
-cp configs_models/prot_t5_xl_half_uniref50_enc.manifest.json artifacts/prot_t5_xl_half_uniref50_enc/manifest.json
+cp config/models/prot_t5_xl_half_uniref50_enc.manifest.json artifacts/prot_t5_xl_half_uniref50_enc/manifest.json
 
 # Fresh initialization needs architecture code/configuration, not upstream task weights.
 hf download tattabio/flashppi_noecoli --revision aebaded7533d1e27d83a855b13b6499352e82894 \

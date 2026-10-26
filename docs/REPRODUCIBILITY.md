@@ -4,7 +4,9 @@
 
 For each result retain the Git commit, exact configuration, model/input hashes, split manifest and audit, source snapshot, dependency versions, device type, CUDA/PyTorch versions, seed, world size, checkpoint step and evaluation output. Changing source mixtures, isolation predicates, encoder precision or negative sampling creates a different experimental condition.
 
-The current original configuration is `configs_train/conglab_distilled_rf2ppi_v3_4epochs.json`. The separately named `piper_rf2ppi_v3.example.json` changes only asset storage paths for a fresh checkout. It is not a replacement configuration for an existing run.
+The current original configuration is `config/train/conglab_distilled_rf2ppi_v3_4epochs.json`. The separately named `piper_rf2ppi_v3.example.json` changes only asset storage paths for a fresh checkout. It is not a replacement configuration for an existing run.
+
+Shared configurations are organized under `config/{train,data,models,accelerate}/` starting with version 0.2.1. Their contents were preserved byte-for-byte. Configuration paths included in source snapshots have changed, so exact resume of existing runs still requires each run's original source/configuration snapshot. Do not overwrite checkpoint-local configurations, historical locks or frozen runtime files to match a new checkout layout.
 
 ## Starting and stopping
 

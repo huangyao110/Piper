@@ -50,8 +50,8 @@ SOURCE_FILES = ["piper/" + name for name in (
     "model.py", "negative_sampling.py", "patch_contact.py", "residue_warm_start.py",
     "sequence_masking.py", "train.py", "training_utils.py",
 )]
-SOURCE_FILES += ["configs_data/conglab_ecoli_filter.lock.json",
-                 "configs_data/conglab_distilled_ecoli_rf2ppi_v3.lock.json"]
+SOURCE_FILES += ["config/data/conglab_ecoli_filter.lock.json",
+                 "config/data/conglab_distilled_ecoli_rf2ppi_v3.lock.json"]
 
 
 def barrier():

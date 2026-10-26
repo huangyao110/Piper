@@ -49,7 +49,7 @@ Run commands from this source checkout: training records source files and protoc
 
 ## Data and pretrained assets
 
-Large datasets, checkpoints, caches and local experiment snapshots are excluded from Git. Prepare the pinned gLM2, ESM C, ProtT5 and FlashPPI architecture assets following [the model asset instructions](configs_models/README.md). Source data must be obtained separately under its own terms.
+Large datasets, checkpoints, caches and local experiment snapshots are excluded from Git. Prepare the pinned gLM2, ESM C, ProtT5 and FlashPPI architecture assets following [the model asset instructions](config/models/README.md). Source data must be obtained separately under its own terms.
 
 The current dataset protocol is `conglab_distilled_ecoli_rf2ppi_v3`:
 
@@ -67,19 +67,19 @@ A train endpoint hits the test reference when `nident/alnlen > 0.30`, reported E
 Use the existing builder for both construction and independent verification:
 
 ```bash
-python tools/train_test.py --mode build --config configs_data/conglab_distilled_ecoli_rf2ppi_v3.json
-python tools/train_test.py --mode check --config configs_data/conglab_distilled_ecoli_rf2ppi_v3.json
+python tools/train_test.py --mode build --config config/data/conglab_distilled_ecoli_rf2ppi_v3.json
+python tools/train_test.py --mode check --config config/data/conglab_distilled_ecoli_rf2ppi_v3.json
 ```
 
 The checked-in configuration records the original workstation paths. See [data relocation and verification](docs/DATA_PROTOCOL.md) before using another machine. Never edit a lock to make an audit pass. Build/check does not start training.
 
 ## Train and evaluate
 
-The [portable training example](configs_train/piper_rf2ppi_v3.example.json) retains the current hyperparameters and uses repository-relative artifact paths. The original [run configuration](configs_train/conglab_distilled_rf2ppi_v3_4epochs.json) remains unchanged for provenance.
+The [portable training example](config/train/piper_rf2ppi_v3.example.json) retains the current hyperparameters and uses repository-relative artifact paths. The original [run configuration](config/train/conglab_distilled_rf2ppi_v3_4epochs.json) remains unchanged for provenance.
 
 ```bash
 # Start a NEW run only after verifying the data and model assets.
-python -m piper train --config configs_train/piper_rf2ppi_v3.example.json --output runs/piper
+python -m piper train --config config/train/piper_rf2ppi_v3.example.json --output runs/piper
 
 # Resume using that run's unchanged configuration, inputs, source and world size.
 python -m piper train --config runs/piper/config.json \
@@ -128,9 +128,11 @@ This entry point scores full sequences one pair at a time, keeps the input orien
 ```text
 piper/            Model, gates, losses, training, evaluation, prediction and asset utilities
 flashppi/         One compatibility module for legacy imports; implementations live in piper
-configs_train/    Current original config and portable example
-configs_data/     Versioned isolation configurations and immutable locks
-configs_models/   Pretrained artifact manifests and preparation instructions
+config/           Shared configuration directory (see config/README.md)
+  train/          Current original config and portable example
+  data/           Versioned isolation configurations and immutable locks
+  models/         Pretrained artifact manifests and preparation instructions
+  accelerate/     Historical Accelerate CPU/multi-GPU templates
 tools/            Maintained data build/check scripts and server launchers
 tests/            CPU regression tests and explicitly marked local integrations
 resercher/        Isolated CLIP residue-gate biology study (historical name retained)
@@ -141,6 +143,8 @@ examples/upstream/ Original FlashPPI screening examples and baseline evaluation
 Local `data/`, `artifacts/`, `runs/`, `experiments/` and the historical server bundle are not published. The [initial cleanup](docs/PIPER_CLEANUP_20261026.json) and [source consolidation](docs/CODE_CONSOLIDATION_20261026.json) manifests record file moves, retirements and protected hashes. Locked filters and the running job's frozen source snapshot remain unchanged.
 
 The public commands are `piper train`, `evaluate`, `predict`, `split`, `download`, `preflight` and `check-replay`; each supports `--help`. `PiperModel` and `load_checkpoint` are available from the `piper` Python package. The independent gate study uses only `python resercher/run.py COMMAND` and its own historical model snapshots.
+
+Version 0.2.1 consolidates shared configuration under [config/](config/README.md). The JSON/YAML contents and lock hashes are unchanged. Existing runs and unfinished data builds continue with their original frozen source and configuration; the running job's snapshot is separate from this checkout.
 
 ## Tests
 
