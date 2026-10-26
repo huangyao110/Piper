@@ -181,7 +181,9 @@ class Tests(unittest.TestCase):
         for a, b in zip(model.parameters(), direct.parameters()):
             torch.testing.assert_close(a.grad, b.grad, atol=3e-6, rtol=3e-5)
         for key in expected:
-            self.assertAlmostEqual(actual[key], expected[key], places=6)
+            # FP32 reduction order can differ by one ULP between CPU builds.
+            # Keep token/mask replay exact and the gradient checks above intact.
+            torch.testing.assert_close(actual[key], expected[key], rtol=1e-7, atol=1e-7)
 
 
 if __name__ == "__main__":

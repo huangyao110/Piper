@@ -20,8 +20,15 @@ def make_strict_fixture(tmp_path, monkeypatch, rf2=False):
     """Use synthetic immutable files; production has no verification bypass flag."""
     import csv
     import gzip
+    import os
+    import shutil
     from flashppi.data_protocol import (read_strict_lock, STRICT_PROTOCOL_ID, STRICT_LOCK_SHA256,
                                        RF2_PROTOCOL_ID, RF2_LOCK_SHA256)
+    executable = os.environ.get('PIPER_MMSEQS') or shutil.which('mmseqs')
+    if executable is None and Path('/home/zlab/miniconda3/bin/mmseqs').is_file():
+        executable = '/home/zlab/miniconda3/bin/mmseqs'
+    if not executable or not Path(executable).is_file():
+        pytest.skip('Real MMseqs integration requires an executable; set PIPER_MMSEQS to its path')
     path, sequences = make_fixture(tmp_path)
     original = json.loads(path.read_text())
     release = Path(original['release'])
@@ -58,7 +65,7 @@ def make_strict_fixture(tmp_path, monkeypatch, rf2=False):
     lock['test'].update(rows=2,positives=1,negatives=1)
     config = {**lock['required_config'], **{k:original[k] for k in ('release','legacy_directory','test','output','seed')},
         'test_sha256':file_sha256(original['test']),'version':'fixture_strict','threads':8,
-        'mmseqs':'/home/zlab/miniconda3/bin/mmseqs','duckdb_memory_limit':'1GB'}
+        'mmseqs':executable,'duckdb_memory_limit':'1GB'}
     path.write_text(json.dumps(config))
     protocol=dict(id=protocol_id,lock_sha256=RF2_LOCK_SHA256 if rf2 else STRICT_LOCK_SHA256)
     monkeypatch.setattr('train_test.verify_strict_inputs',lambda c:protocol)
@@ -67,6 +74,7 @@ def make_strict_fixture(tmp_path, monkeypatch, rf2=False):
     return path,sequences
 
 
+@pytest.mark.integration
 @pytest.mark.parametrize('rf2', [False, True])
 def test_strict_end_to_end_fasta_clusters_test_and_deduplication(tmp_path, monkeypatch, rf2):
     from train_test import StrictBuild

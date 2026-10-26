@@ -26,16 +26,18 @@ Existing absolute artifact and index paths may require the same mounts on a new 
 
 ## Environment
 
-Use Python 3.12 and [requirements.txt](../requirements.txt) for maintained direct dependencies. [requirements-server-lock.txt](../requirements-server-lock.txt) captures the installed CUDA 12.8 reference environment; it is platform-specific, not a promise of bitwise equality on another GPU or driver. `requirements-dev.txt` adds CPU tests, DuckDB for index handling, and Gemmi for geometry checks. `requirements-finetune.txt` and `requirements-server.txt` are compatibility aliases.
+Use Python 3.12 and the single [requirements.txt](../requirements.txt) for training, prediction, data preparation and tests. It pins direct dependencies, including DuckDB, Gemmi and pytest. Install the appropriate CPU or CUDA PyTorch wheels first; both satisfy the same package version constraints. Package metadata, CI and the server setup script use this one list.
 
-`tools/setup_server_env.sh` creates a separate `.venv/server` and installs the CUDA reference stack. `tools/run_server_training.sh CONFIG OUTPUT GPU_IDS` explicitly launches the research trainer with torchrun. These utilities must not be used to reinstall dependencies into a currently active training environment.
+[ENVIRONMENT_REFERENCE.json](ENVIRONMENT_REFERENCE.json) preserves the complete installed CUDA 12.8 environment previously captured in the server lock file. It is a historical record, not an installation input. The unified requirements pin direct dependencies rather than every transitive package; archive each run's resolved environment with `python -m pip freeze`, along with the source/model/data hashes. A reference package list alone does not promise bitwise equality across GPUs or drivers.
+
+`tools/setup_server_env.sh` creates a separate `.venv/server`, installs CUDA 12.8 PyTorch and the unified requirements, checks dependencies, and records the resolved versions in that environment's `installed-lock.txt`. `tools/run_server_training.sh CONFIG OUTPUT GPU_IDS` explicitly launches the research trainer with torchrun. These utilities must not be used to reinstall dependencies into a currently active training environment.
 
 Frozen-encoder reuse avoids recomputation within an optimizer step. Length bucketing and prefix caching are explicit config choices. Numerical equivalence should be established for the setting being compared; lower precision or changed padding shapes can alter hard-negative ranking and hence gradients.
 
 ## Validation tiers
 
 1. **Offline CPU regressions:** synthetic tensors, temporary source shards and fixed protocol boundary cases. Run `pytest -m 'not integration'` with CUDA hidden and offline Hugging Face flags.
-2. **Local integrations:** historical MMseqs evidence and experiment-controller recovery checks, marked `integration`; they need external archives and are not CI prerequisites.
+2. **Local integrations:** real MMseqs end-to-end split tests, historical alignment evidence, and experiment-controller recovery checks, marked `integration`; they need an external binary and/or archives and are not CI prerequisites. For the synthetic split integration, set `PIPER_MMSEQS` to the MMseqs executable and run `python -m pytest -q tests/test_indexed_split.py -m integration`. This test-only executable selection does not change the production binary/hash lock.
 3. **Real-model checks:** require the pinned weights and adequate GPU memory. CPU toy-model tests do not establish real-model throughput, numerical equivalence on every GPU, or predictive performance.
 
 The isolated `resercher/tests` cover its biological analysis logic and run separately. Results from those historical checkpoints should not be attributed to the current fresh RF2-PPI v3 model.

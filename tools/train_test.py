@@ -666,7 +666,7 @@ class Build:
             "    print(sample['seq1'], sample['split_annotation']['legacy_train'])",'',
             '读取器仅依赖 NumPy/PyArrow，按行组缓存；默认验证索引和实际访问源分片的 SHA256。',
             'root_overrides 可传 release、legacy、test 的新根目录；文件相对路径、版本和哈希仍须一致。',
-            '构建工具另需 requirements-data-index.txt 中的 DuckDB；当前构建工具依赖安装在 artifacts/environments/data_index_deps。','',
+            '构建所需的 DuckDB 已包含在根目录 requirements.txt 中；历史环境可继续使用 artifacts/environments/data_index_deps。','',
             f'    PYTHONPATH=artifacts/environments/data_index_deps artifacts/environments/esmc_prott5_gated_py312/bin/python tools/train_test.py --config {self.config_file}','',
             '修改配置应选择新的 output 目录。build_scratch 可在完整验收后删除；全部正式索引和 reader 不依赖 scratch。',
             '生成索引不会自动修改研究训练入口或现有 checkpoint；正式续训前需接入索引读取与分组采样。','']

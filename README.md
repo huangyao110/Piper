@@ -37,11 +37,13 @@ cd Piper
 python3.12 -m venv .venv
 source .venv/bin/activate
 python -m pip install torch==2.8.0 torchvision==0.23.0 --index-url https://download.pytorch.org/whl/cu128
-python -m pip install -r requirements.txt -r requirements-dev.txt
+python -m pip install -r requirements.txt
 python -m pip install --no-deps -e .
 python -m pip check
 piper --help
 ```
+
+`requirements.txt` is the single installation list for training, prediction, data preparation and tests. The [historical environment snapshot](docs/ENVIRONMENT_REFERENCE.json) preserves installed package versions for provenance; it is not another installation file. PyTorch wheels are selected separately above so CPU and CUDA environments can use the same requirements.
 
 Run commands from this source checkout: training records source files and protocol locks relative to the repository. The editable installation is the supported workflow. Data preparation additionally requires the **exact locked MMseqs binary**, not merely a matching version string. Full training needs CUDA and the external assets described below. CPU tests do not require pretrained weights.
 

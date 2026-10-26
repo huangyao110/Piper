@@ -1,19 +1,31 @@
-# Tested core environment: Python 3.12, PyTorch 2.8.0 + CUDA 12.8.
-# Install the appropriate torch wheel first (see README).
+# Unified environment for training, prediction, data preparation and CPU tests.
+# Python 3.12. Install the appropriate PyTorch wheels first (see README).
+
+# PyTorch: CPU and CUDA builds satisfy these versions.
 torch==2.8.0
+torchvision==0.23.0
+
+# Protein language models and training.
 transformers==4.48.1
 accelerate==1.13.0
 esm==3.2.3
+safetensors==0.7.0
+einops==0.8.2
+huggingface-hub==0.36.2
+sentencepiece==0.2.1
+
+# Data, geometry and analysis.
 numpy==2.2.6
 pandas==2.3.3
 pyarrow==17.0.0
 scikit-learn==1.8.0
-safetensors==0.7.0
-einops==0.8.2
+duckdb==1.4.3
+gemmi==0.7.5
 biotite==1.4.0
 biopython==1.86
 PyYAML==6.0.3
 matplotlib==3.10.8
 requests==2.32.5
-huggingface-hub==0.36.2
-sentencepiece==0.2.1
+
+# Regression tests.
+pytest==8.4.2

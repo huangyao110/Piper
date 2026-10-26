@@ -4,6 +4,8 @@ Piper 是本项目设计的蛋白质互作与残基接触预测模型，融合 *
 
 完整安装、训练、恢复、评估及预测命令见 [主 README](README.md)。当前发布研究代码，训练尚在进行，最终模型权重尚未发布。
 
+Python 依赖统一由根目录的 **`requirements.txt`** 管理，覆盖训练、预测、数据处理和测试。按主 README 选择 CPU 或 CUDA 版 PyTorch 后，执行 `python -m pip install -r requirements.txt` 即可安装其余依赖。[历史环境快照](docs/ENVIRONMENT_REFERENCE.json) 仅用于版本溯源，不是另一套安装入口。
+
 ## 当前方案
 
 - gLM2 从原始预训练权重初始化，后 16 层全量微调；ESM C 和 ProtT5 冻结。

@@ -46,7 +46,7 @@ Piper is the current research project derived from FlashPPI. `piper/` provides p
 
 Run commands from the repository root in a virtual environment. There is no separate build step.
 
-- `pip install -r requirements.txt -r requirements-dev.txt` installs pinned runtime and CPU test dependencies after installing the appropriate PyTorch wheel.
+- `pip install -r requirements.txt` installs the unified runtime, data-preparation and CPU test dependencies after installing the appropriate PyTorch wheels.
 - `pip install --no-deps -e .` installs the Piper CLI for use from the source checkout.
 - `python -m piper train --config configs_train/piper_rf2ppi_v3.example.json --output runs/piper` starts a new run only after assets/data are prepared and audited; never run this automatically during code cleanup.
 - `python -m piper evaluate --checkpoint CHECKPOINT --output NEW_DIRECTORY` evaluates the fixed test benchmark.

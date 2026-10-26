@@ -34,7 +34,7 @@ Current public aliases are `python -m piper evaluate` and `python -m piper split
 - `download_esmc_for_fusion.py`: checksum-verified, pinned ESM C 300M download.
 - `download_official_flashppi.py`: pinned upstream baseline weights and E. coli benchmark.
 - `download_original_glm2.py`: historical range download of gLM2 weights; requires the small config/tokenizer files first. The complete fresh setup is documented in [configs_models/README.md](../configs_models/README.md).
-- `setup_server_env.sh`: create a separate CUDA 12.8 Python environment.
+- `setup_server_env.sh`: create a separate CUDA 12.8 Python environment using the root `requirements.txt`; record the resolved versions inside that environment.
 - `server_preflight.py`: explicit GPU topology/NCCL checks; requires free devices and the requested world size.
 - `run_server_training.sh CONFIG OUTPUT GPU_IDS`: explicit torchrun launcher for the research trainer. Default environment: `.venv/server`.
 
