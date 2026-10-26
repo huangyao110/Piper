@@ -34,15 +34,18 @@ class ContactLoss(nn.Module):
         super().__init__()
         self.use_focal_loss = use_focal_loss
 
-    def forward(self, contact_logits, contact_target, valid_mask):
+    def forward(self, contact_logits, contact_target, valid_mask, target_valid_mask=None):
         """
         Args:
             contact_logits: (B', L1, L2) contact prediction logits
             contact_target: (B, L1, L2) boolean contact targets
             valid_mask: (B', L1, L2) boolean mask, True for valid positions, False for padding
         """
+        valid_mask = valid_mask.clone()
+        if target_valid_mask is not None:
+            valid_mask[:len(contact_target)] &= target_valid_mask
         if valid_mask.sum() == 0:
-            return torch.tensor(0.0, device=contact_logits.device, requires_grad=True)
+            return contact_logits.sum() * 0.0
         
         # Expand contact_target if contact_logits has more pairs (negatives)
         if contact_logits.shape[0] > contact_target.shape[0]:
@@ -259,6 +262,8 @@ class PPIGradientCache:
                 's2_mask': seq2['attention_mask'][i:i+self.chunk_size].to(self.device),
                 'targets': targets[i:i+self.chunk_size].to(self.device),
             }
+            if 'contact_target_valid_mask' in batch:
+                chunk['target_valid_mask'] = batch['contact_target_valid_mask'][i:i+self.chunk_size].to(self.device)
             if seq1_clusters is not None:
                 chunk['seq1_cluster'] = seq1_clusters[i:i+self.chunk_size].to(self.device)
             if seq2_clusters is not None:
@@ -269,7 +274,8 @@ class PPIGradientCache:
     def set_random_state(self, state):
         cpu_rng, gpu_rng = state
         torch.set_rng_state(cpu_rng)
-        torch.cuda.set_rng_state(gpu_rng, self.device)
+        if self.device.type == 'cuda':
+            torch.cuda.set_rng_state(gpu_rng, self.device)
 
     def step(self, batch):
         chunks, seq1_clusters, seq2_clusters = self.split_data(batch)
@@ -288,7 +294,7 @@ class PPIGradientCache:
         local_clusters2_cache = []
         with torch.no_grad(), self.accelerator.autocast():
             for chunk in chunks:
-                rnd_states.append((torch.get_rng_state(), torch.cuda.get_rng_state(self.device)))
+                rnd_states.append((torch.get_rng_state(), torch.cuda.get_rng_state(self.device) if self.device.type == 'cuda' else None))
                 e1, e2, clusters1_chunk, clusters2_chunk = unwrapped_model.embed_pair(
                     chunk['s1_ids'], chunk['s2_ids'],
                     chunk['s1_mask'], chunk['s2_mask'],
@@ -317,7 +323,7 @@ class PPIGradientCache:
         self.accelerator.backward(clip_loss)
 
         if unwrapped_model.logit_scale.grad is not None:
-            saved_scale_grad = unwrapped_model.logit_scale.grad.clone()
+            saved_scale_grad = unwrapped_model.logit_scale.grad.clone() * self.clip_weight
             unwrapped_model.logit_scale.grad.zero_()
         else:
             saved_scale_grad = None
@@ -325,7 +331,7 @@ class PPIGradientCache:
         world_size = self.accelerator.num_processes
         grads1 = big_e1.grad * world_size
         grads2 = big_e2.grad * world_size
-        effective_chunk_size = self.chunk_size * 2 if swap_self_negative else self.chunk_size
+        effective_chunk_size = self.chunk_size * 2 if unwrapped_model.swap_self_negative else self.chunk_size
         chunked_grads1 = torch.split(grads1, effective_chunk_size)
         chunked_grads2 = torch.split(grads2, effective_chunk_size)
 
@@ -338,7 +344,7 @@ class PPIGradientCache:
             is_last_chunk = (i == len(chunks) - 1)
             context = nullcontext() if is_last_chunk else self.accelerator.no_sync(self.model)
             
-            with context:
+            with context, self.accelerator.autocast():
                 outputs = self.model(
                     chunk['s1_ids'], chunk['s2_ids'], 
                     chunk['s1_mask'], chunk['s2_mask'],
@@ -355,8 +361,8 @@ class PPIGradientCache:
                 # Contact Loss
                 c_loss = torch.tensor(0.0, device=self.device)
                 if c_logits is not None:
-                    c_loss = self.contact_loss_fn(c_logits, chunk['targets'], c_valid_mask)
-                    c_loss = c_loss / len(chunks)
+                    c_loss = self.contact_loss_fn(c_logits, chunk['targets'], c_valid_mask, chunk.get('target_valid_mask'))
+                    c_loss = c_loss * len(chunk['targets']) / len(batch['contact_target'])
                     total_contact_loss += c_loss.item()
                 
                 # DDP expects logit_scale to be part of the graph in the backward pass of the syncing step.

@@ -205,3 +205,34 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Local model/data downloads and experiment outputs
+/artifacts/
+/data/
+/runs/
+
+# Local experiments and deployment snapshots are not source releases.
+/experiments/
+/server_esmc_protT5_gated/
+/checkpoints/
+/outputs/
+/wandb/
+*.safetensors
+*.pt
+*.pth
+*.ckpt
+*.parquet
+*.duckdb
+*.duckdb.wal
+*.incomplete
+*.log
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+/configs_train/*.local.json
+/configs_data/*.local.json
+/resercher/vendor/
+/resercher/control/
+/resercher/manifests/

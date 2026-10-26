@@ -17,9 +17,9 @@ def main():
     parser.add_argument("--threshold", type=float, default=0.5, help="Contact score threshold to keep predictions.")
     parser.add_argument("--batch_size", type=int, default=64, help="Batch size for model inference.")
     parser.add_argument("--max_len", type=int, default=1024, help="Maximum sequence length.")
-    
+
     args = parser.parse_args()
-    
+
     device = "cuda" if torch.cuda.is_available() else "cpu"
 
     print(f"Loading model and tokenizer ({args.model_name}) to {device}...")
@@ -41,11 +41,11 @@ def main():
         for i in tqdm(range(0, len(sequences), args.batch_size), desc="Encoding", unit="batch"):
             batch_seqs = sequences[i : i + args.batch_size]
             inputs = tokenizer(batch_seqs, return_tensors="pt", padding=True, truncation=True, max_length=args.max_len).to(device)
-            
+
             res_embed = model.encode_protein(inputs["input_ids"], inputs["attention_mask"])
             query_embeds.append(model.head_q(res_embed, inputs["attention_mask"]).cpu().float().numpy())
             key_embeds.append(model.head_k(res_embed, inputs["attention_mask"]).cpu().float().numpy())
-            
+
             lengths = inputs["attention_mask"].sum(dim=1).tolist()
             for j, seq_len in enumerate(lengths):
                 residue_embeds_list.append(res_embed[j, :int(seq_len), :])
@@ -54,14 +54,14 @@ def main():
     query_embeds = np.concatenate(query_embeds, axis=0)
     key_embeds = np.concatenate(key_embeds, axis=0)
     residue_embeds = torch.cat(residue_embeds_list, dim=0)
-    
+
     cu_seqlens = torch.zeros(len(seq_lengths) + 1, dtype=torch.long, device=device)
     cu_seqlens[1:] = torch.tensor(seq_lengths, dtype=torch.long, device=device).cumsum(0)
 
     print("FAISS Retrieval...")
     index = faiss.IndexFlatIP(key_embeds.shape[1])
     index.add(key_embeds)
-    
+
     search_k = min(args.stage1_top_k + 1, len(sequences))
     _, I = index.search(query_embeds, k=search_k)
 
@@ -74,22 +74,22 @@ def main():
             batch = inference_tasks[i : i + args.batch_size]
             q_batch = [residue_embeds[cu_seqlens[q]:cu_seqlens[q+1]] for q, _ in batch]
             c_batch = [residue_embeds[cu_seqlens[c]:cu_seqlens[c+1]] for _, c in batch]
-            
+
             pad_q = pad_sequence(q_batch, batch_first=True)
             pad_c = pad_sequence(c_batch, batch_first=True)
             mask_q = (pad_q.abs().sum(dim=-1) != 0).long()
             mask_c = (pad_c.abs().sum(dim=-1) != 0).long()
-            
+
             logits, valid_mask = model.predict_contacts(pad_q, pad_c, mask_q, mask_c)
             # exclude padded cells from the max, as FlashPPIModel.forward does
             logits = logits.float().masked_fill(~valid_mask, float("-inf"))
             scores = torch.sigmoid(logits.flatten(1).max(dim=-1).values).cpu().numpy()
-            
+
             for k, (q_idx, c_idx) in enumerate(batch):
                 if scores[k] > args.threshold:
                     results.append({
-                        "query_id": ids[q_idx], 
-                        "match_id": ids[c_idx], 
+                        "query_id": ids[q_idx],
+                        "match_id": ids[c_idx],
                         "contact_score": float(scores[k])
                     })
 
@@ -101,7 +101,7 @@ def main():
         # Keep the maximum score for each unique pair
         df = df.loc[df.groupby('pair_key')['contact_score'].idxmax()].drop(columns=['pair_key'])
         df = df.sort_values(by='contact_score', ascending=False)
-        
+
         df.to_csv(args.output, index=False)
         print(f"Success! Saved {len(df)} high-confidence predictions to {args.output}")
     else:

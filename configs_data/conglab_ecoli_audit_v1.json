@@ -1,0 +1,8 @@
+{
+  "release": "/media/zlab/lexar4t/ppidb/distributions/ppidb-training-20261009_101259",
+  "original_metadata": "/media/zlab/lexar4t/ppidb/dataset_build/conglab_metadata",
+  "test": "artifacts/flashppi_official/ecoli_pdb_benchmark/data/train-00000-of-00001.parquet",
+  "output": "data/conglab_ecoli_audit_v1",
+  "mmseqs": "/home/zlab/miniconda3/bin/mmseqs",
+  "threads": 8
+}

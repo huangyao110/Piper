@@ -1,0 +1,2441 @@
+{
+  "status": "completed",
+  "date": "2026-10-12T16:00:06.233985+08:00",
+  "scope": "Repository data/ only; tomato cancelled; no training or official data mutation",
+  "targets": [
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/maize_all_seqs.fasta",
+      "reason": "Derived duplicate sequences; input FASTA and cluster assignments retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/maize_rep_seq.fasta",
+      "reason": "Derived duplicate sequences; input FASTA and cluster assignments retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/maize_tmp",
+      "reason": "Finished MMseqs temporary directory"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/mouse_all_seqs.fasta",
+      "reason": "Derived duplicate sequences; input FASTA and cluster assignments retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/mouse_rep_seq.fasta",
+      "reason": "Derived duplicate sequences; input FASTA and cluster assignments retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/mouse_tmp",
+      "reason": "Finished MMseqs temporary directory"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/rice_all_seqs.fasta",
+      "reason": "Derived duplicate sequences; input FASTA and cluster assignments retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/rice_rep_seq.fasta",
+      "reason": "Derived duplicate sequences; input FASTA and cluster assignments retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/rice_tmp",
+      "reason": "Finished MMseqs temporary directory"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/tair_all_seqs.fasta",
+      "reason": "Derived duplicate sequences; input FASTA and cluster assignments retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/tair_rep_seq.fasta",
+      "reason": "Derived duplicate sequences; input FASTA and cluster assignments retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/tair_tmp",
+      "reason": "Finished MMseqs temporary directory"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/tomato.log",
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/tomato_all_seqs.fasta",
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/tomato_cluster.tsv",
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/tomato_command.json",
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/tomato_input.sha256",
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/tomato_rep_seq.fasta",
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/tomato_tmp",
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/worm_all_seqs.fasta",
+      "reason": "Derived duplicate sequences; input FASTA and cluster assignments retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/worm_rep_seq.fasta",
+      "reason": "Derived duplicate sequences; input FASTA and cluster assignments retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/worm_tmp",
+      "reason": "Finished MMseqs temporary directory"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping",
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/maize_representative_candidates.csv",
+      "reason": "Superseded availability probe, not a frozen test"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/mouse_representative_candidates.csv",
+      "reason": "Superseded availability probe, not a frozen test"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/raw/4081.protein.physical.links.v12.0.txt.gz",
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/raw/4081.protein.physical.links.v12.0.txt.gz.receipt.json",
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/raw/4081.protein.sequences.v12.0.fa.gz",
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/raw/4081.protein.sequences.v12.0.fa.gz.receipt.json",
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/raw/flashppi_supplementary.zip.incomplete",
+      "reason": "Incomplete failed download"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/raw/uniprot_recovery",
+      "reason": "Superseded accession recovery batches; final _100 snapshots retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/raw/uniprot_recovery_100/tomato_000.json",
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/raw/uniprot_recovery_100/tomato_000.tsv",
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/rice_representative_candidates.csv",
+      "reason": "Superseded availability probe, not a frozen test"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/tair_representative_candidates.csv",
+      "reason": "Superseded availability probe, not a frozen test"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/tomato.fasta",
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/tomato_representative_candidates.csv",
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/worm_representative_candidates.csv",
+      "reason": "Superseded availability probe, not a frozen test"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_sources/4081.protein.aliases.v12.0.txt.gz",
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_sources/4081.protein.aliases.v12.0.txt.gz.receipt.json",
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_sources/4081.protein.physical.links.detailed.v12.0.txt.gz",
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_sources/4081.protein.physical.links.detailed.v12.0.txt.gz.receipt.json",
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_sources/PBI-23-4872-s001.docx",
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_sources/PBI-23-4872-s001.docx.txt",
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_sources/PBI-23-4872-s002.docx",
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_sources/PBI-23-4872-s002.docx.txt",
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_sources/intact_tomato.zip",
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_sources/intact_tomato.zip.receipt.json",
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_sources/supplementation/tomato_locus_uniprot.receipt.json",
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_sources/supplementation/tomato_locus_uniprot.tsv",
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_sources/supplementation/tomato_new_experimental_candidates.tsv",
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_sources/tomato_yft1.xml",
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_sources/tomato_yft1.xml.receipt.json",
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_sources/tomato_yft1_supplementary.zip",
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_sources/tomato_yft1_supplementary.zip.receipt.json",
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_work",
+      "reason": "Rebuildable intermediate files and superseded release candidate"
+    }
+  ],
+  "deleted_files": [
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/maize_all_seqs.fasta",
+      "kind": "file",
+      "bytes": 7756774,
+      "allocated_bytes": 7757824,
+      "sha256": "17a2ef2fbc4af75c25b681b5c430b93983321e3355c40cfdb8acaf34273697ab",
+      "reason": "Derived duplicate sequences; input FASTA and cluster assignments retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/maize_rep_seq.fasta",
+      "kind": "file",
+      "bytes": 4559305,
+      "allocated_bytes": 4562944,
+      "sha256": "e77aa9afd3e86c1beb276c8d9a463b62afc07f6716e0770d70c894fbe6211717",
+      "reason": "Derived duplicate sequences; input FASTA and cluster assignments retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/maize_tmp/latest",
+      "kind": "symlink",
+      "target": "3432221712334637952",
+      "bytes": 19,
+      "allocated_bytes": 0,
+      "reason": "Finished MMseqs temporary directory"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/maize_tmp/3432221712334637952/clu_rep_h.index",
+      "kind": "symlink",
+      "target": "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/clusters/maize_tmp/3432221712334637952/input_h.index",
+      "bytes": 115,
+      "allocated_bytes": 4096,
+      "reason": "Finished MMseqs temporary directory"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/maize_tmp/3432221712334637952/clu_rep_h.dbtype",
+      "kind": "symlink",
+      "target": "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/clusters/maize_tmp/3432221712334637952/input_h.dbtype",
+      "bytes": 116,
+      "allocated_bytes": 4096,
+      "reason": "Finished MMseqs temporary directory"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/maize_tmp/3432221712334637952/clu_rep.source",
+      "kind": "symlink",
+      "target": "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/clusters/maize_tmp/3432221712334637952/input.source",
+      "bytes": 114,
+      "allocated_bytes": 4096,
+      "reason": "Finished MMseqs temporary directory"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/maize_tmp/3432221712334637952/clu_rep_h",
+      "kind": "symlink",
+      "target": "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/maize.fasta",
+      "bytes": 74,
+      "allocated_bytes": 4096,
+      "reason": "Finished MMseqs temporary directory"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/mouse_all_seqs.fasta",
+      "kind": "file",
+      "bytes": 7310195,
+      "allocated_bytes": 7311360,
+      "sha256": "02741c191808b5b926dc15959f283ebd56b29290e52da0eaacb16d8ea8629171",
+      "reason": "Derived duplicate sequences; input FASTA and cluster assignments retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/mouse_rep_seq.fasta",
+      "kind": "file",
+      "bytes": 5153272,
+      "allocated_bytes": 5156864,
+      "sha256": "32a0b195fbdbc918b387be5084a0564f7c6e359584760c994ab85e9c85541940",
+      "reason": "Derived duplicate sequences; input FASTA and cluster assignments retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/mouse_tmp/latest",
+      "kind": "symlink",
+      "target": "196582157508642407",
+      "bytes": 18,
+      "allocated_bytes": 0,
+      "reason": "Finished MMseqs temporary directory"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/mouse_tmp/196582157508642407/clu_rep_h.index",
+      "kind": "symlink",
+      "target": "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/clusters/mouse_tmp/196582157508642407/input_h.index",
+      "bytes": 114,
+      "allocated_bytes": 4096,
+      "reason": "Finished MMseqs temporary directory"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/mouse_tmp/196582157508642407/clu_rep_h.dbtype",
+      "kind": "symlink",
+      "target": "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/clusters/mouse_tmp/196582157508642407/input_h.dbtype",
+      "bytes": 115,
+      "allocated_bytes": 4096,
+      "reason": "Finished MMseqs temporary directory"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/mouse_tmp/196582157508642407/clu_rep.source",
+      "kind": "symlink",
+      "target": "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/clusters/mouse_tmp/196582157508642407/input.source",
+      "bytes": 113,
+      "allocated_bytes": 4096,
+      "reason": "Finished MMseqs temporary directory"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/mouse_tmp/196582157508642407/clu_rep_h",
+      "kind": "symlink",
+      "target": "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/mouse.fasta",
+      "bytes": 74,
+      "allocated_bytes": 4096,
+      "reason": "Finished MMseqs temporary directory"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/rice_all_seqs.fasta",
+      "kind": "file",
+      "bytes": 5236761,
+      "allocated_bytes": 5238784,
+      "sha256": "d74ab014655c7bdcaf1e35fc6dc6e8cabe28bf8b7c5f304cda762b5bc4432905",
+      "reason": "Derived duplicate sequences; input FASTA and cluster assignments retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/rice_rep_seq.fasta",
+      "kind": "file",
+      "bytes": 3316647,
+      "allocated_bytes": 3317760,
+      "sha256": "724f13cbda2ceddca5a7cd92bed15849c81b4c0eb7b6d05b2eb80882b37f5b42",
+      "reason": "Derived duplicate sequences; input FASTA and cluster assignments retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/rice_tmp/latest",
+      "kind": "symlink",
+      "target": "4450626982027316758",
+      "bytes": 19,
+      "allocated_bytes": 0,
+      "reason": "Finished MMseqs temporary directory"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/rice_tmp/4450626982027316758/clu_rep_h.index",
+      "kind": "symlink",
+      "target": "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/clusters/rice_tmp/4450626982027316758/input_h.index",
+      "bytes": 114,
+      "allocated_bytes": 4096,
+      "reason": "Finished MMseqs temporary directory"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/rice_tmp/4450626982027316758/clu_rep_h.dbtype",
+      "kind": "symlink",
+      "target": "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/clusters/rice_tmp/4450626982027316758/input_h.dbtype",
+      "bytes": 115,
+      "allocated_bytes": 4096,
+      "reason": "Finished MMseqs temporary directory"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/rice_tmp/4450626982027316758/clu_rep.source",
+      "kind": "symlink",
+      "target": "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/clusters/rice_tmp/4450626982027316758/input.source",
+      "bytes": 113,
+      "allocated_bytes": 4096,
+      "reason": "Finished MMseqs temporary directory"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/rice_tmp/4450626982027316758/clu_rep_h",
+      "kind": "symlink",
+      "target": "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/rice.fasta",
+      "bytes": 73,
+      "allocated_bytes": 4096,
+      "reason": "Finished MMseqs temporary directory"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/tair_all_seqs.fasta",
+      "kind": "file",
+      "bytes": 4778081,
+      "allocated_bytes": 4780032,
+      "sha256": "d420310952b8d933f7a1f0a673aae8230d929ebe5b4d5a4caa321000d2719e81",
+      "reason": "Derived duplicate sequences; input FASTA and cluster assignments retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/tair_rep_seq.fasta",
+      "kind": "file",
+      "bytes": 2578952,
+      "allocated_bytes": 2580480,
+      "sha256": "7a29cda1b3bc73dfcbedb3c0b8352ebf0776f8d94a5c7429ed911fff82ea8c50",
+      "reason": "Derived duplicate sequences; input FASTA and cluster assignments retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/tair_tmp/latest",
+      "kind": "symlink",
+      "target": "1326459769107231263",
+      "bytes": 19,
+      "allocated_bytes": 0,
+      "reason": "Finished MMseqs temporary directory"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/tair_tmp/1326459769107231263/clu_rep_h.index",
+      "kind": "symlink",
+      "target": "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/clusters/tair_tmp/1326459769107231263/input_h.index",
+      "bytes": 114,
+      "allocated_bytes": 4096,
+      "reason": "Finished MMseqs temporary directory"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/tair_tmp/1326459769107231263/clu_rep_h.dbtype",
+      "kind": "symlink",
+      "target": "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/clusters/tair_tmp/1326459769107231263/input_h.dbtype",
+      "bytes": 115,
+      "allocated_bytes": 4096,
+      "reason": "Finished MMseqs temporary directory"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/tair_tmp/1326459769107231263/clu_rep.source",
+      "kind": "symlink",
+      "target": "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/clusters/tair_tmp/1326459769107231263/input.source",
+      "bytes": 113,
+      "allocated_bytes": 4096,
+      "reason": "Finished MMseqs temporary directory"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/tair_tmp/1326459769107231263/clu_rep_h",
+      "kind": "symlink",
+      "target": "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/tair.fasta",
+      "bytes": 73,
+      "allocated_bytes": 4096,
+      "reason": "Finished MMseqs temporary directory"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/tomato.log",
+      "kind": "file",
+      "bytes": 45080,
+      "allocated_bytes": 49152,
+      "sha256": "2bf33e8664ce32053cb4b63d48585f86d7b97576b1d7b3bb81514431b7adcbf5",
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/tomato_all_seqs.fasta",
+      "kind": "file",
+      "bytes": 19878,
+      "allocated_bytes": 20480,
+      "sha256": "78b1cc1e6f6d2d2bfdb94c2bb4c71d8eea3cbca37c4699a87a4b062179cecbf9",
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/tomato_cluster.tsv",
+      "kind": "file",
+      "bytes": 3102,
+      "allocated_bytes": 4096,
+      "sha256": "1ef475c5659dff2f52ca0fcf2c8e70609eada4ecc42f37c557d0c580349194fe",
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/tomato_command.json",
+      "kind": "file",
+      "bytes": 508,
+      "allocated_bytes": 4096,
+      "sha256": "c08d2bbe2a66bb6ab4245de1bb9d177cb85bd83214749c3cfd6ce42a410e9f92",
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/tomato_input.sha256",
+      "kind": "file",
+      "bytes": 65,
+      "allocated_bytes": 4096,
+      "sha256": "e46e81235445ee7e26aedf1c5e903216acc517d206e64a1687d805a89b7401a6",
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/tomato_rep_seq.fasta",
+      "kind": "file",
+      "bytes": 12344,
+      "allocated_bytes": 16384,
+      "sha256": "88db22e1a0864145f337cd0f1132d3ed6c265dbe1d8f1e348e9cff5745acd434",
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/tomato_tmp/latest",
+      "kind": "symlink",
+      "target": "5432578605397181742",
+      "bytes": 19,
+      "allocated_bytes": 0,
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/tomato_tmp/5432578605397181742/clu_rep_h.index",
+      "kind": "symlink",
+      "target": "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/clusters/tomato_tmp/5432578605397181742/input_h.index",
+      "bytes": 116,
+      "allocated_bytes": 4096,
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/tomato_tmp/5432578605397181742/clu_rep_h.dbtype",
+      "kind": "symlink",
+      "target": "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/clusters/tomato_tmp/5432578605397181742/input_h.dbtype",
+      "bytes": 117,
+      "allocated_bytes": 4096,
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/tomato_tmp/5432578605397181742/clu_rep.source",
+      "kind": "symlink",
+      "target": "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/clusters/tomato_tmp/5432578605397181742/input.source",
+      "bytes": 115,
+      "allocated_bytes": 4096,
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/tomato_tmp/5432578605397181742/clu_rep_h",
+      "kind": "symlink",
+      "target": "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/tomato.fasta",
+      "bytes": 75,
+      "allocated_bytes": 4096,
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/worm_all_seqs.fasta",
+      "kind": "file",
+      "bytes": 3888778,
+      "allocated_bytes": 3891200,
+      "sha256": "d54ec4f90bbc8ea4329945259403cb1dae76ccbe592bd99e9590454fd8d17ad3",
+      "reason": "Derived duplicate sequences; input FASTA and cluster assignments retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/worm_rep_seq.fasta",
+      "kind": "file",
+      "bytes": 3175561,
+      "allocated_bytes": 3178496,
+      "sha256": "de9ee30bc7008ce850eed7db41e79e217b0a87df546350a44e3a45b98b506c8a",
+      "reason": "Derived duplicate sequences; input FASTA and cluster assignments retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/worm_tmp/latest",
+      "kind": "symlink",
+      "target": "14266745390930844320",
+      "bytes": 20,
+      "allocated_bytes": 0,
+      "reason": "Finished MMseqs temporary directory"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/worm_tmp/14266745390930844320/clu_rep_h.index",
+      "kind": "symlink",
+      "target": "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/clusters/worm_tmp/14266745390930844320/input_h.index",
+      "bytes": 115,
+      "allocated_bytes": 4096,
+      "reason": "Finished MMseqs temporary directory"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/worm_tmp/14266745390930844320/clu_rep_h.dbtype",
+      "kind": "symlink",
+      "target": "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/clusters/worm_tmp/14266745390930844320/input_h.dbtype",
+      "bytes": 116,
+      "allocated_bytes": 4096,
+      "reason": "Finished MMseqs temporary directory"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/worm_tmp/14266745390930844320/clu_rep.source",
+      "kind": "symlink",
+      "target": "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/clusters/worm_tmp/14266745390930844320/input.source",
+      "bytes": 114,
+      "allocated_bytes": 4096,
+      "reason": "Finished MMseqs temporary directory"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters/worm_tmp/14266745390930844320/clu_rep_h",
+      "kind": "symlink",
+      "target": "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/worm.fasta",
+      "bytes": 73,
+      "allocated_bytes": 4096,
+      "reason": "Finished MMseqs temporary directory"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_command.json",
+      "kind": "file",
+      "bytes": 505,
+      "allocated_bytes": 4096,
+      "sha256": "a946b38a8a4495d6596c7babb8e49ba1413b2074de807ef8aa66515d1dacf61e",
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse.log",
+      "kind": "file",
+      "bytes": 34259,
+      "allocated_bytes": 36864,
+      "sha256": "5bdc05051c43c7d09d100c9073f56326664d2102c3f45fc2b7a3629e638ea05c",
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/latest",
+      "kind": "symlink",
+      "target": "16922554107347411660",
+      "bytes": 20,
+      "allocated_bytes": 0,
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/input_h",
+      "kind": "symlink",
+      "target": "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/mouse.fasta",
+      "bytes": 74,
+      "allocated_bytes": 4096,
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/input_h.index",
+      "kind": "file",
+      "bytes": 165070,
+      "allocated_bytes": 167936,
+      "sha256": "a26b90f0e21653309392cdb3d1aedb0f79149333fc12db49760e8c2ec8d3b53d",
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/input_h.dbtype",
+      "kind": "file",
+      "bytes": 4,
+      "allocated_bytes": 4096,
+      "sha256": "42f4aeb81c1ef81f771f3de8abca9dcf66901c575530e7672e4b1146474ae650",
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/input",
+      "kind": "symlink",
+      "target": "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/mouse.fasta",
+      "bytes": 74,
+      "allocated_bytes": 4096,
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/input.index",
+      "kind": "file",
+      "bytes": 176986,
+      "allocated_bytes": 180224,
+      "sha256": "91f00ea346d340e58f1a397bb720f6d0d9f09a530bff42f5167e0045d6a96010",
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/input.source",
+      "kind": "file",
+      "bytes": 14,
+      "allocated_bytes": 4096,
+      "sha256": "b60d92458a8d97cb9b430997ab39e2695f83fcfa9f4616d9eff3e9189c43fa78",
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/easycluster.sh",
+      "kind": "file",
+      "bytes": 2380,
+      "allocated_bytes": 4096,
+      "sha256": "5bcd5d1401179886c53af4abb10f351781de70393fdef07ecb7a7e5fe38b9497",
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/input.dbtype",
+      "kind": "file",
+      "bytes": 4,
+      "allocated_bytes": 4096,
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/latest",
+      "kind": "symlink",
+      "target": "8300531489534573039",
+      "bytes": 19,
+      "allocated_bytes": 0,
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/pref_step0.0",
+      "kind": "file",
+      "bytes": 50809,
+      "allocated_bytes": 53248,
+      "sha256": "5e3757d243b2c49df3b9bc6e81b1fc4a4ec19324b53d3a7c8b63417debfe026d",
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/input_step_redundancy",
+      "kind": "symlink",
+      "target": "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/mouse.fasta",
+      "bytes": 74,
+      "allocated_bytes": 4096,
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/clu_redundancy.0",
+      "kind": "file",
+      "bytes": 0,
+      "allocated_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/aln_step0.2",
+      "kind": "file",
+      "bytes": 131399,
+      "allocated_bytes": 135168,
+      "sha256": "f1aa3d7b90b6eb0c4ad41b0125071d5452ac2e8c57feb5943e8bf9b068765ffa",
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/pref_step1.2",
+      "kind": "file",
+      "bytes": 84791,
+      "allocated_bytes": 86016,
+      "sha256": "586a56f1cc813084aadd15255e522f244d04649cba190681e69bb6f8bb1c670a",
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/clu_step0.index",
+      "kind": "file",
+      "bytes": 100064,
+      "allocated_bytes": 102400,
+      "sha256": "cad790aff20d18cb8b76882fb23ae90d3ae5811cc1c45d7438a053a4facae112",
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/pref_step2.2",
+      "kind": "file",
+      "bytes": 0,
+      "allocated_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/input_step2_h",
+      "kind": "symlink",
+      "target": "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/mouse.fasta",
+      "bytes": 74,
+      "allocated_bytes": 4096,
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/cascaded_clustering.sh",
+      "kind": "file",
+      "bytes": 13140,
+      "allocated_bytes": 16384,
+      "sha256": "c047c70103cea172a4229d48ec2be8de0756d1c1688d1a696b71e3c6f0382840",
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/clu_step0.dbtype",
+      "kind": "file",
+      "bytes": 4,
+      "allocated_bytes": 4096,
+      "sha256": "7aa8ca4a02506da9133d8f889678b76f716ce45d02e22fdb7b70a15e56a0eff8",
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/aln_step0.3",
+      "kind": "file",
+      "bytes": 165295,
+      "allocated_bytes": 167936,
+      "sha256": "9bce5f776cec6083e90d6b6659286d4b887d5dcbf31e4c31ee5e66934ddf8893",
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/input_step1_h.dbtype",
+      "kind": "symlink",
+      "target": "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/clusters/mouse_tmp/16922554107347411660/input_h.dbtype",
+      "bytes": 117,
+      "allocated_bytes": 4096,
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/input_step2.source",
+      "kind": "symlink",
+      "target": "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/clusters/mouse_tmp/16922554107347411660/input.source",
+      "bytes": 115,
+      "allocated_bytes": 4096,
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/aln_step0.0",
+      "kind": "file",
+      "bytes": 134747,
+      "allocated_bytes": 135168,
+      "sha256": "563e024b0649c684acf9c0276e16f82c3dbfc2507e2e47638024fd60858a679d",
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/clu_step1.index",
+      "kind": "file",
+      "bytes": 96863,
+      "allocated_bytes": 98304,
+      "sha256": "079c7c3e8b9d3afad0f1a774f9d11c8a8d4d1388910c9f484ef6286baf4345a2",
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/aln_step1.index",
+      "kind": "file",
+      "bytes": 114640,
+      "allocated_bytes": 114688,
+      "sha256": "e3b4ffa249ffabaa8f320bc738eba36cb33a6501f1bcfc82377319ad67c96557",
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/pref_step0.1",
+      "kind": "file",
+      "bytes": 45822,
+      "allocated_bytes": 49152,
+      "sha256": "15b9a3459f127ae433a2f5096c72ce6412f5f7c54afb1030df05a76e9e8d6078",
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/clu_redundancy.2",
+      "kind": "file",
+      "bytes": 15794,
+      "allocated_bytes": 16384,
+      "sha256": "31c6fbaa78e5410413bede8b7dd743c7fcf6662708ab173b1e6f76a80bb46ac0",
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/input_step2",
+      "kind": "symlink",
+      "target": "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/mouse.fasta",
+      "bytes": 74,
+      "allocated_bytes": 4096,
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/clu_redundancy.3",
+      "kind": "file",
+      "bytes": 21608,
+      "allocated_bytes": 24576,
+      "sha256": "faf3ada7ed1e8a259ddf2442e0993d20fb5ee5968944e1fb016c4d929cf13a10",
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/pref_step0.dbtype",
+      "kind": "file",
+      "bytes": 4,
+      "allocated_bytes": 4096,
+      "sha256": "e8613f5a5bc9f9feeda32a8e7c80b69dd4878e47b6a91723fb15eb84236b6a2b",
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/input_step_redundancy.source",
+      "kind": "symlink",
+      "target": "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/clusters/mouse_tmp/16922554107347411660/input.source",
+      "bytes": 115,
+      "allocated_bytes": 4096,
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/input_step1.source",
+      "kind": "symlink",
+      "target": "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/clusters/mouse_tmp/16922554107347411660/input.source",
+      "bytes": 115,
+      "allocated_bytes": 4096,
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/aln_step1.2",
+      "kind": "file",
+      "bytes": 105804,
+      "allocated_bytes": 106496,
+      "sha256": "a14e48ee5ab57ee8cd6f54d6ba9a6cfb8d49e4305393ad067a34115aba5d5c88",
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/input_step_redundancy_h",
+      "kind": "symlink",
+      "target": "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/mouse.fasta",
+      "bytes": 74,
+      "allocated_bytes": 4096,
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/pref_step2.1",
+      "kind": "file",
+      "bytes": 0,
+      "allocated_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/input_step_redundancy.dbtype",
+      "kind": "file",
+      "bytes": 4,
+      "allocated_bytes": 4096,
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/clu_redundancy.dbtype",
+      "kind": "file",
+      "bytes": 4,
+      "allocated_bytes": 4096,
+      "sha256": "7aa8ca4a02506da9133d8f889678b76f716ce45d02e22fdb7b70a15e56a0eff8",
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/aln_step1.1",
+      "kind": "file",
+      "bytes": 86068,
+      "allocated_bytes": 90112,
+      "sha256": "bd61d247885f11251f844dae365deac3f58859ed06d9fff880eacc96caa90c7f",
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/pref_step1.1",
+      "kind": "file",
+      "bytes": 96630,
+      "allocated_bytes": 98304,
+      "sha256": "b3758f689f7374c13b0c501b96069a24578fb66474b49e6702df5db8a6bfa973",
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/aln_step1.0",
+      "kind": "file",
+      "bytes": 85555,
+      "allocated_bytes": 86016,
+      "sha256": "492fd31b7319c3785a4222d2a385452e0663774e3ace98cfe38bade03b4fd8d4",
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/pref_step2.3",
+      "kind": "file",
+      "bytes": 0,
+      "allocated_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/input_step_redundancy.index",
+      "kind": "file",
+      "bytes": 150067,
+      "allocated_bytes": 151552,
+      "sha256": "6424e83afa285fd7f423184dc4df837289dfb433a4b755d078a10beaf6382f33",
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/aln_step0.1",
+      "kind": "file",
+      "bytes": 115590,
+      "allocated_bytes": 118784,
+      "sha256": "a46b0ec31f9eb8b93810d0b1014053c458adb2030e5c8e76a4542d6a109f39b5",
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/input_step2.dbtype",
+      "kind": "file",
+      "bytes": 4,
+      "allocated_bytes": 4096,
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/pref_step0.3",
+      "kind": "file",
+      "bytes": 50303,
+      "allocated_bytes": 53248,
+      "sha256": "844fc5b8a1de76ba04d90ad96d70268de7cb2b422b57227038e17e79bf55f73c",
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/input_step2_h.index",
+      "kind": "symlink",
+      "target": "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/clusters/mouse_tmp/16922554107347411660/input_h.index",
+      "bytes": 116,
+      "allocated_bytes": 4096,
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/input_step2_h.dbtype",
+      "kind": "symlink",
+      "target": "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/clusters/mouse_tmp/16922554107347411660/input_h.dbtype",
+      "bytes": 117,
+      "allocated_bytes": 4096,
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/pref_step1.dbtype",
+      "kind": "file",
+      "bytes": 4,
+      "allocated_bytes": 4096,
+      "sha256": "e8613f5a5bc9f9feeda32a8e7c80b69dd4878e47b6a91723fb15eb84236b6a2b",
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/pref_step1.index",
+      "kind": "file",
+      "bytes": 114927,
+      "allocated_bytes": 118784,
+      "sha256": "7a7494b2e0dbf43616762e0af1936ee47a9fc1c780b0a0b786c780a01e512afe",
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/input_step1.dbtype",
+      "kind": "file",
+      "bytes": 4,
+      "allocated_bytes": 4096,
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/aln_step1.dbtype",
+      "kind": "file",
+      "bytes": 4,
+      "allocated_bytes": 4096,
+      "sha256": "2594b6a92ebfb1c3312deb7d01c015fb95e9fbe9bd7bc6b527af07813ec7b910",
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/clu_step0",
+      "kind": "file",
+      "bytes": 51637,
+      "allocated_bytes": 53248,
+      "sha256": "9e01cf9e6ab40c91ddd47dec237c966c35d8c9a2f71ce36de0a6bc02d23c9c5f",
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/pref_step2.index.0",
+      "kind": "file",
+      "bytes": 16384,
+      "allocated_bytes": 16384,
+      "sha256": "0081d96823ac5d3089e29e63fb6806683466a7ac1fb83bac89acf8860303c97f",
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/pref_step0.index",
+      "kind": "file",
+      "bytes": 127682,
+      "allocated_bytes": 131072,
+      "sha256": "f90416de3f1eba8249732bae9afb9c4860219c2c74d2d9167b7865a86524f4c2",
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/aln_step1.3",
+      "kind": "file",
+      "bytes": 104353,
+      "allocated_bytes": 106496,
+      "sha256": "17355b8e4a0e5d6ffd0335019815c12c173341454437856c4c8ed915d4b0cd49",
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/input_step1_h",
+      "kind": "symlink",
+      "target": "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/mouse.fasta",
+      "bytes": 74,
+      "allocated_bytes": 4096,
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/pref_step2.index.2",
+      "kind": "file",
+      "bytes": 12288,
+      "allocated_bytes": 12288,
+      "sha256": "d6f05707ac759f4f295043b4de48cb21b9a0beaf5fd2e8236240eae70f9e9253",
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/aln_step0.dbtype",
+      "kind": "file",
+      "bytes": 4,
+      "allocated_bytes": 4096,
+      "sha256": "2594b6a92ebfb1c3312deb7d01c015fb95e9fbe9bd7bc6b527af07813ec7b910",
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/pref_step2.index.1",
+      "kind": "file",
+      "bytes": 12288,
+      "allocated_bytes": 12288,
+      "sha256": "ae70e4511e02379b90fcc1b1a33de80bba27f1782945bc19ad00c67d02103013",
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/pref_step2.index.3",
+      "kind": "file",
+      "bytes": 12288,
+      "allocated_bytes": 12288,
+      "sha256": "f27301646841d36eba909d038282bd7daa6a0d6873234d27a83a504ed30261f1",
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/clu_redundancy.1",
+      "kind": "file",
+      "bytes": 23128,
+      "allocated_bytes": 24576,
+      "sha256": "67e83fad91b19aa517e16f8c2a6fe353bc4e8eb009f5b43fa768d82be5c862fe",
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/input_step1.index",
+      "kind": "file",
+      "bytes": 132280,
+      "allocated_bytes": 135168,
+      "sha256": "3e791f38b2398baae9e474f0587fccee125ce6adc00b520c2c68fb228d407cf9",
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/input_step1",
+      "kind": "symlink",
+      "target": "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/mouse.fasta",
+      "bytes": 74,
+      "allocated_bytes": 4096,
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/input_step1_h.index",
+      "kind": "symlink",
+      "target": "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/clusters/mouse_tmp/16922554107347411660/input_h.index",
+      "bytes": 116,
+      "allocated_bytes": 4096,
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/clu_step1",
+      "kind": "file",
+      "bytes": 46262,
+      "allocated_bytes": 49152,
+      "sha256": "17d1901cbfc4b551b7109503f774a34c23ac9609ae3ea97584b58117047ecf53",
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/clu_step1.dbtype",
+      "kind": "file",
+      "bytes": 4,
+      "allocated_bytes": 4096,
+      "sha256": "7aa8ca4a02506da9133d8f889678b76f716ce45d02e22fdb7b70a15e56a0eff8",
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/aln_step0.index",
+      "kind": "file",
+      "bytes": 131463,
+      "allocated_bytes": 135168,
+      "sha256": "f5fdbe1e0cd8a0a4cd02ac5ab5addac8de7f1011a96227f18b7a14d38ac32790",
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/pref_step2.0",
+      "kind": "file",
+      "bytes": 0,
+      "allocated_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/pref_step0.2",
+      "kind": "file",
+      "bytes": 48912,
+      "allocated_bytes": 49152,
+      "sha256": "8fb185f5f3accd63b05e17ec01af889c108cba79babc59ebbf67c6da48e9d3b8",
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/pref_step1.0",
+      "kind": "file",
+      "bytes": 92436,
+      "allocated_bytes": 94208,
+      "sha256": "22317b22fd4c8d06f9bae102a6f3bdea90f293efcc28c21c53a3685709f5b8df",
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/clu_redundancy.index",
+      "kind": "file",
+      "bytes": 114208,
+      "allocated_bytes": 114688,
+      "sha256": "5971a2050cd5e693af6d08679a3f327f80fdb3271175ad4378197bedb30a5fc9",
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/pref_step1.3",
+      "kind": "file",
+      "bytes": 91334,
+      "allocated_bytes": 94208,
+      "sha256": "b7df3b945a1d5773d133c21a09fdfd56366bc5870cc9581b840e8655f8592037",
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/input_step_redundancy_h.index",
+      "kind": "symlink",
+      "target": "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/clusters/mouse_tmp/16922554107347411660/input_h.index",
+      "bytes": 116,
+      "allocated_bytes": 4096,
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/input_step2.index",
+      "kind": "file",
+      "bytes": 129113,
+      "allocated_bytes": 131072,
+      "sha256": "905de5bb57ab8f274d41370684ed30544065332e9827e1716c6060b4f21c998c",
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/input_step_redundancy_h.dbtype",
+      "kind": "symlink",
+      "target": "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/clusters/mouse_tmp/16922554107347411660/input_h.dbtype",
+      "bytes": 117,
+      "allocated_bytes": 4096,
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/clusters_before_final_sequence_mapping/mouse_tmp/16922554107347411660/clu_tmp/8300531489534573039/linclust/latest",
+      "kind": "symlink",
+      "target": "16336655831498754823",
+      "bytes": 20,
+      "allocated_bytes": 0,
+      "reason": "Superseded clustering attempt"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/maize_representative_candidates.csv",
+      "kind": "file",
+      "bytes": 12555551,
+      "allocated_bytes": 12558336,
+      "sha256": "85633e0c954035105fb9c51e21fd495daae16f2a0dc0f2a09a852011c51b491d",
+      "reason": "Superseded availability probe, not a frozen test"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/mouse_representative_candidates.csv",
+      "kind": "file",
+      "bytes": 826720,
+      "allocated_bytes": 827392,
+      "sha256": "10c4aaff2efb3ce518c3d478ba5a29b8052aea9216775d134c6122e005fbf2f3",
+      "reason": "Superseded availability probe, not a frozen test"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/raw/4081.protein.physical.links.v12.0.txt.gz",
+      "kind": "file",
+      "bytes": 9093128,
+      "allocated_bytes": 9097216,
+      "sha256": "2864cb8b9664c56582794a6def399050f242f77ea2c7f0ed609ed9a99ae15043",
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/raw/4081.protein.physical.links.v12.0.txt.gz.receipt.json",
+      "kind": "file",
+      "bytes": 841,
+      "allocated_bytes": 4096,
+      "sha256": "8e7c8520ee42d43452eb5fa98412f3ced257e88c1eca36cc845a69f61626dac5",
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/raw/4081.protein.sequences.v12.0.fa.gz",
+      "kind": "file",
+      "bytes": 7389337,
+      "allocated_bytes": 7393280,
+      "sha256": "2f4969aed5d22f0c6c68d1ec2bf50686cd4e753326593a888df8ba9226ba38dd",
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/raw/4081.protein.sequences.v12.0.fa.gz.receipt.json",
+      "kind": "file",
+      "bytes": 824,
+      "allocated_bytes": 4096,
+      "sha256": "52c936e7c6aec7205d898380c5f8cd41c3daa46fd22adbce1cfa841659b4718e",
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/raw/flashppi_supplementary.zip.incomplete",
+      "kind": "file",
+      "bytes": 6792331,
+      "allocated_bytes": 6795264,
+      "sha256": "fa9d059b5d1571795d7ad69e426e3139e80884f68aef05d8b5275d86663b2aee",
+      "reason": "Incomplete failed download"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/raw/uniprot_recovery/worm_010.json",
+      "kind": "file",
+      "bytes": 5667,
+      "allocated_bytes": 8192,
+      "sha256": "eb9203126eed3cfdee918b091686d6c0424ba6032d523a572001efb4bede3cf7",
+      "reason": "Superseded accession recovery batches; final _100 snapshots retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/raw/uniprot_recovery/tair_006.json",
+      "kind": "file",
+      "bytes": 5667,
+      "allocated_bytes": 8192,
+      "sha256": "8e1bae1c049fa6e657e116c950f719adadc45c7cd087e25431f17745ed83ff33",
+      "reason": "Superseded accession recovery batches; final _100 snapshots retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/raw/uniprot_recovery/tair_008.json",
+      "kind": "file",
+      "bytes": 5667,
+      "allocated_bytes": 8192,
+      "sha256": "5a451eb9e0c4458e456b7934dccf07423de1c43dda4b5c78720dad9ee535143e",
+      "reason": "Superseded accession recovery batches; final _100 snapshots retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/raw/uniprot_recovery/worm_013.json",
+      "kind": "file",
+      "bytes": 5667,
+      "allocated_bytes": 8192,
+      "sha256": "8c2726b28fc4d7aee3afc61042cdb130ed585787914ca49eb6677be4e32a2012",
+      "reason": "Superseded accession recovery batches; final _100 snapshots retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/raw/uniprot_recovery/worm_003.json",
+      "kind": "file",
+      "bytes": 5667,
+      "allocated_bytes": 8192,
+      "sha256": "6a62b348f346cce04c3fdfc74bfacdfdafd8a050a91324ffa53cca61b5702820",
+      "reason": "Superseded accession recovery batches; final _100 snapshots retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/raw/uniprot_recovery/worm_015.json",
+      "kind": "file",
+      "bytes": 5667,
+      "allocated_bytes": 8192,
+      "sha256": "d9528e098a652262665f9cc4ffa263542ce2a7edba8d30f77f2f30bd5cab1e47",
+      "reason": "Superseded accession recovery batches; final _100 snapshots retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/raw/uniprot_recovery/worm_016.json",
+      "kind": "file",
+      "bytes": 5667,
+      "allocated_bytes": 8192,
+      "sha256": "b9678803e0530a50ba02774e8d1143f1506dd20e8d0a0a24749b9c11d81ae271",
+      "reason": "Superseded accession recovery batches; final _100 snapshots retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/raw/uniprot_recovery/tomato_000.json",
+      "kind": "file",
+      "bytes": 1074,
+      "allocated_bytes": 4096,
+      "sha256": "59324927388d153e2a0bd8d3ae23f34773639ae1b39fc8b0194cf3031e7ee584",
+      "reason": "Superseded accession recovery batches; final _100 snapshots retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/raw/uniprot_recovery/tair_016.json",
+      "kind": "file",
+      "bytes": 5235,
+      "allocated_bytes": 8192,
+      "sha256": "a36e2fd7ace5d4be8fe8298036eae90d9e7c1a5da48df0c251edcde289f0043b",
+      "reason": "Superseded accession recovery batches; final _100 snapshots retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/raw/uniprot_recovery/mouse_003.json",
+      "kind": "file",
+      "bytes": 603,
+      "allocated_bytes": 4096,
+      "sha256": "948cf6c0cb9e80137c1ab7d6972d69f66834e47768704cc24e66f40bec0a18a9",
+      "reason": "Superseded accession recovery batches; final _100 snapshots retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/raw/uniprot_recovery/worm_009.json",
+      "kind": "file",
+      "bytes": 5667,
+      "allocated_bytes": 8192,
+      "sha256": "392ab686f33e9fc6902472d2d2ddc5f347ebac4f43c7a2a5b937dda038614b01",
+      "reason": "Superseded accession recovery batches; final _100 snapshots retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/raw/uniprot_recovery/worm_004.json",
+      "kind": "file",
+      "bytes": 5667,
+      "allocated_bytes": 8192,
+      "sha256": "eef4bbcadf0d9a25dfd5427d94acca21d7852c2f0f9dbb4ee5f0aea501a3a47f",
+      "reason": "Superseded accession recovery batches; final _100 snapshots retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/raw/uniprot_recovery/tair_014.json",
+      "kind": "file",
+      "bytes": 5667,
+      "allocated_bytes": 8192,
+      "sha256": "f44bf92328202fedd2bb228f02f4d3200f77ec58a216d3140042eca6eccda005",
+      "reason": "Superseded accession recovery batches; final _100 snapshots retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/raw/uniprot_recovery/tair_011.json",
+      "kind": "file",
+      "bytes": 5667,
+      "allocated_bytes": 8192,
+      "sha256": "1dc7f5d29aac5f4f6e273d55ecbb6002860216e5ebd5d6366425640895c674bb",
+      "reason": "Superseded accession recovery batches; final _100 snapshots retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/raw/uniprot_recovery/tair_004.json",
+      "kind": "file",
+      "bytes": 5667,
+      "allocated_bytes": 8192,
+      "sha256": "b0474b84b750da7be52ee591767ecdf041f68424e63113bd136b178964e7f30b",
+      "reason": "Superseded accession recovery batches; final _100 snapshots retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/raw/uniprot_recovery/worm_012.json",
+      "kind": "file",
+      "bytes": 5667,
+      "allocated_bytes": 8192,
+      "sha256": "d39c4bfce0f32087c73d530f69486fe02f1aad308f6b3ce1c8f8710191bb8e99",
+      "reason": "Superseded accession recovery batches; final _100 snapshots retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/raw/uniprot_recovery/maize_000.json",
+      "kind": "file",
+      "bytes": 639,
+      "allocated_bytes": 4096,
+      "sha256": "fc240ad548a7c321c0a572c5d4045a3196f17ba89f9fdd2c2d0ee13147fba50c",
+      "reason": "Superseded accession recovery batches; final _100 snapshots retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/raw/uniprot_recovery/tair_007.json",
+      "kind": "file",
+      "bytes": 5667,
+      "allocated_bytes": 8192,
+      "sha256": "a6d527547f15d3c84ea171165d5a386cf60ccba8fd32ad4985f1d970266272a6",
+      "reason": "Superseded accession recovery batches; final _100 snapshots retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/raw/uniprot_recovery/worm_017.tsv",
+      "kind": "file",
+      "bytes": 4334,
+      "allocated_bytes": 8192,
+      "sha256": "902f770474f85f3f1bf57c4b330ed0c126097e2cd61624b27eb0ee485c73a62a",
+      "reason": "Superseded accession recovery batches; final _100 snapshots retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/raw/uniprot_recovery/rice_000.tsv",
+      "kind": "file",
+      "bytes": 5830,
+      "allocated_bytes": 8192,
+      "sha256": "2fa9bba557e699fa055ddaed1bc2f66dd3f40a5abc4ea852eef8e11522b507d7",
+      "reason": "Superseded accession recovery batches; final _100 snapshots retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/raw/uniprot_recovery/worm_006.json",
+      "kind": "file",
+      "bytes": 5667,
+      "allocated_bytes": 8192,
+      "sha256": "d0d9d8fab333f8a9f1af059c98ddd0c8272e82916a0f42d4c1b6fab10fd14b2f",
+      "reason": "Superseded accession recovery batches; final _100 snapshots retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/raw/uniprot_recovery/mouse_001.json",
+      "kind": "file",
+      "bytes": 5668,
+      "allocated_bytes": 8192,
+      "sha256": "f465f91e78382cbb006903e3b857928d30a9a8dc4cfff4051726954ba92a5af6",
+      "reason": "Superseded accession recovery batches; final _100 snapshots retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/raw/uniprot_recovery/tair_015.json",
+      "kind": "file",
+      "bytes": 5667,
+      "allocated_bytes": 8192,
+      "sha256": "c19ab83efb44c59774617cc922fc003f43a65a1c054160f2797574674b8cb717",
+      "reason": "Superseded accession recovery batches; final _100 snapshots retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/raw/uniprot_recovery/worm_007.json",
+      "kind": "file",
+      "bytes": 5667,
+      "allocated_bytes": 8192,
+      "sha256": "0f19ee176467133682fe286f8cb12bdd9c9a86a3b35bde0edbd2e743c4409ee5",
+      "reason": "Superseded accession recovery batches; final _100 snapshots retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/raw/uniprot_recovery/worm_005.json",
+      "kind": "file",
+      "bytes": 5667,
+      "allocated_bytes": 8192,
+      "sha256": "fb27d4b6cbeda9cf5699826bc17a816d7f62c1345bfe62cfa0bb1f3e1e9a8880",
+      "reason": "Superseded accession recovery batches; final _100 snapshots retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/raw/uniprot_recovery/mouse_002.json",
+      "kind": "file",
+      "bytes": 5668,
+      "allocated_bytes": 8192,
+      "sha256": "8331681ab7506bf5c3fc5c2eba63d142cc50a5a9ca35a6db51ce52a746833081",
+      "reason": "Superseded accession recovery batches; final _100 snapshots retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/raw/uniprot_recovery/mouse_003.tsv",
+      "kind": "file",
+      "bytes": 5634,
+      "allocated_bytes": 8192,
+      "sha256": "a129ecaf186d95a763ceff3ff92cffcdc16f1e2e054c4bf1e257695a099a48ff",
+      "reason": "Superseded accession recovery batches; final _100 snapshots retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/raw/uniprot_recovery/tair_012.json",
+      "kind": "file",
+      "bytes": 5667,
+      "allocated_bytes": 8192,
+      "sha256": "52bea032f434a3fdaa9461349053425bbfbe37f0b55b7e9c975d770ec25af3b7",
+      "reason": "Superseded accession recovery batches; final _100 snapshots retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/raw/uniprot_recovery/worm_014.json",
+      "kind": "file",
+      "bytes": 5667,
+      "allocated_bytes": 8192,
+      "sha256": "42695d5a9d4679f2c752b96c6574b1319337be712e25ee3b7c6b2a0502289e4d",
+      "reason": "Superseded accession recovery batches; final _100 snapshots retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/raw/uniprot_recovery/worm_000.json",
+      "kind": "file",
+      "bytes": 5667,
+      "allocated_bytes": 8192,
+      "sha256": "7ba90d93dd6835dfc345716b15097ae4fccca47d5bb70f43b4269f5975a57a78",
+      "reason": "Superseded accession recovery batches; final _100 snapshots retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/raw/uniprot_recovery/tair_009.json",
+      "kind": "file",
+      "bytes": 5667,
+      "allocated_bytes": 8192,
+      "sha256": "525d90c5e6d2bde6aafd3f76f34adb65e1aaf3808992b9a49a91e4f3004fd255",
+      "reason": "Superseded accession recovery batches; final _100 snapshots retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/raw/uniprot_recovery/worm_008.json",
+      "kind": "file",
+      "bytes": 5667,
+      "allocated_bytes": 8192,
+      "sha256": "8b39ce472eed12498ea7a79a78ef45df9038a880fbb01bf8b06eb59df8d9a1da",
+      "reason": "Superseded accession recovery batches; final _100 snapshots retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/raw/uniprot_recovery/worm_002.json",
+      "kind": "file",
+      "bytes": 5667,
+      "allocated_bytes": 8192,
+      "sha256": "4221ce5cf9dd42fdb20dd8cc8393469f20e5aa0a5c35d5a58a581a20aba50778",
+      "reason": "Superseded accession recovery batches; final _100 snapshots retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/raw/uniprot_recovery/tair_000.json",
+      "kind": "file",
+      "bytes": 5667,
+      "allocated_bytes": 8192,
+      "sha256": "30e40ef86608925f675e4088703b328dbe0ee17f04e999e9ce6eb2b3892205a5",
+      "reason": "Superseded accession recovery batches; final _100 snapshots retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/raw/uniprot_recovery/worm_017.json",
+      "kind": "file",
+      "bytes": 817,
+      "allocated_bytes": 4096,
+      "sha256": "a4472e027263516dca2e7bd8664380fd5571a4f346a4b6031da78a30dc5c140a",
+      "reason": "Superseded accession recovery batches; final _100 snapshots retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/raw/uniprot_recovery/mouse_000.json",
+      "kind": "file",
+      "bytes": 5708,
+      "allocated_bytes": 8192,
+      "sha256": "6fee51da2e5b080fe7333f4da4759ce304f500a6dd4366a479dcfaf8ca78f157",
+      "reason": "Superseded accession recovery batches; final _100 snapshots retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/raw/uniprot_recovery/tair_010.json",
+      "kind": "file",
+      "bytes": 5667,
+      "allocated_bytes": 8192,
+      "sha256": "720c3ea0cbae0ce6b6a66b2d4c181a06f6f32ab1f953899219b9b7d8c383a54f",
+      "reason": "Superseded accession recovery batches; final _100 snapshots retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/raw/uniprot_recovery/tair_013.json",
+      "kind": "file",
+      "bytes": 5667,
+      "allocated_bytes": 8192,
+      "sha256": "94ed775b0e720689b32af1a26a81ddaa96b3b778da60bcac87f61b37000703b2",
+      "reason": "Superseded accession recovery batches; final _100 snapshots retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/raw/uniprot_recovery/tair_002.json",
+      "kind": "file",
+      "bytes": 5667,
+      "allocated_bytes": 8192,
+      "sha256": "f7468432098f288e9313071f7682b97c23b2c3b8733cf34ec92226d2f3bb22c7",
+      "reason": "Superseded accession recovery batches; final _100 snapshots retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/raw/uniprot_recovery/tair_005.json",
+      "kind": "file",
+      "bytes": 5667,
+      "allocated_bytes": 8192,
+      "sha256": "cbc1630ba3e790fb0a075cf0a069d8e4ddc94cbd05715f7328b988095ac889a2",
+      "reason": "Superseded accession recovery batches; final _100 snapshots retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/raw/uniprot_recovery/tair_001.json",
+      "kind": "file",
+      "bytes": 5667,
+      "allocated_bytes": 8192,
+      "sha256": "196b3dd88fec448a35df2acb7368967803c5337f26c750ef1be0e901cb811085",
+      "reason": "Superseded accession recovery batches; final _100 snapshots retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/raw/uniprot_recovery/tomato_000.tsv",
+      "kind": "file",
+      "bytes": 5650,
+      "allocated_bytes": 8192,
+      "sha256": "0cb6a8d25e1ee59e76ecdfbf857954ed8a78ec5dbf04e9bc6e154725349dffcd",
+      "reason": "Superseded accession recovery batches; final _100 snapshots retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/raw/uniprot_recovery/rice_000.json",
+      "kind": "file",
+      "bytes": 1142,
+      "allocated_bytes": 4096,
+      "sha256": "4bea017b87afcc70c3bd57132cb555356227f7a1a20c79273e4beebefaddb5a0",
+      "reason": "Superseded accession recovery batches; final _100 snapshots retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/raw/uniprot_recovery/maize_000.tsv",
+      "kind": "file",
+      "bytes": 2711,
+      "allocated_bytes": 4096,
+      "sha256": "ed90fd08f02c403e21ba25e4a8bc2ecfb732bc814b37bde4ae24aa165c628120",
+      "reason": "Superseded accession recovery batches; final _100 snapshots retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/raw/uniprot_recovery/tair_003.json",
+      "kind": "file",
+      "bytes": 5667,
+      "allocated_bytes": 8192,
+      "sha256": "de587898ebb3b5fdcdf76caeb06166038a7103322cdf13159bb3caf56a12325a",
+      "reason": "Superseded accession recovery batches; final _100 snapshots retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/raw/uniprot_recovery/worm_001.json",
+      "kind": "file",
+      "bytes": 5667,
+      "allocated_bytes": 8192,
+      "sha256": "22d410204b51c4a7736e360abd4a2e0980dd077e9b2b14f9a7b90783d57256a6",
+      "reason": "Superseded accession recovery batches; final _100 snapshots retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/raw/uniprot_recovery/worm_011.json",
+      "kind": "file",
+      "bytes": 5667,
+      "allocated_bytes": 8192,
+      "sha256": "342293c79a09c70fe98685a977a8a78939de2d285dc66dd41573b5b5bfabf70a",
+      "reason": "Superseded accession recovery batches; final _100 snapshots retained"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/raw/uniprot_recovery_100/tomato_000.json",
+      "kind": "file",
+      "bytes": 1078,
+      "allocated_bytes": 4096,
+      "sha256": "9b3c582f102b553465251fe5bfcec9e01d91d27447167725c9586d95fdd3d4ea",
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/raw/uniprot_recovery_100/tomato_000.tsv",
+      "kind": "file",
+      "bytes": 5650,
+      "allocated_bytes": 8192,
+      "sha256": "0cb6a8d25e1ee59e76ecdfbf857954ed8a78ec5dbf04e9bc6e154725349dffcd",
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/rice_representative_candidates.csv",
+      "kind": "file",
+      "bytes": 4438637,
+      "allocated_bytes": 4440064,
+      "sha256": "0de88444113234f743a16a278501a5b44e78df26e575652a7eb22a5df5565218",
+      "reason": "Superseded availability probe, not a frozen test"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/tair_representative_candidates.csv",
+      "kind": "file",
+      "bytes": 6295287,
+      "allocated_bytes": 6295552,
+      "sha256": "326eaa52d13e77b923388f4765d00cc294a0a7b50f95e69b451e521e25029a37",
+      "reason": "Superseded availability probe, not a frozen test"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/tomato.fasta",
+      "kind": "file",
+      "bytes": 18858,
+      "allocated_bytes": 20480,
+      "sha256": "1db589a74cc2b0466e8d7ddfefc5c192a8fc0107c518715b4099544c78b61e36",
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/tomato_representative_candidates.csv",
+      "kind": "file",
+      "bytes": 13439,
+      "allocated_bytes": 16384,
+      "sha256": "d1113a32f2c5425792f8860037331b992f0f0ec9a07d242ab6efc9f2e34bb4ef",
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/benchmark_inventory_20261012/worm_representative_candidates.csv",
+      "kind": "file",
+      "bytes": 2011660,
+      "allocated_bytes": 2015232,
+      "sha256": "4ecf9a2e76cea390ffaba124a05f495a83ff0cee06a44d2cd61c6b56ca846971",
+      "reason": "Superseded availability probe, not a frozen test"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_sources/4081.protein.aliases.v12.0.txt.gz",
+      "kind": "file",
+      "bytes": 1950733,
+      "allocated_bytes": 1953792,
+      "sha256": "efeb850454f6706aad68083a881274d5392fbe357be85367d0a6b16aa0e7f152",
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_sources/4081.protein.aliases.v12.0.txt.gz.receipt.json",
+      "kind": "file",
+      "bytes": 477,
+      "allocated_bytes": 4096,
+      "sha256": "8e601def2bf3dfb619d1a7b75bb0645a78e235d72dc2ced310880a262be3d9d0",
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_sources/4081.protein.physical.links.detailed.v12.0.txt.gz",
+      "kind": "file",
+      "bytes": 10942272,
+      "allocated_bytes": 10944512,
+      "sha256": "1bde4249231dd2174c710c31f139c1346e3279a32ea5a236254b8eea56d0ba60",
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_sources/4081.protein.physical.links.detailed.v12.0.txt.gz.receipt.json",
+      "kind": "file",
+      "bytes": 542,
+      "allocated_bytes": 4096,
+      "sha256": "8f5ad24916d2ed406ac58f61444a687ec2f6fb4a7eb5382855f35915dd70935a",
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_sources/PBI-23-4872-s001.docx",
+      "kind": "file",
+      "bytes": 30802,
+      "allocated_bytes": 32768,
+      "sha256": "41aa7665f380823038f5db92bb7d1a0a718a02e8d178fd88d67e7199dba80b5f",
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_sources/PBI-23-4872-s001.docx.txt",
+      "kind": "file",
+      "bytes": 10178,
+      "allocated_bytes": 12288,
+      "sha256": "5f47f211c7e6b2511bac93758b71f443f26c1c3468251961435e8c557b25e582",
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_sources/PBI-23-4872-s002.docx",
+      "kind": "file",
+      "bytes": 52166968,
+      "allocated_bytes": 52170752,
+      "sha256": "a901c6a394616ec5ac3aeae7975c653058d48191a16afe1140c3e4b21dee2930",
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_sources/PBI-23-4872-s002.docx.txt",
+      "kind": "file",
+      "bytes": 11455,
+      "allocated_bytes": 12288,
+      "sha256": "223172fd59688d4183b7bdf41269c1d746cf67df9ad67d94f7053e3ce0657df4",
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_sources/intact_tomato.zip",
+      "kind": "file",
+      "bytes": 4042,
+      "allocated_bytes": 4096,
+      "sha256": "356886be9da6c1464c398222a469b93e97bc2c5e74135631bdfadfef6782a113",
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_sources/intact_tomato.zip.receipt.json",
+      "kind": "file",
+      "bytes": 425,
+      "allocated_bytes": 4096,
+      "sha256": "96ad5259bc462b2c9d719e6729c656b9a454a5766d226b3f49a2b73579f211bd",
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_sources/supplementation/tomato_locus_uniprot.receipt.json",
+      "kind": "file",
+      "bytes": 510,
+      "allocated_bytes": 4096,
+      "sha256": "edeff6f5115d4a30d1a8e7e19a82c1d4fc1a5c0eda865f887300278c052b18ce",
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_sources/supplementation/tomato_locus_uniprot.tsv",
+      "kind": "file",
+      "bytes": 47,
+      "allocated_bytes": 4096,
+      "sha256": "918b7d3c9894bd5e121d5ca5de5a12c2b59f3561b70307cd5713c0fa91cb4c47",
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_sources/supplementation/tomato_new_experimental_candidates.tsv",
+      "kind": "file",
+      "bytes": 1808,
+      "allocated_bytes": 4096,
+      "sha256": "f076db7da5be904f44406e67a85be8bf00ff92d655031a7b4e02d8de70952127",
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_sources/tomato_yft1.xml",
+      "kind": "file",
+      "bytes": 242357,
+      "allocated_bytes": 245760,
+      "sha256": "6300a7fa10d54e86931d15e95c8d2fc5a2b9d291a423ec67792eee55f6471659",
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_sources/tomato_yft1.xml.receipt.json",
+      "kind": "file",
+      "bytes": 390,
+      "allocated_bytes": 4096,
+      "sha256": "da00b11ed6a7da4860cb7be56c7f5f320db531ab25ef4278460335058e16f233",
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_sources/tomato_yft1_supplementary.zip",
+      "kind": "file",
+      "bytes": 49426996,
+      "allocated_bytes": 49434624,
+      "sha256": "b24ce0f951f09f86d3a005c89d25790f761118882e0a06c604f0ee42351cd3eb",
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_sources/tomato_yft1_supplementary.zip.receipt.json",
+      "kind": "file",
+      "bytes": 427,
+      "allocated_bytes": 4096,
+      "sha256": "ab18c40039ddc84c6d4ca3fa852118cbbe2036cd1390d482fd7a6a6a9ff9f538",
+      "reason": "Tomato benchmark cancelled by user"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_work/validation_homology.tsv",
+      "kind": "file",
+      "bytes": 568194,
+      "allocated_bytes": 569344,
+      "sha256": "908e80cfcb24acc8e97df0cd865d55d786619cf2b9b1132976b239326f18fc72",
+      "reason": "Rebuildable intermediate files and superseded release candidate"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_work/maize_exclusions.json",
+      "kind": "file",
+      "bytes": 38827589,
+      "allocated_bytes": 38830080,
+      "sha256": "e11ac1dd98183ded0ac05fc8470accbf6362b641a7c527ba9257c771d9335b53",
+      "reason": "Rebuildable intermediate files and superseded release candidate"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_work/tair_quality_candidates.parquet",
+      "kind": "file",
+      "bytes": 3367511,
+      "allocated_bytes": 3371008,
+      "sha256": "eda5bd431807ea1611b089f5cc0fa100b7d2b5dfc74bca105b1551b3be2711d1",
+      "reason": "Rebuildable intermediate files and superseded release candidate"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_work/global_exclusion_provenance.json",
+      "kind": "file",
+      "bytes": 455,
+      "allocated_bytes": 4096,
+      "sha256": "c54553b0106445a2caf28520604cbdda7fba890d3aaa94a049b0e0bea6fce66d",
+      "reason": "Rebuildable intermediate files and superseded release candidate"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_work/worm_quality_candidates.parquet",
+      "kind": "file",
+      "bytes": 895183,
+      "allocated_bytes": 897024,
+      "sha256": "2175a5d37c5c7586ab4bcad1269f5d1630308ccf2212c7fe8a61fa1479e4a6f4",
+      "reason": "Rebuildable intermediate files and superseded release candidate"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_work/current_train_exact_pairs_in_candidate_universe.parquet",
+      "kind": "file",
+      "bytes": 2577,
+      "allocated_bytes": 4096,
+      "sha256": "5a76789d86aaecb8150c57a907229d8e3f6bb39b3760650b215d8c195a80ff27",
+      "reason": "Rebuildable intermediate files and superseded release candidate"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_work/validation_search.log",
+      "kind": "file",
+      "bytes": 14029,
+      "allocated_bytes": 16384,
+      "sha256": "22c35096f40f5807d6e3f1599c9dc66fcbacefcfb3c830f71a01991c2226bb90",
+      "reason": "Rebuildable intermediate files and superseded release candidate"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_work/validation_proteins.fasta",
+      "kind": "file",
+      "bytes": 310416,
+      "allocated_bytes": 311296,
+      "sha256": "beffae14460a6044b94ca093e6ab63cb86ebdf84f22d228087fc4e242589c57a",
+      "reason": "Rebuildable intermediate files and superseded release candidate"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_work/validation_search_receipt.json",
+      "kind": "file",
+      "bytes": 1159,
+      "allocated_bytes": 4096,
+      "sha256": "ca0fe81bc19dcdb66c4e3fdc868c40378db4fff8ac9b4013f232a0ed2a1f0237",
+      "reason": "Rebuildable intermediate files and superseded release candidate"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_work/maize_quality_candidates.parquet",
+      "kind": "file",
+      "bytes": 6516030,
+      "allocated_bytes": 6516736,
+      "sha256": "63d658a70b6e138dfbe6cbddc77b2c280039d958afe8740725fd4c1dfcea3506",
+      "reason": "Rebuildable intermediate files and superseded release candidate"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_work/mouse_exclusions.json",
+      "kind": "file",
+      "bytes": 13257370,
+      "allocated_bytes": 13258752,
+      "sha256": "d8b953ddb29b5deb135511fe4e9f594a8d64c21f4a0ac3f42731ce48d3a9726f",
+      "reason": "Rebuildable intermediate files and superseded release candidate"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_work/worm_exclusions.json",
+      "kind": "file",
+      "bytes": 5816161,
+      "allocated_bytes": 5816320,
+      "sha256": "2f72001f913480e86fae5bd2921c9863fbe1f2e7e10bac8324a494776c3666ad",
+      "reason": "Rebuildable intermediate files and superseded release candidate"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_work/rice_exclusions.json",
+      "kind": "file",
+      "bytes": 1854983,
+      "allocated_bytes": 1855488,
+      "sha256": "2fdcb46085516125c16faa60a53d24bb9d16781d68bd39f068d41484a77c394a",
+      "reason": "Rebuildable intermediate files and superseded release candidate"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_work/rice_quality_candidates.parquet",
+      "kind": "file",
+      "bytes": 588115,
+      "allocated_bytes": 589824,
+      "sha256": "ba6948e63e8034f3abd1ba687b1b734777fde252def2b3b6df5a4456696c40de",
+      "reason": "Rebuildable intermediate files and superseded release candidate"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_work/mouse_quality_candidates.parquet",
+      "kind": "file",
+      "bytes": 517689,
+      "allocated_bytes": 520192,
+      "sha256": "16f4a695f99c8d0ed63157e6bf9a2706c5baa785e49a6e8a3c961d9c5beb5336",
+      "reason": "Rebuildable intermediate files and superseded release candidate"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_work/global_known_sequence_pairs.parquet",
+      "kind": "file",
+      "bytes": 12211245,
+      "allocated_bytes": 12214272,
+      "sha256": "363a0e4f0b0e854097a69879121c0ed164de2fec99e196df85fadaac10e2c7dc",
+      "reason": "Rebuildable intermediate files and superseded release candidate"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_work/all_candidate_proteins.fasta",
+      "kind": "file",
+      "bytes": 27778845,
+      "allocated_bytes": 27779072,
+      "sha256": "be57f44e9da12841568fdad20f77196680419aeb199735fd2653b7f639854298",
+      "reason": "Rebuildable intermediate files and superseded release candidate"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_work/tair_exclusions.json",
+      "kind": "file",
+      "bytes": 12037123,
+      "allocated_bytes": 12038144,
+      "sha256": "f6dbe5ce28294176ba692e80e5e7484c3d58d354c3a72a7d734da85fa12f339e",
+      "reason": "Rebuildable intermediate files and superseded release candidate"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_work/validation_search_tmp/latest",
+      "kind": "symlink",
+      "target": "12013860253499516189",
+      "bytes": 20,
+      "allocated_bytes": 0,
+      "reason": "Rebuildable intermediate files and superseded release candidate"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_work/release_candidate_before_exact_overlap_exclusion/rice_pairs.tsv",
+      "kind": "file",
+      "bytes": 28202902,
+      "allocated_bytes": 28205056,
+      "sha256": "4c6f48e317cb191d3f58165256813fe0eb35c0f87e2f18e5e065674317b20b65",
+      "reason": "Rebuildable intermediate files and superseded release candidate"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_work/release_candidate_before_exact_overlap_exclusion/tair_positive_evidence.parquet",
+      "kind": "file",
+      "bytes": 313266,
+      "allocated_bytes": 315392,
+      "sha256": "1c5afffd84bd3c78f3b0b70383010b9ec253f0416485318ca4f1f185555a6261",
+      "reason": "Rebuildable intermediate files and superseded release candidate"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_work/release_candidate_before_exact_overlap_exclusion/manifest.json",
+      "kind": "file",
+      "bytes": 22218,
+      "allocated_bytes": 24576,
+      "sha256": "42e24fd383e264cff0706552f485f56173cf50dd43940810f0a2902c01fa658d",
+      "reason": "Rebuildable intermediate files and superseded release candidate"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_work/release_candidate_before_exact_overlap_exclusion/new_and_available_official_test_holdout_sequences.fasta",
+      "kind": "file",
+      "bytes": 12926903,
+      "allocated_bytes": 12926976,
+      "sha256": "56313cbf194ff0f915f5c2a920a1999cd745a286f3b565a754f9caddc097d7fa",
+      "reason": "Rebuildable intermediate files and superseded release candidate"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_work/release_candidate_before_exact_overlap_exclusion/mouse_positive_evidence.parquet",
+      "kind": "file",
+      "bytes": 277043,
+      "allocated_bytes": 278528,
+      "sha256": "9d1317709b2755f81d320914231aa7969ee2547fdb0dd10cc3ed169119fb1c9b",
+      "reason": "Rebuildable intermediate files and superseded release candidate"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_work/release_candidate_before_exact_overlap_exclusion/mouse_pairs.tsv",
+      "kind": "file",
+      "bytes": 30830316,
+      "allocated_bytes": 30830592,
+      "sha256": "7ba3646d0abdb9052c42c40974517ffdae6000c6e33bb2588b90eac285788696",
+      "reason": "Rebuildable intermediate files and superseded release candidate"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_work/release_candidate_before_exact_overlap_exclusion/tair_pairs.tsv",
+      "kind": "file",
+      "bytes": 27884651,
+      "allocated_bytes": 27885568,
+      "sha256": "4cbb6f534b326715c2ce65532f62e97a5b869ab997b19947843a854bc4f0ca92",
+      "reason": "Rebuildable intermediate files and superseded release candidate"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_work/release_candidate_before_exact_overlap_exclusion/validation.json",
+      "kind": "file",
+      "bytes": 3171,
+      "allocated_bytes": 4096,
+      "sha256": "070459f7dccfcb6132c57d1db3095e718f9c2a0a6e872316984c361997f92caa",
+      "reason": "Rebuildable intermediate files and superseded release candidate"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_work/release_candidate_before_exact_overlap_exclusion/rice_proteins.fasta",
+      "kind": "file",
+      "bytes": 873038,
+      "allocated_bytes": 876544,
+      "sha256": "c6979a2d10c366cb3948670bc777cc1bee72a2021686068fbc972f85d28591c0",
+      "reason": "Rebuildable intermediate files and superseded release candidate"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_work/release_candidate_before_exact_overlap_exclusion/maize_test.parquet",
+      "kind": "file",
+      "bytes": 2487823,
+      "allocated_bytes": 2490368,
+      "sha256": "27c29271d0f535ec49d4090136811236472a10500cc011864fc1a1f8cbaa8b74",
+      "reason": "Rebuildable intermediate files and superseded release candidate"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_work/release_candidate_before_exact_overlap_exclusion/worm_positive_evidence.parquet",
+      "kind": "file",
+      "bytes": 270014,
+      "allocated_bytes": 270336,
+      "sha256": "c35078dd09f4f19f3aa8f09d76b32425b6bdce900d45f73bbd4d2ceb6421ba2d",
+      "reason": "Rebuildable intermediate files and superseded release candidate"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_work/release_candidate_before_exact_overlap_exclusion/global_exclusion_provenance.json",
+      "kind": "file",
+      "bytes": 455,
+      "allocated_bytes": 4096,
+      "sha256": "c54553b0106445a2caf28520604cbdda7fba890d3aaa94a049b0e0bea6fce66d",
+      "reason": "Rebuildable intermediate files and superseded release candidate"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_work/release_candidate_before_exact_overlap_exclusion/config.json",
+      "kind": "file",
+      "bytes": 1147,
+      "allocated_bytes": 4096,
+      "sha256": "78572d5abdcc75b5ca05ec2f359e684b838ba401716ffeb0061ec0b1eab58018",
+      "reason": "Rebuildable intermediate files and superseded release candidate"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_work/release_candidate_before_exact_overlap_exclusion/build_statistics.json",
+      "kind": "file",
+      "bytes": 3991,
+      "allocated_bytes": 4096,
+      "sha256": "8ed7ada579a37d9d461fd6b63a342a33de5744268a1e8cdd5da09ff16df2dc39",
+      "reason": "Rebuildable intermediate files and superseded release candidate"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_work/release_candidate_before_exact_overlap_exclusion/mouse_proteins.fasta",
+      "kind": "file",
+      "bytes": 1000930,
+      "allocated_bytes": 1003520,
+      "sha256": "f29334f17d184bc64f55844d305c5dbd6ef13c91a6accbebcc91fcf295f35ad7",
+      "reason": "Rebuildable intermediate files and superseded release candidate"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_work/release_candidate_before_exact_overlap_exclusion/tair_test.parquet",
+      "kind": "file",
+      "bytes": 2070260,
+      "allocated_bytes": 2072576,
+      "sha256": "244535245e19903c8e7e02f250244e25795d1292a3639257b1f73ba2951b50e2",
+      "reason": "Rebuildable intermediate files and superseded release candidate"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_work/release_candidate_before_exact_overlap_exclusion/maize_proteins.fasta",
+      "kind": "file",
+      "bytes": 1086324,
+      "allocated_bytes": 1089536,
+      "sha256": "98c5b3827fadb0d8f4acaeda0f55ea406f0e9e07be23eb9b091585b62f98984c",
+      "reason": "Rebuildable intermediate files and superseded release candidate"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_work/release_candidate_before_exact_overlap_exclusion/validation_search_receipt.json",
+      "kind": "file",
+      "bytes": 1159,
+      "allocated_bytes": 4096,
+      "sha256": "ca0fe81bc19dcdb66c4e3fdc868c40378db4fff8ac9b4013f232a0ed2a1f0237",
+      "reason": "Rebuildable intermediate files and superseded release candidate"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_work/release_candidate_before_exact_overlap_exclusion/tair_proteins.fasta",
+      "kind": "file",
+      "bytes": 779824,
+      "allocated_bytes": 782336,
+      "sha256": "12c4d628635ea382a396a4e9cab276f9e7d0985d159189670f56fa961d6fc510",
+      "reason": "Rebuildable intermediate files and superseded release candidate"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_work/release_candidate_before_exact_overlap_exclusion/maize_pairs.tsv",
+      "kind": "file",
+      "bytes": 28557109,
+      "allocated_bytes": 28557312,
+      "sha256": "c8e73e64ac18b22c47359322ed6511663bdf88b814406369634b175246819c07",
+      "reason": "Rebuildable intermediate files and superseded release candidate"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_work/release_candidate_before_exact_overlap_exclusion/worm_pairs.tsv",
+      "kind": "file",
+      "bytes": 28643464,
+      "allocated_bytes": 28647424,
+      "sha256": "3ccce04b6cc4a45d696a9a962bfa2c2c8e845a667b396b6ab927f19d2bd8ca72",
+      "reason": "Rebuildable intermediate files and superseded release candidate"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_work/release_candidate_before_exact_overlap_exclusion/worm_test.parquet",
+      "kind": "file",
+      "bytes": 2033424,
+      "allocated_bytes": 2035712,
+      "sha256": "05bebdb6630a7ae177ea29e2bdb8273fa0229abbbda81d1c7b3819ee6cc1b002",
+      "reason": "Rebuildable intermediate files and superseded release candidate"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_work/release_candidate_before_exact_overlap_exclusion/rice_positive_evidence.parquet",
+      "kind": "file",
+      "bytes": 253804,
+      "allocated_bytes": 253952,
+      "sha256": "cb0e1097b6dd94cc10b6d4c6c763c6cd366af2ee0e4413485e8c7e19a636642a",
+      "reason": "Rebuildable intermediate files and superseded release candidate"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_work/release_candidate_before_exact_overlap_exclusion/mouse_test.parquet",
+      "kind": "file",
+      "bytes": 2282054,
+      "allocated_bytes": 2285568,
+      "sha256": "b29b65918ef36667ed484ca6645b17747f782df0b30238d6cc703ef1f08d37ee",
+      "reason": "Rebuildable intermediate files and superseded release candidate"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_work/release_candidate_before_exact_overlap_exclusion/maize_positive_evidence.parquet",
+      "kind": "file",
+      "bytes": 305808,
+      "allocated_bytes": 307200,
+      "sha256": "22847946c71962861534651afe84cb8cc01ff2c280835e9cfeaaaffc5c31a3df",
+      "reason": "Rebuildable intermediate files and superseded release candidate"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_work/release_candidate_before_exact_overlap_exclusion/worm_proteins.fasta",
+      "kind": "file",
+      "bytes": 758312,
+      "allocated_bytes": 761856,
+      "sha256": "b641b733ef40754e002d71225f7e1b93dec54a4504d7799a55407b21c23e973d",
+      "reason": "Rebuildable intermediate files and superseded release candidate"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_work/release_candidate_before_exact_overlap_exclusion/new_test_holdout_sequences.fasta",
+      "kind": "file",
+      "bytes": 4333676,
+      "allocated_bytes": 4337664,
+      "sha256": "f0deeee21d187b3d505a1e7e720aa04b726884c3096d340117cf824075e2b4c4",
+      "reason": "Rebuildable intermediate files and superseded release candidate"
+    },
+    {
+      "path": "data/multispecies_test_v1_20261012_work/release_candidate_before_exact_overlap_exclusion/rice_test.parquet",
+      "kind": "file",
+      "bytes": 2199271,
+      "allocated_bytes": 2199552,
+      "sha256": "643ddd79b22dd0115892559bda1f29f0ef2669a76bfe374c57482213a184d6f4",
+      "reason": "Rebuildable intermediate files and superseded release candidate"
+    }
+  ],
+  "deleted_file_count": 250,
+  "deleted_bytes": 518583397,
+  "deleted_allocated_bytes": 519221248,
+  "protected_sha256": {
+    "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012/rice_pairs.tsv": "4c6f48e317cb191d3f58165256813fe0eb35c0f87e2f18e5e065674317b20b65",
+    "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012/tair_positive_evidence.parquet": "2c84ad6f20eaadd3d2fd84437df65a633bc5f90825860257fd4725f1a220c6c7",
+    "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012/manifest.json": "e7a2ca78096d983bf51d0735e3c95adec486b37efcfd5d43e7447e4100a605e0",
+    "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012/new_and_available_official_test_holdout_sequences.fasta": "6d055dc4c980a3e4e9f0fa63108d32f0a8cfb0be19962c28501f433509477bdb",
+    "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012/mouse_positive_evidence.parquet": "39c4101c1f42bc7fa0688eb9853c6003603524a9c6dd791d91a30dd96a5a4903",
+    "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012/mouse_pairs.tsv": "3020df8172019242d9159bdeed186ca62abbea17ebd1a68705ffcc996fe6cae6",
+    "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012/tair_pairs.tsv": "b2c82af24bb75f3f9b5d9e378d59c82266e877326cbf287a486c0b4150fd8953",
+    "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012/validation.json": "b8fbe07ffb4ff55a03d9b66dfe8b9d017c3bf9f47c9cb5b075ded8608c368f8c",
+    "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012/rice_proteins.fasta": "c6979a2d10c366cb3948670bc777cc1bee72a2021686068fbc972f85d28591c0",
+    "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012/maize_test.parquet": "27c29271d0f535ec49d4090136811236472a10500cc011864fc1a1f8cbaa8b74",
+    "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012/worm_positive_evidence.parquet": "c35078dd09f4f19f3aa8f09d76b32425b6bdce900d45f73bbd4d2ceb6421ba2d",
+    "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012/global_exclusion_provenance.json": "c54553b0106445a2caf28520604cbdda7fba890d3aaa94a049b0e0bea6fce66d",
+    "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012/config.json": "ac20c492bc831d256d6a4ebbb2993c39b827c529b73a3010a72ba49744e4db66",
+    "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012/build_statistics.json": "e47fe397d50fba2896eca81c690cb6d9ffca96e6caf6a47cfc02fcba02cfcc8b",
+    "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012/mouse_proteins.fasta": "4107bc76f21f9d8daf84d0b9f312bdfeebfc42697493dc9c6eeeeffb4a57b9dc",
+    "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012/tair_test.parquet": "ae5c7f5af22e59557ea5530f4c817b0685eb25fab4c2e344a16c99a61c0746f7",
+    "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012/maize_proteins.fasta": "98c5b3827fadb0d8f4acaeda0f55ea406f0e9e07be23eb9b091585b62f98984c",
+    "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012/validation_search_receipt.json": "ca0fe81bc19dcdb66c4e3fdc868c40378db4fff8ac9b4013f232a0ed2a1f0237",
+    "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012/tair_proteins.fasta": "12c4d628635ea382a396a4e9cab276f9e7d0985d159189670f56fa961d6fc510",
+    "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012/maize_pairs.tsv": "c8e73e64ac18b22c47359322ed6511663bdf88b814406369634b175246819c07",
+    "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012/worm_pairs.tsv": "3ccce04b6cc4a45d696a9a962bfa2c2c8e845a667b396b6ab927f19d2bd8ca72",
+    "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012/worm_test.parquet": "05bebdb6630a7ae177ea29e2bdb8273fa0229abbbda81d1c7b3819ee6cc1b002",
+    "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012/rice_positive_evidence.parquet": "cb0e1097b6dd94cc10b6d4c6c763c6cd366af2ee0e4413485e8c7e19a636642a",
+    "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012/mouse_test.parquet": "5e03b3a46da07eca67e0822a38243d1bea353ced08a100f142d1bf772e9d21d9",
+    "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012/maize_positive_evidence.parquet": "22847946c71962861534651afe84cb8cc01ff2c280835e9cfeaaaffc5c31a3df",
+    "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012/worm_proteins.fasta": "b641b733ef40754e002d71225f7e1b93dec54a4504d7799a55407b21c23e973d",
+    "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012/new_test_holdout_sequences.fasta": "8a16a6872943847353c1bcbce735dc8e2b8278b6ae153b195533d72f1b468511",
+    "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012/rice_test.parquet": "643ddd79b22dd0115892559bda1f29f0ef2669a76bfe374c57482213a184d6f4",
+    "/media/zlab/lexar4t/FlashPPI/data/ppi_finetune_split_v1/manifest.json": "35d919526832552bb015ef0b9e07d6e1234ce3c8a10bcbd7f08e6f15760362b6",
+    "/media/zlab/lexar4t/FlashPPI/data/ppi_finetune_split_v1/assignments.parquet": "d7cad1c3b76f49fc5309e2112e38a5c394e3b022f9f52b7e0927bf1d09adcf82",
+    "/media/zlab/lexar4t/FlashPPI/data/ppi_finetune_split_v1/sequence_clusters.parquet": "b08a594d979e858ce9361d57735ed3b8a0bc8152db7047629995e9665d4e9a9b",
+    "/media/zlab/lexar4t/FlashPPI/data/ppi_finetune_split_v1/train.parquet": "a83f8af75f587659629122282565c967c46c57a490b1de968191013ea45e82b9",
+    "/media/zlab/lexar4t/FlashPPI/data/ppi_finetune_split_v1/validation.parquet": "fc22be650bfd89607c1e68510032d13113230c1ca4fd49ed2a92c7e8c957ad54",
+    "/media/zlab/lexar4t/FlashPPI/data/ppi_finetune_validation_v1/manifest.json": "90a90c99123bd117ce8239da5d685be9f1f150e7c6d6e997390a35e9dd8480f2",
+    "/media/zlab/lexar4t/FlashPPI/data/ppi_finetune_validation_v1/interaction.parquet": "ea5b6d8269ac667d34bb14678f58ba6b2d1a530a752eb5c3cdffbfc3d059ee7d",
+    "/media/zlab/lexar4t/FlashPPI/data/ppi_finetune_validation_v1/provenance.json": "112d4b1950e0017f4dab310e4376bbe11fd1a5797e196ae4a8ef3f296058b0d6",
+    "/home/zlab/P2PSigLip-1.0/run/e32_multispecies_20260916/raw/intact_20260916/maize.zip": "6320a6717826a2a1a392e6722ab7c389bbf0158f05b8fd6bd7e4f44474f150a1",
+    "/home/zlab/P2PSigLip-1.0/run/e32_multispecies_20260916/raw/intact_20260916/rice_psicquic.tsv": "66e711ccf8d8c38f3b6560854d00e3f7a48d43e86990b066a2e7b0b4660eb199",
+    "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/candidate_pairs.parquet": "b37df42a94d51c188a7a51f48ae5520b18244f7c0ad8728ac626f263d923a05b",
+    "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/clusters/maize_cluster.tsv": "0650b561908321a20e424ccaa5f78c889d9c6559902c8358ce404bf744cbbac3",
+    "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/clusters/mouse_cluster.tsv": "da2de6f6a2a0449909877959c93371d3733a7d6aeb3826431c28901037c8db47",
+    "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/clusters/rice_cluster.tsv": "56477b480989d3f24a3099987e30a3a7f55d0b67855e7887a764fd32fc54c10a",
+    "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/clusters/tair_cluster.tsv": "0aa885fb75e565c07044fad0a5dbfbf1b703954c0d2b620322d6eb2d73df641f",
+    "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/clusters/worm_cluster.tsv": "41f466bf46d9b80d25c8673512f1de0cc2dc940b7f09baec76bcaf7d7a13cd8d",
+    "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/evidence_inventory.parquet": "c61f0fc5bf6046c9ffe2a79ddde24941fff300073502d1cfbf14ac253a866d17",
+    "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/maize.fasta": "a2d924edb470587d9cf60ac2cd14fce8eb21f97ed86fea1cd74651b196b17f91",
+    "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/mouse.fasta": "2a78465d24a7b6850c759be4f41455471be417030ed36b3ea9c17cf5d416744f",
+    "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/raw/10090.protein.sequences.v12.0.fa.gz": "d559b20fd4280701743be2237657e17a410cf4ce69f6ea7ada2912b3ffa3a394",
+    "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/raw/3702.protein.sequences.v12.0.fa.gz": "e1a1d875751a1f826ab60e90baa92c3aa4e203822972c996f79217511d382ee5",
+    "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/raw/39947.protein.sequences.v12.0.fa.gz": "c3f51acc7fb73710acd811d3dcf319d377509796b59f62dd0f39098ae54663d7",
+    "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/raw/4577.protein.sequences.v12.0.fa.gz": "113b9a84d0105b1866f508074a4b5e19f05627ae170e71838a5438a75a85246b",
+    "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/raw/6239.protein.sequences.v12.0.fa.gz": "0d485417512c3cb41b8f2bafba859a9c242e70a6e15547c53d8cb61c22ccbcdf",
+    "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/raw/BIOGRID-ORGANISM-20261012.tab3.zip": "096a9e4d871ad5d698bd503b2b9a2409297b88f5b55bc479c710f0c700429820",
+    "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/raw/osa1_r7.gene_models.repr.pep.fa.gz": "8c3371382d560fdc7cd4f466aaaf02de0b7d2757bdd6650a98a9b1b5c9d15588",
+    "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/raw/rice_bipseq_fulltext.xml": "155813869ccf04e23b1dc33ebe49edfb6fbdb14263c46bbe92b0112044700cbf",
+    "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/raw/rice_bipseq_tables/3_Supplementary table 1.xlsx": "3e2581d79f21ae37f28af2afd7ff7e6d96fc78f9dcea77fb722e2be767baf3c1",
+    "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/raw/rice_bipseq_tables/Supplementary table 10.xlsx": "42aaf4085fef73a16d1b51f86347f4796936afa9efe2aeca8edce68ac6dcd6a3",
+    "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/raw/rice_bipseq_tables/Supplementary table 11.xlsx": "1c6428bdd71b68dad4ca57ad73c8ccf10be8bb3afac434ac902b75e5f25c9d25",
+    "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/raw/rice_bipseq_tables/Supplementary table 12.xlsx": "446c91de8569bdba112a079870c703bce6103cf5b5e06baa64f1ea2d6225ce97",
+    "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/raw/rice_bipseq_tables/Supplementary table 13.xlsx": "ebc19389875143a0f6b070d321182002171d9586a5c17adaf5e5a84f8b2cefae",
+    "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/raw/rice_bipseq_tables/Supplementary table 14.xlsx": "30401880b12acda1bab443c8ffc9351f25f55b8163fb168419d434ab9795aa62",
+    "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/raw/rice_bipseq_tables/Supplementary table 15.xlsx": "9dd7619ff88f591de38d00610e5b3e98c172f8029b6b379626d2fb2d9fcd3357",
+    "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/raw/rice_bipseq_tables/Supplementary table 16.xlsx": "c5bd94d1b6629656bfa6430aa0fb4704b91ebb55fbff0eac6f456bf719fa822a",
+    "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/raw/rice_bipseq_tables/Supplementary table 17.xlsx": "8f80107a23f13e55a2bf62b4596a19aaaa20c9de7ab4b8f8aef6b2abb4d745d1",
+    "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/raw/rice_bipseq_tables/Supplementary table 18.xlsx": "42c08057dd6df362c633d3a38524eaf33a6c2c77078d95bc564fb77204735e31",
+    "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/raw/rice_bipseq_tables/Supplementary table 2.xlsx": "0fc943e7f87fe857301c3f979667441cb4a8e70ded2415f11cb6b77983ee0c64",
+    "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/raw/rice_bipseq_tables/Supplementary table 3.xlsx": "36a9f9664cff9d7d132b839b600893542e3379e71ef034145cdd65eb4615bec9",
+    "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/raw/rice_bipseq_tables/Supplementary table 5.xlsx": "4acf00c468ba33d7fae117b34667dddb6a874d977031875ca430dafbf892a036",
+    "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/raw/rice_bipseq_tables/Supplementary table 6.xlsx": "019bed9d91ce47d4f37286147a254c0cf0a6a47a0a68e21c3d4fb66cecbcdd98",
+    "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/raw/rice_bipseq_tables/Supplementary table 7.xlsx": "453d7cff1141bc0823dd0fe5b9c8c01539ac4134a8df7ced151c1441bcda593d",
+    "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/raw/rice_bipseq_tables/Supplementary table 8.xlsx": "b8d9d04802cf7ac7299dd14361d09355bafbf6e53d88acb6e0f5f1f55b061dff",
+    "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/raw/rice_bipseq_tables/Supplementary table 9.xlsx": "c68b53c04c06279c6957c621a42ce298e79a38edeb77c1e0144f1755df9876d2",
+    "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/rice.fasta": "8c6bf69bec0595e7f4a1fe065b5d9214ea9b42865e7d42bbb732dc8d394bb427",
+    "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/tair.fasta": "8332d7bff4a79db71e7123fa99afe3f382fa2531cb3e0696dd0d870050300263",
+    "/media/zlab/lexar4t/FlashPPI/data/benchmark_inventory_20261012/worm.fasta": "283febc33809a19743ed04ba82b7b0a499b81e26460b49ba93f2fe7817a26b11",
+    "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012_sources/10090.protein.aliases.v12.0.txt.gz": "2f1ccd371548d9db5784d341984209431a26573c3b34f16161bfe9052168159c",
+    "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012_sources/10090.protein.physical.links.detailed.v12.0.txt.gz": "d0b2af8c0ddbe667f23338aca383e81addb53d025ff1423d1ee87744607ecbee",
+    "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012_sources/3702.protein.aliases.v12.0.txt.gz": "18b48b5f7dbd3449366c15dc99a01849314628d510434fa778698a811f0f2270",
+    "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012_sources/3702.protein.physical.links.detailed.v12.0.txt.gz": "9628efca6650913f30d4ffc930abea7e7b5b2f51385aef46f461e496da6b4c1b",
+    "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012_sources/39947.protein.aliases.v12.0.txt.gz": "4b979480e7ee69f43aac1f3acfad7a183eeac7209af533dd65496954d553ddab",
+    "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012_sources/39947.protein.physical.links.detailed.v12.0.txt.gz": "3617403bc948374b12af434d58aa811bf56614ab99c69b88cc7933346738de79",
+    "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012_sources/41588_2022_1262_MOESM1_ESM.pdf": "b0525bbee0a0c1376867bcff0a86134e45afbc11336b8b6d7b19b1222852fe5d",
+    "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012_sources/41588_2022_1262_MOESM3_ESM.xlsx": "45936059caa13ad3805c8f0d3763682abc321a6c01fe044e7509122a0c973cc1",
+    "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012_sources/4577.protein.aliases.v12.0.txt.gz": "6b93b4f989bc8e866e5fcfd39469ed9328fee8ba4f7394984506b80bcdc8f046",
+    "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012_sources/4577.protein.physical.links.detailed.v12.0.txt.gz": "d57323f6f21d053cf09626eb2fd9d09de7ade2f2f86848c54451bcbdd46a43ea",
+    "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012_sources/6239.protein.aliases.v12.0.txt.gz": "46dfe3d00ce80abcf1d398f3d7291b3ee1fb91cbcd5dd55743e47d1e9b40baee",
+    "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012_sources/6239.protein.physical.links.detailed.v12.0.txt.gz": "5e5db9890d06159429d7461ce205ecbb938b9e5b1f08d05d276303f46363a35c",
+    "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012_sources/flashppi_main.tar.gz": "ffb299c312684d51030789e9c6909fbc6f289e4424294280ca9282223a1c305c",
+    "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012_sources/intact_arath.zip": "952ed5b6ef170673b60a211d0206e7defb4b70a12a318eb0ece897b5987fe975",
+    "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012_sources/intact_caeel.zip": "dc303dcc317c0132323f86d0bcc61b66a46547fcd64eae028f0a2b1b263b1cfd",
+    "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012_sources/intact_mouse.zip": "8c91c4524d8d54c131304a08731df130b8a0b71f15eb7a1351629073948f9338",
+    "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012_sources/intact_pseudomonas.zip": "9fd0a27a6ec7c3a1fe1d45d50b046d240a42b5b5c201330a225b8ae4666e9e35",
+    "/media/zlab/lexar4t/FlashPPI/artifacts/flashppi_official/ecoli_pdb_benchmark/data/train-00000-of-00001.parquet": "07dace691cac67561d264fbbcd8deb862ad6356998b129ae57dee7d983de7f6c",
+    "/home/zlab/P2PSigLip-1.0/mutil_species/runs/preparation/conglab_20260918_complete/raw/positives_and_negatives.tsv": "36596120a89a6fb714cbee272c2f85f87aca52d6e3cca54504bf3abd8b59a1c0",
+    "/home/zlab/P2PSigLip-1.0/mutil_species/runs/preparation/conglab_20260918_complete/accession_sequences.csv": "6cd9b1792187aaa37eb03dd309ca6507d20bd561744909525fa32a8bf01577ac",
+    "/media/zlab/lexar4t/FlashPPI/tools/build_multispecies_test.py": "2b16bc91462bce2b80922b17ddec68fe950376bc40e38c9e0f7adb07b45d3c77",
+    "/media/zlab/lexar4t/FlashPPI/configs_data/multispecies_test_v1.json": "5696716812f8c496e30a5103d996efe27cf1397cf3faeda80238094dbbbddcf4",
+    "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012_sources/intact_psea7.zip": "35817e288ca5e493ad42b86f7a681cc96b2107900fc539f18f954735601612e7",
+    "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012_sources/intact_pseae.zip": "9ae95b0fa0e3fd8d7f3e5fbc388ac34653983084af01854572edc88145aa56b6",
+    "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012_sources/supplementation/pseudomonas_same_taxon_protein_evidence.tsv": "2cf92afde6372aa5adea2cb0a8de5715f5aaf0866b98bd63a99d1dd079e0ac2e",
+    "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012_sources/supplementation/pseudomonas_status.json": "594328e5f1bb9da93185b6ef433b46357bc4075895671dc1eb815a7067f95899",
+    "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012_sources/supplementation/pseudomonas_intact_research_records.tsv": "c2c5aa91b382348db20abe0e414eef09be155ea1ff5d4cb82d7484f1b6a13062",
+    "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012_sources/supplementation/pseudomonas_additional_downloads.json": "6afda1300194987493c99a7b8acfc3e8e343b8446dad607f823731df731abb8d"
+  },
+  "removed_frozen_manifest_inputs": [
+    {
+      "path": "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012_sources/4081.protein.aliases.v12.0.txt.gz",
+      "sha256": "efeb850454f6706aad68083a881274d5392fbe357be85367d0a6b16aa0e7f152"
+    },
+    {
+      "path": "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012_sources/4081.protein.physical.links.detailed.v12.0.txt.gz",
+      "sha256": "1bde4249231dd2174c710c31f139c1346e3279a32ea5a236254b8eea56d0ba60"
+    },
+    {
+      "path": "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012_sources/intact_tomato.zip",
+      "sha256": "356886be9da6c1464c398222a469b93e97bc2c5e74135631bdfadfef6782a113"
+    },
+    {
+      "path": "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012_sources/tomato_yft1.xml",
+      "sha256": "6300a7fa10d54e86931d15e95c8d2fc5a2b9d291a423ec67792eee55f6471659"
+    },
+    {
+      "path": "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012_sources/tomato_yft1_supplementary.zip",
+      "sha256": "b24ce0f951f09f86d3a005c89d25790f761118882e0a06c604f0ee42351cd3eb"
+    },
+    {
+      "path": "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012_work/global_known_sequence_pairs.parquet",
+      "sha256": "363a0e4f0b0e854097a69879121c0ed164de2fec99e196df85fadaac10e2c7dc"
+    },
+    {
+      "path": "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012_work/maize_exclusions.json",
+      "sha256": "e11ac1dd98183ded0ac05fc8470accbf6362b641a7c527ba9257c771d9335b53"
+    },
+    {
+      "path": "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012_work/maize_quality_candidates.parquet",
+      "sha256": "63d658a70b6e138dfbe6cbddc77b2c280039d958afe8740725fd4c1dfcea3506"
+    },
+    {
+      "path": "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012_work/mouse_exclusions.json",
+      "sha256": "d8b953ddb29b5deb135511fe4e9f594a8d64c21f4a0ac3f42731ce48d3a9726f"
+    },
+    {
+      "path": "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012_work/mouse_quality_candidates.parquet",
+      "sha256": "16f4a695f99c8d0ed63157e6bf9a2706c5baa785e49a6e8a3c961d9c5beb5336"
+    },
+    {
+      "path": "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012_work/rice_exclusions.json",
+      "sha256": "2fdcb46085516125c16faa60a53d24bb9d16781d68bd39f068d41484a77c394a"
+    },
+    {
+      "path": "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012_work/rice_quality_candidates.parquet",
+      "sha256": "ba6948e63e8034f3abd1ba687b1b734777fde252def2b3b6df5a4456696c40de"
+    },
+    {
+      "path": "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012_work/tair_exclusions.json",
+      "sha256": "f6dbe5ce28294176ba692e80e5e7484c3d58d354c3a72a7d734da85fa12f339e"
+    },
+    {
+      "path": "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012_work/tair_quality_candidates.parquet",
+      "sha256": "eda5bd431807ea1611b089f5cc0fa100b7d2b5dfc74bca105b1551b3be2711d1"
+    },
+    {
+      "path": "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012_work/validation_homology.tsv",
+      "sha256": "908e80cfcb24acc8e97df0cd865d55d786619cf2b9b1132976b239326f18fc72"
+    },
+    {
+      "path": "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012_work/worm_exclusions.json",
+      "sha256": "2f72001f913480e86fae5bd2921c9863fbe1f2e7e10bac8324a494776c3666ad"
+    },
+    {
+      "path": "/media/zlab/lexar4t/FlashPPI/data/multispecies_test_v1_20261012_work/worm_quality_candidates.parquet",
+      "sha256": "2175a5d37c5c7586ab4bcad1269f5d1630308ccf2212c7fe8a61fa1479e4a6f4"
+    }
+  ],
+  "note": "Original frozen manifest remains unchanged. Removed work inputs are reproducible via prepare/global-exclusions; tomato downloads were audit attachments, not five-species computational inputs.",
+  "metadata_before_sha256": {
+    "data/multispecies_test_v1_20261012_sources/downloads.json": "98bbb91bd6c8f8ea172e81fbbf985c6904938451009d018c63cfc44e2f82c543",
+    "data/benchmark_inventory_20261012/raw/string_downloads.json": "143fcf53f8782213d0b39f424bb2f8f9a5cba989598f1ab2bc6ce840a5065aa9",
+    "data/benchmark_inventory_20261012/raw/uniprot_recovery_manifest.json": "74be4d1ac8ef248e9a20abda5caec80a71645d5a79b682df8269b66229260fba",
+    "data/multispecies_test_v1_20261012_sources/supplementation/manifest.json": "6b7f043d67416bdaab11e89f180eecc925097627747f7109cabfc76c43ac0772"
+  },
+  "completed_at": "2026-10-12T16:00:41.263576+08:00",
+  "protected_hashes_verified": 103,
+  "metadata_after_sha256": {
+    "data/multispecies_test_v1_20261012_sources/downloads.json": "942a0d642e194af2b0b6fbec9203c4cdea7c62a64c7dcc89c561d3e3f5a54bcd",
+    "data/benchmark_inventory_20261012/raw/string_downloads.json": "ec5a01cfdd5ef0a7fe2dff33bb0fcd127bf7dcb004bd88827f78bd6eccca64b9",
+    "data/benchmark_inventory_20261012/raw/uniprot_recovery_manifest.json": "8e9ecd491f9268f94250081062bff9bec411bd2aae822bd3e074857d446a87c6",
+    "data/multispecies_test_v1_20261012_sources/supplementation/manifest.json": "5224e71618496a1d2bbde4558f18859aa31ae644a1935fcbb1006bfe765ee46b"
+  },
+  "post_cleanup_checks": {
+    "retained_download_hashes": "passed",
+    "training_configuration_paths": "passed",
+    "tomato_dedicated_files_removed": true,
+    "script_syntax": "passed",
+    "builder_regression_tests_passed": 4,
+    "git_diff_check": "passed"
+  },
+  "retained_data_directories": [
+    "benchmark_inventory_20261012",
+    "multispecies_test_v1_20261012",
+    "multispecies_test_v1_20261012_sources",
+    "ppi_finetune_split_v1",
+    "ppi_finetune_validation_v1"
+  ]
+}

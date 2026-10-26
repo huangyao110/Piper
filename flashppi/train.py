@@ -335,7 +335,7 @@ def main(config_file, run_name=None):
                 clip_loss, top1_acc = train_loss_fn(clip_embed1, clip_embed2, logit_scale, seq1_clusters=seq1_clusters, seq2_clusters=seq2_clusters, compute_top1_acc=True)
                 clip_loss_val = clip_loss.item()
 
-                contact_loss_tensor = contact_loss(contact_logits, contact_target, contact_valid_mask)
+                contact_loss_tensor = contact_loss(contact_logits, contact_target, contact_valid_mask, batch.get('contact_target_valid_mask'))
                 contact_loss_val = contact_loss_tensor.item()
                 total_loss = training_config.clip_loss_weight * clip_loss + training_config.contact_loss_weight * contact_loss_tensor
                 

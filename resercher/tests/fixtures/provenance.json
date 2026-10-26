@@ -1,0 +1,12 @@
+[
+  {
+    "source": "resercher/vendor/before_1616/flashppi/gated_modules.py",
+    "fixture": "before_1616_gated_modules.py",
+    "sha256": "7aea46f2ba86b304d7d27f043039a49e548519dd026364ac49f4e34b0d1cb4d9"
+  },
+  {
+    "source": "resercher/vendor/after_2182/flashppi/gated_modules.py",
+    "fixture": "after_2182_gated_modules.py",
+    "sha256": "7aea46f2ba86b304d7d27f043039a49e548519dd026364ac49f4e34b0d1cb4d9"
+  }
+]

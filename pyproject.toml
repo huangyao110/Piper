@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=78.1"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "piper-contact"
+version = "0.1.0"
+description = "Piper: gated protein language model fusion for residue contact prediction"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+license = {file = "LICENSE"}
+authors = [{name = "Piper contributors", email = "1647721078@qq.com"}]
+dynamic = ["dependencies"]
+
+[project.scripts]
+piper = "piper.cli:main"
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
+
+[tool.setuptools.packages.find]
+include = ["piper*", "flashppi*", "tools"]
+namespaces = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "integration: requires local archived experiments, datasets, or external binaries",
+]

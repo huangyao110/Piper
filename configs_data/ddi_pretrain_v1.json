@@ -1,0 +1,26 @@
+{
+  "version": "ddi_esmc_rf2_v1",
+  "distance_release": "/media/zlab/lexar4t/ppidb/distributions/ppidb-distances-20261009_101259",
+  "sequence_clusters": "/media/zlab/lexar4t/ppidb/distributions/ppidb-ddi-clusters-20261009_101259/ddi_sequence_clusters.tsv",
+  "validation_structures": "data/ppi_finetune_split_v1/validation.parquet",
+  "validation_interactions": "data/ppi_finetune_validation_v1/interaction.parquet",
+  "rf2_pairs": "/home/zlab/P2PSigLip-1.0/mutil_species/runs/preparation/conglab_20260918_complete/raw/positives_and_negatives.tsv",
+  "rf2_sequences": "/home/zlab/P2PSigLip-1.0/mutil_species/runs/preparation/conglab_20260918_complete/accession_sequences.csv",
+  "output": "data/ddi_pretrain_v1",
+  "mmseqs": "/home/zlab/miniconda3/bin/mmseqs",
+  "homology": {
+    "identity": 0.3,
+    "domain_coverage": 0.8,
+    "coverage_mode": 1,
+    "query": "all fixed validation and RF2 test sequences",
+    "target": "DDI domain",
+    "sensitivity": 7.5,
+    "evalue": 0.001,
+    "max_seqs": 200000,
+    "threads": 16,
+    "split_memory_limit": "32G"
+  },
+  "exclude_homolog_cluster": true,
+  "require_nonempty_valid_contacts": true,
+  "seed": 20261012
+}

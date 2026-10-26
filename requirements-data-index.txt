@@ -1,0 +1,2 @@
+# Build-only dependency. The index reader requires only the existing NumPy/PyArrow.
+duckdb==1.4.3

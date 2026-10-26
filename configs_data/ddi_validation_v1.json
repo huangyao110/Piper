@@ -1,0 +1,32 @@
+{
+  "version": "ddi_validation_v1",
+  "prepared_training": "data/ddi_pretrain_v1",
+  "output": "data/ddi_validation_v1",
+  "target_pairs": 1000,
+  "seed": 20261013,
+  "threads": 8,
+  "candidate_pool_limit": 60000,
+  "selection": {
+    "require_val_related_cluster": true,
+    "exclude_rf2_related_clusters": true,
+    "exclude_training_clusters_on_both_domains": true,
+    "exclude_training_parent_proteins": true,
+    "one_pair_per_parent": true,
+    "one_pair_per_unordered_cluster_pair": true,
+    "require_fully_valid_coordinates": true,
+    "minimum_domain_length": 30,
+    "maximum_domain_length": 1024,
+    "minimum_contacts": 5
+  },
+  "homology": {
+    "identity": 0.3,
+    "domain_coverage": 0.8,
+    "ddi_vs_training_coverage": "exclude if either aligned domain has >=80% coverage; two directional coverage searches",
+    "rf2_coverage": "coverage of candidate DDI domain, not the full RF2 protein",
+    "sensitivity": 7.5,
+    "evalue": 0.001,
+    "max_seqs": 200000,
+    "split_memory_limit": "32G"
+  },
+  "notes": "Structural DDI validation candidates from original exclusions. Related to existing PPI val by construction; RF2-related candidates excluded. No changes to active training or existing holdouts."
+}

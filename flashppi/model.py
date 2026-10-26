@@ -69,72 +69,43 @@ def get_contact_negatives(
     """
     B = embed1.size(0)
     device = embed1.device
-    
-    # Pre-compute known interaction mask (B, B) - True means it's a known interaction
-    known_mask = None
-    if clusters1 is not None and clusters2 is not None and valid_keys is not None and len(valid_keys) > 0:
-        batch_keys = clusters1.unsqueeze(1) * multiplier + clusters2.unsqueeze(0)
-        invalid = (clusters1.unsqueeze(1) == -1) | (clusters2.unsqueeze(0) == -1)
-        known_mask = torch.isin(batch_keys, valid_keys.to(device)) & ~invalid
-    
-    # Collect negative pair indices
-    neg_idx1_list, neg_idx2_list = [], []
-    
-    # Random negatives: shift pairs (A_i, B_{i+shift}), skip known interactions
+    allowed = ~torch.eye(B, dtype=torch.bool, device=device)
+    if clusters1 is not None and clusters2 is not None and valid_keys is not None:
+        keys = clusters1[:, None] * multiplier + clusters2[None, :]
+        known = torch.isin(keys, valid_keys.to(device))
+        allowed &= ~known
+    pairs = torch.zeros_like(allowed)
     if random_neg_ratio > 0 and B > 1:
-        num_rand = int(B * random_neg_ratio)
-        reps = (num_rand + B - 1) // B
-        for shift in range(1, reps + 1):
-            n = min(B, num_rand - (shift - 1) * B)
-            idx1 = torch.arange(n, device=device)
-            idx2 = (idx1 + shift) % B
-            if known_mask is not None:
-                valid = ~known_mask[idx1, idx2]
-                idx1, idx2 = idx1[valid], idx2[valid]
-            neg_idx1_list.append(idx1)
-            neg_idx2_list.append(idx2)
-    
-    # Self negatives: (A_i, A_i), skip known interactions
-    if self_neg_ratio > 0:
-        n = min(B, int(B * self_neg_ratio))
-        idx = torch.arange(n, device=device)
-        if known_mask is not None:
-            valid = ~known_mask[idx, idx]
-            idx = idx[valid]
-        neg_idx1_list.append(idx)
-        neg_idx2_list.append(idx)
-    
-    # Hard negatives: select most similar non-known pairs by CLIP score
-    if hard_neg_ratio > 0 and clip_embed1 is not None and clip_embed2 is not None and B > 1:
-        num_hard_per_example = max(1, int(hard_neg_ratio))
+        candidates = allowed.nonzero()
+        n = min(len(candidates), int(B * random_neg_ratio))
+        chosen = candidates[torch.randperm(len(candidates), device=device)[:n]]
+        pairs[chosen[:, 0], chosen[:, 1]] = True
+    if hard_neg_ratio > 0 and clip_embed1 is not None and B > 1:
         with torch.no_grad():
-            sim_matrix = clip_embed1 @ clip_embed2.T
-            # Mask out diagonal (positives)
-            sim_matrix.fill_diagonal_(-1e9)
-            # Mask out known interactions before selecting top-K
-            if known_mask is not None:
-                sim_matrix = sim_matrix.masked_fill(known_mask, -1e9)
-            # Get top-K most similar valid pairs per example
-            num_hard_actual = min(num_hard_per_example, B - 1)
-            _, top_indices_per_row = torch.topk(sim_matrix, num_hard_actual, dim=1)
-            idx1 = torch.arange(B, device=device).unsqueeze(1).expand(-1, num_hard_actual).flatten()
-            idx2 = top_indices_per_row.flatten()
-        neg_idx1_list.append(idx1)
-        neg_idx2_list.append(idx2)
-    
-    # Combine all negatives
-    if neg_idx1_list:
-        neg_idx1 = torch.cat(neg_idx1_list)
-        neg_idx2 = torch.cat(neg_idx2_list)
-        
-        if len(neg_idx1) > 0:
-            return embed1[neg_idx1], embed2[neg_idx2], mask1[neg_idx1], mask2[neg_idx2]
-    
-    # Return empty if no negatives
-    return (torch.empty(0, *embed1.shape[1:], device=device),
-            torch.empty(0, *embed2.shape[1:], device=device),
-            torch.empty(0, *mask1.shape[1:], device=device),
-            torch.empty(0, *mask2.shape[1:], device=device))
+            similarity = (clip_embed1 @ clip_embed2.T).masked_fill(~allowed, -torch.inf)
+            n = min(B - 1, max(1, int(hard_neg_ratio)))
+            values, indices = similarity.topk(n, dim=1)
+            first = torch.arange(B, device=device)[:, None].expand_as(indices)
+            finite = torch.isfinite(values)
+            pairs[first[finite], indices[finite]] = True
+    i, j = pairs.nonzero(as_tuple=True)
+    out1, out2, outm1, outm2 = embed1[i], embed2[j], mask1[i], mask2[j]
+    if self_neg_ratio > 0:
+        idx = torch.arange(min(B, int(B * self_neg_ratio)), device=device)
+        if clusters1 is not None:
+            # Every observed same-cluster positive is a known homomer candidate.
+            known_self = torch.zeros(B, dtype=torch.bool, device=device)
+            if valid_keys is not None:
+                known_self |= torch.isin(clusters1 * multiplier + clusters1, valid_keys.to(device))
+            if clusters2 is not None:
+                positive_self = clusters1[clusters1 == clusters2]
+                known_self |= torch.isin(clusters1, positive_self)
+            idx = idx[~known_self[idx]]
+        out1 = torch.cat([out1, embed1[idx]])
+        out2 = torch.cat([out2, embed1[idx]])
+        outm1 = torch.cat([outm1, mask1[idx]])
+        outm2 = torch.cat([outm2, mask1[idx]])
+    return out1, out2, outm1, outm2
 
 
 class ContactHead(nn.Module):
@@ -168,7 +139,7 @@ class ContactHead(nn.Module):
         # Scale factor (1 / sqrt(head_dim))
         self.scale = self.head_dim ** -0.5
 
-    def forward(self, embed1, embed2, mask1, mask2):
+    def forward(self, embed1, embed2, mask1, mask2, return_pair_features=False):
         B, L1, D = embed1.shape
         _, L2, _ = embed2.shape
 
@@ -210,6 +181,8 @@ class ContactHead(nn.Module):
         else:
             valid_mask = torch.ones_like(contact_logits, dtype=torch.bool)
 
+        if return_pair_features:
+            return contact_logits, valid_mask, attn_logits
         return contact_logits, valid_mask
 
 
@@ -261,9 +234,8 @@ class FlashPPIModel(nn.Module):
         self.contact_self_neg_ratio = contact_self_neg_ratio
         self.contact_hard_neg_ratio = contact_hard_neg_ratio
         # Register valid_keys as buffer for contact negative filtering
-        if valid_keys_tensor is not None:
-            self.multiplier = multiplier
-            self.register_buffer('valid_keys', valid_keys_tensor, persistent=False)
+        self.multiplier = multiplier
+        self.register_buffer('valid_keys', valid_keys_tensor, persistent=False)
 
         self.plm = load_plm_model(config.plm_model_name)
         
@@ -409,6 +381,9 @@ class FlashPPIModel(nn.Module):
         seq2_attention_mask: Optional[torch.Tensor] = None,
         seq1_cluster: Optional[torch.Tensor] = None,
         seq2_cluster: Optional[torch.Tensor] = None,
+        return_coverage: bool = False,
+        seq1_identity: Optional[torch.Tensor] = None,
+        seq2_identity: Optional[torch.Tensor] = None,
     ):
         """
         Full forward pass for both CLIP and contact prediction.
@@ -449,26 +424,43 @@ class FlashPPIModel(nn.Module):
                 neg_embed2 = torch.cat([residue_embed2, residue_embed1], dim=0)
                 neg_mask1 = torch.cat([seq1_mask, seq2_mask], dim=0)
                 neg_mask2 = torch.cat([seq2_mask, seq1_mask], dim=0)
-            neg1, neg2, neg_mask1, neg_mask2 = get_contact_negatives(
-                neg_embed1, neg_embed2, neg_mask1, neg_mask2,
-                random_neg_ratio=self.contact_random_neg_ratio,
-                self_neg_ratio=self.contact_self_neg_ratio,
-                hard_neg_ratio=self.contact_hard_neg_ratio,
-                clusters1=neg_clusters1,
-                clusters2=neg_clusters2,
-                valid_keys=self.valid_keys,
-                multiplier=self.multiplier,
-                clip_embed1=q,
-                clip_embed2=k,
-            )
+            if getattr(self, 'contact_negative_sampling', None):
+                from .negative_sampling import unique_heteroprotein_indices
+                if seq1_identity is None or seq2_identity is None:
+                    raise ValueError('Full-sequence identities are required for unique negatives')
+                identities1 = torch.cat([seq1_identity, seq2_identity])
+                identities2 = torch.cat([seq2_identity, seq1_identity])
+                i, j, self.last_negative_sampling = unique_heteroprotein_indices(
+                    neg_clusters1, neg_clusters2, identities1, identities2,
+                    self.valid_keys, self.multiplier, q, k,
+                    hard_ratio=self.contact_hard_neg_ratio,
+                    legacy_self_ratio=self.contact_negative_sampling['legacy_self_budget_ratio'])
+                neg1, neg2 = neg_embed1[i], neg_embed2[j]
+                neg_mask1, neg_mask2 = neg_mask1[i], neg_mask2[j]
+            else:
+                neg1, neg2, neg_mask1, neg_mask2 = get_contact_negatives(
+                    neg_embed1, neg_embed2, neg_mask1, neg_mask2,
+                    random_neg_ratio=self.contact_random_neg_ratio,
+                    self_neg_ratio=self.contact_self_neg_ratio,
+                    hard_neg_ratio=self.contact_hard_neg_ratio,
+                    clusters1=neg_clusters1,
+                    clusters2=neg_clusters2,
+                    valid_keys=self.valid_keys,
+                    multiplier=self.multiplier,
+                    clip_embed1=q,
+                    clip_embed2=k,
+                )
             residue_embed1 = torch.cat([residue_embed1, neg1], dim=0)
             residue_embed2 = torch.cat([residue_embed2, neg2], dim=0)
             seq1_mask = torch.cat([seq1_mask, neg_mask1], dim=0)
             seq2_mask = torch.cat([seq2_mask, neg_mask2], dim=0)
             
-        contact_logits, contact_valid_mask = self.predict_contacts(
-            residue_embed1, residue_embed2, seq1_mask, seq2_mask
-        )
-
-        return q, k, contact_logits, self.logit_scale.exp(), contact_valid_mask, seq1_cluster, seq2_cluster
+        if return_coverage:
+            contact_logits, contact_valid_mask, coverage = self.contact_head.forward_with_coverage(
+                residue_embed1, residue_embed2, seq1_mask, seq2_mask)
+        else:
+            contact_logits, contact_valid_mask = self.predict_contacts(
+                residue_embed1, residue_embed2, seq1_mask, seq2_mask)
+        result = (q, k, contact_logits, self.logit_scale.exp(), contact_valid_mask, seq1_cluster, seq2_cluster)
+        return result + (coverage,) if return_coverage else result
 

@@ -1,0 +1,847 @@
+{
+  "date": "2026-10-24T09:15:46.979109+00:00",
+  "authorization": "User requested deletion of V2 and obsolete unused directories.",
+  "state": "complete",
+  "removed_symlink": "/media/zlab/lexar4t/FlashPPI/data/conglab_distilled_ecoli_strict_v2",
+  "directories": [
+    {
+      "path": "/home/zlab/flashppi_data/conglab_distilled_ecoli_strict_v2",
+      "allocated_bytes": 4880371712,
+      "metadata": {
+        "manifest.json": {
+          "sha256": "5fbe7421ddad596380c88ccc7c632c9dc818204ad278c0b83f657f5cce6894d7",
+          "content": {
+            "state": "complete",
+            "version": "conglab_distilled_ecoli_strict_v2",
+            "config": {
+              "filter_protocol": "conglab_distilled_ecoli_strict_v2",
+              "test_exclusion": "either_chain",
+              "validation": "none",
+              "coverage_basis": "release_fasta_before_training_crop",
+              "identity": "nident_over_alnlen_gt_30",
+              "ppi_coverage": "both_coverage_gte_50",
+              "ddi_coverage": "training_domain_coverage_gte_50",
+              "preserve_all_legacy": false,
+              "allowed_sources": {
+                "ppi": [
+                  "conglab",
+                  "conglab_pred",
+                  "afdb_complexs_pred",
+                  "complex_atlas_pred",
+                  "huintaf2_pred",
+                  "yeast_core_pred",
+                  "endomap_pred",
+                  "predictomes_pred",
+                  "gwyre_pred"
+                ],
+                "ddi": [
+                  "conglab"
+                ]
+              },
+              "threads": 8,
+              "test_sha256": "07dace691cac67561d264fbbcd8deb862ad6356998b129ae57dee7d983de7f6c",
+              "contact_cutoff_angstrom": 12,
+              "quality_policy": "reuse_release_source_admission_no_additional_quality_filters",
+              "version": "conglab_distilled_ecoli_strict_v2",
+              "release": "/media/zlab/lexar4t/ppidb/distributions/ppidb-2026.10.3",
+              "legacy_directory": "/media/zlab/lexar4t/FlashPPI/data/conglab_ecoli_v1",
+              "test": "/media/zlab/lexar4t/FlashPPI/artifacts/flashppi_official/ecoli_pdb_benchmark/data/train-00000-of-00001.parquet",
+              "output": "/media/zlab/lexar4t/FlashPPI/data/conglab_distilled_ecoli_strict_v2",
+              "mmseqs": "/home/zlab/miniconda3/bin/mmseqs",
+              "duckdb_memory_limit": "24GB",
+              "seed": 20261024
+            },
+            "filter_protocol": {
+              "id": "conglab_distilled_ecoli_strict_v2",
+              "lock_sha256": "b8a3a133238ac99c09a817241d77fade696d91266b67b4c0fab9b373b10b5a4f"
+            },
+            "splits": {
+              "train": {
+                "file": "train.index.parquet",
+                "rows": 644917,
+                "sha256": "9f6813487c16a2a3b8d6da4cc4d3502b08d28c19b86dd8cc21e53dcea7d9d05f"
+              },
+              "test": {
+                "file": "test.index.parquet",
+                "rows": 65650,
+                "sha256": "be5440cfcb2281c7d9d89bb172c865154e2b4cffb36928262a4e28cbd52c99f9"
+              }
+            },
+            "source_registry": "sources.json",
+            "source_registry_sha256": "e3567bb02340928239cb04e7db27b3364e8ca5f2d695f0015a97e9979864dd52",
+            "source_counts": [
+              {
+                "kind": "ddi",
+                "source": "conglab",
+                "input_rows": 585078,
+                "homology_excluded": 372560,
+                "empty_contacts": 0,
+                "duplicates": 0,
+                "rows": 212518
+              },
+              {
+                "kind": "ppi",
+                "source": "afdb_complexs_pred",
+                "input_rows": 80248,
+                "homology_excluded": 12110,
+                "empty_contacts": 0,
+                "duplicates": 1,
+                "rows": 68137
+              },
+              {
+                "kind": "ppi",
+                "source": "complex_atlas_pred",
+                "input_rows": 78985,
+                "homology_excluded": 12640,
+                "empty_contacts": 7,
+                "duplicates": 6,
+                "rows": 66332
+              },
+              {
+                "kind": "ppi",
+                "source": "conglab",
+                "input_rows": 391897,
+                "homology_excluded": 109527,
+                "empty_contacts": 447,
+                "duplicates": 37786,
+                "rows": 244137
+              },
+              {
+                "kind": "ppi",
+                "source": "conglab_pred",
+                "input_rows": 34444,
+                "homology_excluded": 2569,
+                "empty_contacts": 0,
+                "duplicates": 0,
+                "rows": 31875
+              },
+              {
+                "kind": "ppi",
+                "source": "endomap_pred",
+                "input_rows": 439,
+                "homology_excluded": 15,
+                "empty_contacts": 0,
+                "duplicates": 2,
+                "rows": 422
+              },
+              {
+                "kind": "ppi",
+                "source": "gwyre_pred",
+                "input_rows": 1950,
+                "homology_excluded": 274,
+                "empty_contacts": 0,
+                "duplicates": 0,
+                "rows": 1676
+              },
+              {
+                "kind": "ppi",
+                "source": "huintaf2_pred",
+                "input_rows": 2833,
+                "homology_excluded": 93,
+                "empty_contacts": 0,
+                "duplicates": 0,
+                "rows": 2740
+              },
+              {
+                "kind": "ppi",
+                "source": "predictomes_pred",
+                "input_rows": 16469,
+                "homology_excluded": 423,
+                "empty_contacts": 0,
+                "duplicates": 0,
+                "rows": 16046
+              },
+              {
+                "kind": "ppi",
+                "source": "yeast_core_pred",
+                "input_rows": 1106,
+                "homology_excluded": 72,
+                "empty_contacts": 0,
+                "duplicates": 0,
+                "rows": 1034
+              }
+            ],
+            "cluster_multiplier": 13658157,
+            "sampling": {
+              "kind_ratio": {
+                "ppi": 0.5,
+                "ddi": 0.5
+              },
+              "ppi": "balanced sequence clusters, weighted within cluster",
+              "ddi": "balanced sequence clusters, weighted within cluster",
+              "within_pair": "1 / retained distinct supervision count",
+              "source_quota": "not activated in this data-only build",
+              "training_automatically_started": false
+            },
+            "sequence_scope": "Full source FASTA entries before any training crop; entries can be structure fragments/domains, not claimed canonical UniProt full proteins.",
+            "limitations": [
+              "K-mer search is heuristic; mandatory bidirectional prefilter-mode 2 passes remove k-mer screening. The claim is limited to the locked MMseqs alignment scoring, identity/coverage definitions and actual source FASTA entries, not absence of all biological homology.",
+              "The frequently evaluated historical E. coli benchmark is not a newly blind test set.",
+              "No statement about pretraining exposure or full-protein/structure-level isolation."
+            ],
+            "versions": {
+              "python": "3.12.0 | packaged by Anaconda, Inc. | (main, Oct  2 2023, 17:29:18) [GCC 11.2.0]",
+              "numpy": "2.2.6",
+              "pyarrow": "17.0.0",
+              "duckdb": "1.4.3"
+            },
+            "artifacts": {
+              "duplicate_map.parquet": {
+                "sha256": "2ea5489dd52f2fc2703f305c9677d73df99634f8437e0a45a26192c02c1e1c22",
+                "bytes": 3129147
+              },
+              "known_positive_cluster_pairs.parquet": {
+                "sha256": "2461996246ffde70f52b4141fc365e078731839b22a1ba7d031d597ef4eebd9e",
+                "bytes": 1815644
+              },
+              "cluster_bridges.parquet": {
+                "sha256": "21c29e802ab03140eecda25067f2de9bd19ba711ccb39af323a66500a614f388",
+                "bytes": 374
+              },
+              "excluded_homology.index.parquet": {
+                "sha256": "857ccfa271b08dae8e199adbb460d31dfabd7eaaacd0e3ca8633273246c437bd",
+                "bytes": 73315721
+              },
+              "excluded_empty_contacts.index.parquet": {
+                "sha256": "ad1ecc70bb6b409bc23c16c04ab4126f035cf7543c0d487552325f09ef381a7c",
+                "bytes": 16934
+              },
+              "selected_sources.index.parquet": {
+                "sha256": "6b28b8c03c4f816e0d35d8120b3cc9cb752ed568ec0a15508a4061f7440b34d3",
+                "bytes": 166604234
+              },
+              "legacy_before_after.index.parquet": {
+                "sha256": "f5f2818cbec4e55d02b9e9b732a2f0429c4b77e0ff98e0035634debebf2ac842",
+                "bytes": 26632019
+              },
+              "verification.json": {
+                "sha256": "fe789c2cf033e12c7528fa0589ddd6f907276c76b73d9419011c92da403a98cd",
+                "bytes": 2893
+              },
+              "README.md": {
+                "sha256": "4c5275b9211bc1160c267ee3704329c48bdbb7ceedefb87987f5fb56ead964b8",
+                "bytes": 7617
+              },
+              "filter_protocol.lock.json": {
+                "sha256": "b8a3a133238ac99c09a817241d77fade696d91266b67b4c0fab9b373b10b5a4f",
+                "bytes": 6704
+              },
+              "build_identity.json": {
+                "sha256": "c83cad3a70d82bae28e80903ed0ec52b32f67e63ebb2e2422d851bddedda5903",
+                "bytes": 2252
+              },
+              "sequence_inputs.done.json": {
+                "sha256": "2ac2056061d7818686013fe18b1ccdc54b3935a5da86148314761e0906385c82",
+                "bytes": 849
+              },
+              "test_reference.fasta": {
+                "sha256": "4567cd7bcbcb21a5f7a99954ee6c431ed4c4fc8433c4315b7b9262e384435275",
+                "bytes": 237578
+              },
+              "ppi_homology_hits.parquet": {
+                "sha256": "61c56dc44745016e356ad1814a40c83037df5e1a109c8bf928ea57e17edc2e70",
+                "bytes": 918313
+              },
+              "ppi_homology_evidence.parquet": {
+                "sha256": "f701756cff45efd27d94da0bb7d2ec77bc55e39e75824df7426705049b2a5c46",
+                "bytes": 6115889
+              },
+              "ppi_homology.json": {
+                "sha256": "840b1897a8eb235576eb72620db4be43667b99770a98435049b778cf2dc784f1",
+                "bytes": 15177
+              },
+              "ppi_sequence_catalog.parquet": {
+                "sha256": "2fe245f11e09714b16f4ccd0d86cfe9479c47f3109ae32edaea4773c4b9eceee",
+                "bytes": 7229013
+              },
+              "ppi_candidate.fasta": {
+                "sha256": "ba2763efd4ade706e7c76c25e0536d5a8453603a1437043ad2f0547946805136",
+                "bytes": 76702872
+              },
+              "ppi_test_to_train.tsv.gz": {
+                "sha256": "423d4ccacd4fe7f36b99a0b4598cf2f2adeb4f4fe0eeabac1b93cc2da0f1548f",
+                "bytes": 2097968
+              },
+              "ppi_test_to_train.search.json": {
+                "sha256": "d33c8e91961765740ae0848cf7d5c415edd5e24db581dbc9c8c31819295cad2a",
+                "bytes": 2984
+              },
+              "ppi_test_to_train_mmseqs.log": {
+                "sha256": "92147550bc67060276cbbdd1d281c4c041db0119407e8f54a4b3a83aec2899d5",
+                "bytes": 15927
+              },
+              "ppi_train_to_test.tsv.gz": {
+                "sha256": "b0d3d642bfa1fa606bb10f3a60bd5119003430ab9c0fb08a38487ca82fd51e7b",
+                "bytes": 1504742
+              },
+              "ppi_train_to_test.search.json": {
+                "sha256": "0e8d5e898959d8c370b1dfacc05e272b81b02d6e4914ac3db8747cfd2d381965",
+                "bytes": 2981
+              },
+              "ppi_train_to_test_mmseqs.log": {
+                "sha256": "2655f88fb6163da41fb1357013d3d421a5ece628601680cbfe0663a62ed979de",
+                "bytes": 15921
+              },
+              "ppi_test_to_train_nofilter.tsv.gz": {
+                "sha256": "acc6ae64796d6b883e7c8ef497cfbb9d16bfef5f1818e60594260a5bfedaf36a",
+                "bytes": 2227409
+              },
+              "ppi_test_to_train_nofilter.search.json": {
+                "sha256": "e5a12b1bb19bfed5994f2bd6cb778c36e66bdfd75601c3ed7a6ab349c72bc60c",
+                "bytes": 3002
+              },
+              "ppi_test_to_train_nofilter_mmseqs.log": {
+                "sha256": "9a93211d4251dfc6b448023678596a5d5521e19e900c6225d828a3de98726556",
+                "bytes": 13870
+              },
+              "ppi_train_to_test_nofilter.tsv.gz": {
+                "sha256": "f2a3af1ced2afd76b06b53f29ebfa0480af18663357d8cc182ffbad7dc9b6d6a",
+                "bytes": 1722165
+              },
+              "ppi_train_to_test_nofilter.search.json": {
+                "sha256": "ab5267c45b3b65a2d0f7f9a9bbab13c58f832517abaf1d54b270babaed473445",
+                "bytes": 2999
+              },
+              "ppi_train_to_test_nofilter_mmseqs.log": {
+                "sha256": "c6033a448beea12059dcaa9621955e9068acf72280dc3bfdea2f9b19c40c9268",
+                "bytes": 13877
+              },
+              "ddi_homology_hits.parquet": {
+                "sha256": "ba857bb9a9053da725bdc9c9eda32d2fe52744c365f422208df1f9e733031268",
+                "bytes": 14872403
+              },
+              "ddi_homology_evidence.parquet": {
+                "sha256": "1af4d56e03f35ad0dc1a37dfbd3c1407f2675ab64f382b906af65ba2d71d0f10",
+                "bytes": 142685755
+              },
+              "ddi_homology.json": {
+                "sha256": "86e7e56c7a69748b803ecd2654ed54c9c5aba661657cb418bbdb4f25147d9d23",
+                "bytes": 15191
+              },
+              "ddi_sequence_catalog.parquet": {
+                "sha256": "6e0d262118979740996e564bf3a4d26c2fdd7926e274f8bf952230f3f9e468f6",
+                "bytes": 42636657
+              },
+              "ddi_candidate.fasta": {
+                "sha256": "9fc8c02716b85fece223e58ae57cc5c07afc1d7b4416ba56d869f334cdab4eba",
+                "bytes": 271594402
+              },
+              "ddi_test_to_train.tsv.gz": {
+                "sha256": "54fc832610575e43d3c27c68580743c80475e897a088d678f20cc42c616c59e2",
+                "bytes": 8448881
+              },
+              "ddi_test_to_train.search.json": {
+                "sha256": "9fb837e7e446d7eb874fc8a384f5ac9d08ee75badfd5067f1fcad3677e89d9bb",
+                "bytes": 2985
+              },
+              "ddi_test_to_train_mmseqs.log": {
+                "sha256": "00cb83d3ff3caacbc12fd15ba8a26d53005e9218376dec55b543cb1103860889",
+                "bytes": 16083
+              },
+              "ddi_train_to_test.tsv.gz": {
+                "sha256": "7b8263437c7ccb32d4aeed3681fb0900eb3de25bf70b0244f786e0683043054d",
+                "bytes": 6508660
+              },
+              "ddi_train_to_test.search.json": {
+                "sha256": "a5ed76b5dd2e935d1cbee6672e12faa782c1ac023002c980e29e0ecd04d37755",
+                "bytes": 2981
+              },
+              "ddi_train_to_test_mmseqs.log": {
+                "sha256": "3f919070a7fc2e2105898683894726b9c7af9be12016d1f72f2211d82145795a",
+                "bytes": 16022
+              },
+              "ddi_test_to_train_nofilter.tsv.gz": {
+                "sha256": "b1a56d6afb976dd02a21469e353a33b484459f14a26f208fd20504107f3f5daa",
+                "bytes": 114305444
+              },
+              "ddi_test_to_train_nofilter.search.json": {
+                "sha256": "45c345e46a50b75ab9b5e238dbcada28b5a8b7e5dab8f1ec39101b0c3046edb1",
+                "bytes": 3003
+              },
+              "ddi_test_to_train_nofilter_mmseqs.log": {
+                "sha256": "15fd8104be1ea8467f87eb95a8610b47ed52941877afd77cfcd6f611eb09b4e9",
+                "bytes": 13988
+              },
+              "ddi_train_to_test_nofilter.tsv.gz": {
+                "sha256": "90ff89a8dc73536aae09d57475356a50cee95c5c90b6cced27774b4a91ba4d06",
+                "bytes": 66999281
+              },
+              "ddi_train_to_test_nofilter.search.json": {
+                "sha256": "25d1af242e22d734781aa28e71e3250c1bad0a5a66f19d6811eb4155076f5abe",
+                "bytes": 2999
+              },
+              "ddi_train_to_test_nofilter_mmseqs.log": {
+                "sha256": "466c4f3ec8f200b5f4d58b9fce1508e6bdfe53c804a719a352900ca81c7b4d32",
+                "bytes": 14004
+              },
+              "independent_audit.json": {
+                "sha256": "eb82426714ce3807a6a72a523ed43868cf3a1d1b56350fffa3363112ad4273d0",
+                "bytes": 4182
+              },
+              "build_code_snapshot.tar.gz": {
+                "sha256": "3635591930dfa3b1ed7472b7c83fa16c51a3491f06e3131225e7cde2a429c6ae",
+                "bytes": 66541
+              },
+              "build_code_snapshot.json": {
+                "sha256": "3a6b8c6c3639b23db6377290c9425057aa17f4e507ce6cbdfe92b5f03c884f06",
+                "bytes": 1924
+              },
+              "verified_entrypoint_snapshot.tar.gz": {
+                "sha256": "7fc69979440080f9d0c9e4d2a51a42a56b7ac6b1fae78ecc07cc07be5cd3799b",
+                "bytes": 86784
+              },
+              "entrypoint_update.json": {
+                "sha256": "b37af38aec7415a11929bf8fc9e87af495e1d21cdd6fe43973d3ae78a338b270",
+                "bytes": 1561
+              },
+              "build_attempt_01_failure.json": {
+                "sha256": "c14b6bb24c4690561e2bfae7fe489dedbce7947c04f5ba591dad042db2153fa1",
+                "bytes": 726
+              }
+            },
+            "audit_status": "passed",
+            "independent_audit": "independent_audit.json",
+            "entrypoint_update": "entrypoint_update.json",
+            "latest_check": "check_status.json"
+          }
+        },
+        "status.json": {
+          "sha256": "0711032a96d0d5ce8c38ddd7cf2486957408337e9ad6211c22372cdd9f2f7224",
+          "content": {
+            "state": "complete",
+            "train_rows": 644917,
+            "test_rows": 65650,
+            "audit_status": "passed",
+            "training_started": false
+          }
+        }
+      }
+    },
+    {
+      "path": "/home/zlab/flashppi_data/conglab_distilled_ecoli_strict_v2_unpublished_draft_20261024",
+      "allocated_bytes": 1034682368,
+      "metadata": {
+        "status.json": {
+          "sha256": "e816e5f2a87e0949921b0634efd1d5520b124360c887abc228e207ceaf2a4060",
+          "content": {
+            "state": "building",
+            "stage": "verify_pair_fasta_and_cluster_mapping",
+            "elapsed_seconds": 104.71,
+            "kind": "ppi"
+          }
+        }
+      }
+    },
+    {
+      "path": "/media/zlab/lexar4t/FlashPPI/data/expanded_conglab_pinder_teddymer_v1",
+      "allocated_bytes": 2016964608,
+      "metadata": {
+        "manifest.json": {
+          "sha256": "35311160ca7c0e3e08370dbaaa86e77ac2520d09e4409c4f95ca8206068a6e0b",
+          "content": {
+            "state": "complete",
+            "version": "expanded_conglab_pinder_teddymer_v1",
+            "config": {
+              "version": "expanded_conglab_pinder_teddymer_v1",
+              "release": "/media/zlab/lexar4t/ppidb/distributions/ppidb-2026.10.2",
+              "legacy_directory": "/media/zlab/lexar4t/FlashPPI/data/conglab_ecoli_v1",
+              "test": "/media/zlab/lexar4t/FlashPPI/artifacts/flashppi_official/ecoli_pdb_benchmark/data/train-00000-of-00001.parquet",
+              "output": "/media/zlab/lexar4t/FlashPPI/data/expanded_conglab_pinder_teddymer_v1",
+              "mmseqs": "/home/zlab/miniconda3/bin/mmseqs",
+              "threads": 8,
+              "seed": 20261022,
+              "expected_legacy": {
+                "ppi": 256596,
+                "ddi": 570709
+              },
+              "test_sha256": "07dace691cac67561d264fbbcd8deb862ad6356998b129ae57dee7d983de7f6c",
+              "new_sources": [
+                "pinder",
+                "teddymer"
+              ],
+              "test_exclusion": "both_chains",
+              "val_exclusion": "either_chain",
+              "ppi_coverage": "both_coverage_50",
+              "ddi_coverage": "candidate_coverage_80",
+              "preserve_all_legacy": true,
+              "contact_cutoff_angstrom": 12,
+              "quality_policy": "reuse_release_quality_no_new_unverified_plddt_or_pae_claim",
+              "duckdb_memory_limit": "32GB"
+            },
+            "splits": {
+              "train": {
+                "file": "train.index.parquet",
+                "rows": 10984272,
+                "sha256": "a3bfb2a9205e8be733b6f9acd763994a78be136f979f7c014f8e76d077065bc3"
+              },
+              "validation_contact": {
+                "file": "validation_contact.index.parquet",
+                "rows": 100,
+                "sha256": "c2b73738415deb63f859d6a1d4f583a3b19966903c4ed065f372f662548c00c2"
+              },
+              "validation_interaction": {
+                "file": "validation_interaction.index.parquet",
+                "rows": 228,
+                "sha256": "87984e3dbdfacb77ad31cf3befac82a63a98d0eb86d002db0dd91572dddf2aee"
+              },
+              "test": {
+                "file": "test.index.parquet",
+                "rows": 65650,
+                "sha256": "c354c8ec7566ac55580e806d30c62bec5c43abbd0d9004b8c8ea8c1cad1cfd52"
+              }
+            },
+            "source_registry": "sources.json",
+            "source_registry_sha256": "23c2e8c812779e8d738ce8dcb765baa0ed9e848df3df43aabe8bd5a2c1dbb176",
+            "release_manifest_sha256": "a8084502376a05b26f738c82a37a6a523321c9fa91387aa82c90e8a8f4dcad2d",
+            "legacy_train_sha256": "05e540632c5975665cf00842420650bf1402f9b9839ff9c1c7212c04bee21538",
+            "legacy_counts": {
+              "ppi": 256596,
+              "ddi": 570709
+            },
+            "old_train_missing": 0,
+            "legacy_payload_mismatches": 0,
+            "source_counts": [
+              {
+                "kind": "ddi",
+                "source": "conglab",
+                "legacy": true,
+                "rows": 570709,
+                "sequence_pairs": 570708,
+                "supervision_groups": 570709
+              },
+              {
+                "kind": "ddi",
+                "source": "teddymer",
+                "legacy": false,
+                "rows": 9736092,
+                "sequence_pairs": 9717105,
+                "supervision_groups": 9736092
+              },
+              {
+                "kind": "ppi",
+                "source": "conglab",
+                "legacy": true,
+                "rows": 256596,
+                "sequence_pairs": 83083,
+                "supervision_groups": 223324
+              },
+              {
+                "kind": "ppi",
+                "source": "pinder",
+                "legacy": false,
+                "rows": 420875,
+                "sequence_pairs": 174555,
+                "supervision_groups": 420875
+              }
+            ],
+            "duplicate_counts": [
+              {
+                "action": "excluded_exact_supervision",
+                "kind": "ddi",
+                "source": "teddymer",
+                "rows": 1252
+              },
+              {
+                "action": "excluded_exact_supervision",
+                "kind": "ppi",
+                "source": "pinder",
+                "rows": 1604513
+              },
+              {
+                "action": "retained_legacy_grouped",
+                "kind": "ppi",
+                "source": "conglab",
+                "rows": 33272
+              }
+            ],
+            "candidate_cross_source_sequence_pair_groups": {
+              "ppi": 70654,
+              "ddi": 14
+            },
+            "cluster_multiplier": 13593056,
+            "sampling": {
+              "kind_ratio": {
+                "ppi": 0.5,
+                "ddi": 0.5
+              },
+              "within_pair": "choose sequence-pair group, then uniform distinct supervision, then uniform retained member",
+              "source_ratio": "not activated; choose after inspecting overlap and source statistics",
+              "training_automatically_started": false
+            },
+            "deduplication": {
+              "chain_swap_invariant": true,
+              "includes_unknown_masks": true,
+              "different_contact_maps": "retained separately; never unioned",
+              "identical_legacy_members": "all retained; weights shared within supervision group",
+              "cross_kind": "PPI and DDI supervision groups remain separate; exact sequences share loss-mask cluster namespace"
+            },
+            "quality_policy": "reuse_release_quality_no_new_unverified_plddt_or_pae_claim",
+            "limitations": [
+              "This is an expansion of the existing E.coli protocol, not a new official PINDER split.",
+              "Both-chain test filtering permits one homologous training endpoint; validation excludes either endpoint.",
+              "All legacy train IDs are preserved. Any additional legacy homology hits are disclosed, not silently removed.",
+              "MMseqs2 searches are heuristic and use the observed source sequences, not reconstructed unobserved full chains.",
+              "No RF2 isolation or absence of pretrained-model exposure is claimed.",
+              "No new pLDDT/PAE quality filter has been applied. Source preparation is not a confidence-quality certificate.",
+              "The data contain structural positive examples. Real interaction negatives are not supplied by this expansion.",
+              "PPI structure clusters are unavailable; sequence-pair/sequence clustering is not an interface-structure leakage proof."
+            ],
+            "code": {
+              "builder": "/media/zlab/lexar4t/FlashPPI/tools/prepare_expanded_index_split.py",
+              "builder_sha256": "cbed153f128e3925d9bcef58e0200b7ed8dabba79f373d2958a16969efd82332",
+              "reader": "/media/zlab/lexar4t/FlashPPI/flashppi/indexed_data.py",
+              "reader_sha256": "f4132bf66147d08a285148f0d31c745f9edf06d5e1492d22cdbab2614c7c7f1c",
+              "independent_auditor": "/media/zlab/lexar4t/FlashPPI/tools/audit_expanded_index_split.py",
+              "independent_auditor_sha256": "a7ce21865ddba8cc9eacbc5cb3c357c18ae3b77cf0b747b9efaeff877dade58c"
+            },
+            "versions": {
+              "python": "3.12.0 | packaged by Anaconda, Inc. | (main, Oct  2 2023, 17:29:18) [GCC 11.2.0]",
+              "numpy": "2.2.6",
+              "pyarrow": "17.0.0",
+              "duckdb": "1.4.3"
+            },
+            "artifacts": {
+              "duplicate_map.parquet": {
+                "sha256": "150ece9c9fc65027e3117d6578c2044962f53e6409b5343f06c5108e3f06eb68",
+                "bytes": 160410958
+              },
+              "known_positive_cluster_pairs.parquet": {
+                "sha256": "b3759c98cf7a3ef5f66296d19b830569031c758cb0b8efccc010039837862eaa",
+                "bytes": 48308211
+              },
+              "cluster_bridges.parquet": {
+                "sha256": "e1a8d95e9157cab723944752047cd5ddcc3402dd04628b41b589e09e1e3b0d45",
+                "bytes": 617
+              },
+              "excluded_homology.index.parquet": {
+                "sha256": "e8f64f3f20699037bd2d87c150ae3cf977f59670c094ff2f0797013563bb401c",
+                "bytes": 26747922
+              },
+              "excluded_empty_contacts.index.parquet": {
+                "sha256": "b6489e19bccc9b163433c27e4ddd822977a056f9960f73c2cdce5e6289f098ec",
+                "bytes": 1460327
+              },
+              "legacy_payload_verification.parquet": {
+                "sha256": "f219b8ff262d49e83d6a98645eb7245713a6e8145ee0c65a048357ac155230e5",
+                "bytes": 81597756
+              },
+              "ppi_homology_hits.parquet": {
+                "sha256": "346c60dcf93d27913c963a4fa804505be7c49196e3432d78fff55c809280c227",
+                "bytes": 1106564
+              },
+              "ddi_homology_hits.parquet": {
+                "sha256": "5c99e7b8c046d37dad08c80837f65ec582bdf90616c5d377f8ec47c5e6819ee9",
+                "bytes": 31402856
+              },
+              "verification.json": {
+                "sha256": "e1d796a2e81480b3eff954fd13fb5c8bcf45860af3faea7e3600a77b4a8d6ea4",
+                "bytes": 1990
+              },
+              "README.md": {
+                "sha256": "ef0993d9eb68ebb0eed2d01c5a4a760753d8b6f64c50d8c0467eab52445bdd49",
+                "bytes": 7945
+              },
+              "inherited_holdout_overlap.index.parquet": {
+                "sha256": "c6b4f852e3d0f22ea31e224160ef8bc9ea1d8542866140505b773f064a0aa31d",
+                "bytes": 114540
+              },
+              "independent_audit.json": {
+                "sha256": "65ef874a4fb31d6c7babe49f16bfcd519fed8e29f50835160238cff159a0fc8b",
+                "bytes": 2455
+              },
+              "cleanup.json": {
+                "sha256": "4677569f555cac3b5a1563f3832eff9ae78f40275a70f6ee2025fec974fbc51a",
+                "bytes": 251
+              },
+              "code_tests.xml": {
+                "sha256": "16c3c1549cd84ae681f9c28440f03e0d15562e045278ebaf428a582c27cff3c3",
+                "bytes": 990
+              },
+              "independent_audit.log": {
+                "sha256": "65ef874a4fb31d6c7babe49f16bfcd519fed8e29f50835160238cff159a0fc8b",
+                "bytes": 2455
+              }
+            },
+            "completed_at": "2026-10-22T16:56:51+0800",
+            "independent_audit": "independent_audit.json",
+            "inherited_homology": {
+              "ppi": {
+                "legacy_rows": 256596,
+                "val_either_endpoint": 0,
+                "test_both_endpoints": 0,
+                "test_either_endpoint": 31159,
+                "val_or_test_rule": 0,
+                "val_exact_endpoint": 0,
+                "test_both_exact_endpoints": 0
+              },
+              "ddi": {
+                "legacy_rows": 570709,
+                "val_either_endpoint": 541,
+                "test_both_endpoints": 508,
+                "test_either_endpoint": 23594,
+                "val_or_test_rule": 1047,
+                "val_exact_endpoint": 0,
+                "test_both_exact_endpoints": 0
+              }
+            },
+            "audit_status": "passed_with_inherited_overlap",
+            "duplicate_origin_counts": [
+              {
+                "action": "excluded_exact_supervision",
+                "structure_source": "pinder",
+                "canonical_source": "conglab",
+                "action_count": 355635
+              },
+              {
+                "action": "excluded_exact_supervision",
+                "structure_source": "pinder",
+                "canonical_source": "pinder",
+                "action_count": 1248878
+              },
+              {
+                "action": "excluded_exact_supervision",
+                "structure_source": "teddymer",
+                "canonical_source": "conglab",
+                "action_count": 1
+              },
+              {
+                "action": "excluded_exact_supervision",
+                "structure_source": "teddymer",
+                "canonical_source": "teddymer",
+                "action_count": 1251
+              },
+              {
+                "action": "retained_legacy_grouped",
+                "structure_source": "conglab",
+                "canonical_source": "conglab",
+                "action_count": 33272
+              }
+            ],
+            "code_snapshots": {
+              "code_snapshot/tools/prepare_expanded_index_split.py": {
+                "sha256": "cbed153f128e3925d9bcef58e0200b7ed8dabba79f373d2958a16969efd82332",
+                "bytes": 48535
+              },
+              "code_snapshot/tools/audit_expanded_index_split.py": {
+                "sha256": "a7ce21865ddba8cc9eacbc5cb3c357c18ae3b77cf0b747b9efaeff877dade58c",
+                "bytes": 8198
+              },
+              "code_snapshot/flashppi/indexed_data.py": {
+                "sha256": "f4132bf66147d08a285148f0d31c745f9edf06d5e1492d22cdbab2614c7c7f1c",
+                "bytes": 7116
+              },
+              "code_snapshot/tools/audit_conglab_ecoli.py": {
+                "sha256": "e47fffdc7bc08097e2abf3a393c015676a1391ce8d53abf034e4ab23f5954373",
+                "bytes": 8493
+              },
+              "code_snapshot/tools/prepare_conglab_mixture.py": {
+                "sha256": "ee734d190518afe3de888b1f4293631f99861f41c08ade9f4428079b9fa5378a",
+                "bytes": 17236
+              },
+              "code_snapshot/tools/prepare_ppi_finetune_split.py": {
+                "sha256": "5bd816d3d36b182c48fc57f6e20b8d86d87541a1a5ab9e5a8b0059a74fdbe24c",
+                "bytes": 30747
+              },
+              "code_snapshot/flashppi/cropping.py": {
+                "sha256": "64a7f914601beb6b71aa82a9ba11f98423ac8a933ddb29e6b4a58553b4cf95e5",
+                "bytes": 5267
+              },
+              "code_snapshot/flashppi/ddi_common.py": {
+                "sha256": "abe625555dffaf2bbf46eeade737a04c27d30c7224730ba7cc85916f5bd0407d",
+                "bytes": 1703
+              },
+              "code_snapshot/tests/test_indexed_split.py": {
+                "sha256": "9bb139e2584f3247dc7b6cc2b7ccfae609b836a9aba6ef19e45de0260a7955c9",
+                "bytes": 9184
+              },
+              "code_snapshot/tests/test_conglab_ecoli_protocol.py": {
+                "sha256": "6af30ad5479fa648f6cd277c8d1dc458c756e297e699d305dd4e15683ef791a4",
+                "bytes": 2164
+              },
+              "code_snapshot/configs_data/expanded_conglab_pinder_teddymer_v1.json": {
+                "sha256": "9e722c0aa8d8bd516824d9d8a4a529ee28e6a026f5da28e1d73f12b2c4cb3012",
+                "bytes": 1005
+              },
+              "code_snapshot/requirements-data-index.txt": {
+                "sha256": "8d9f710e7692cf269cbeb06714155b9554780acd87bd862b16041247a8803eec",
+                "bytes": 98
+              }
+            },
+            "tests": {
+              "passed": 6,
+              "failures": 0,
+              "errors": 0,
+              "hardware": "CPU",
+              "report": "code_tests.xml",
+              "omitted": "unrelated LoRA optimizer test"
+            },
+            "storage": {
+              "scratch_removed_bytes": 15635539226,
+              "full_training_payloads_copied": false
+            }
+          }
+        },
+        "status.json": {
+          "sha256": "51449212dff83df1b8d620245df039a5d4c9fd7446fc400cda8f72aabeee48a5",
+          "content": {
+            "state": "complete",
+            "train_rows": 10984272,
+            "legacy_counts": {
+              "ppi": 256596,
+              "ddi": 570709
+            },
+            "verification": "verification.json",
+            "training_started": false,
+            "audit_status": "passed_with_inherited_overlap",
+            "inherited_homology": {
+              "ppi": {
+                "legacy_rows": 256596,
+                "val_either_endpoint": 0,
+                "test_both_endpoints": 0,
+                "test_either_endpoint": 31159,
+                "val_or_test_rule": 0,
+                "val_exact_endpoint": 0,
+                "test_both_exact_endpoints": 0
+              },
+              "ddi": {
+                "legacy_rows": 570709,
+                "val_either_endpoint": 541,
+                "test_both_endpoints": 508,
+                "test_either_endpoint": 23594,
+                "val_or_test_rule": 1047,
+                "val_exact_endpoint": 0,
+                "test_both_exact_endpoints": 0
+              }
+            }
+          }
+        },
+        "FILTER_PROTOCOL_RETIRED.json": {
+          "sha256": "41b890f4fca68d370d5fb8dc6ed9e826e2e5209edda3db39a3db4dfce6aac0ae",
+          "content": {
+            "date": "2026-10-22",
+            "reason": "User requires original filtering conditions. Automatic k=7 expansion is not approved for use.",
+            "replacement": "data/expanded_conglab_pinder_teddymer_legacy_v1",
+            "replacement_config": "configs_data/expanded_conglab_pinder_teddymer_legacy_v1.json",
+            "historical_artifacts_preserved": true
+          }
+        }
+      }
+    }
+  ],
+  "total_allocated_bytes": 7932018688,
+  "retained": [
+    "data/conglab_ecoli_v1",
+    "data/expanded_conglab_pinder_teddymer_legacy_v1",
+    "data/conglab_distilled_ecoli_rf2ppi_v3"
+  ],
+  "baseline_comparison": "/home/zlab/flashppi_data/conglab_distilled_ecoli_rf2ppi_v3/comparison_baseline.json",
+  "verified_absent": true,
+  "completed_build_scratch_cleanup": {
+    "path": "/home/zlab/flashppi_data/conglab_distilled_ecoli_rf2ppi_v3/build_scratch",
+    "allocated_bytes": 4451086336,
+    "at": "2026-10-24T10:09:26.038124+00:00",
+    "reason": "RF2-PPI v3 build completed and passed independent audit; all formal artifacts and source payloads remain.",
+    "verified_absent": true
+  },
+  "total_with_completed_build_scratch_bytes": 12383105024
+}

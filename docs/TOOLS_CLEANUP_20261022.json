@@ -1,0 +1,263 @@
+{
+  "date": "2026-10-22",
+  "reason": "User requested obsolete tools removed; retain maintained entry points and required dependencies",
+  "removed_scripts": 35,
+  "retired_script_only_test_files": [
+    "test_ddi_homology.py",
+    "test_ddi_validation_builder.py",
+    "test_multispecies_test_builder.py",
+    "test_ddi_launch.py",
+    "test_contact_improvement_pilot.py"
+  ],
+  "remaining_scripts": 23,
+  "removed": [
+    {
+      "path": "tools/audit_interface_cropping.py",
+      "bytes": 4311,
+      "sha256": "82746051236405be43335162a3761dc719ecc7bc223b853fe47309777e8c36b6"
+    },
+    {
+      "path": "tools/audit_rf2ppi_exact_overlap.py",
+      "bytes": 3189,
+      "sha256": "78a827f5a7111f42a5ef6a680a77ae1a7a6d2c75dd1ae97cea13ed0174f00990"
+    },
+    {
+      "path": "tools/check_finetune_replay.py",
+      "bytes": 1730,
+      "sha256": "31fd727a69f5e93399daccbb34d352817726398c4924d6a6f66f135807025bfa"
+    },
+    {
+      "path": "tools/check_patch_experiment.py",
+      "bytes": 11853,
+      "sha256": "b48820ce96c7a3162adb1772f9dc0a757717535e3aaeab2eba908d90c5a10b98"
+    },
+    {
+      "path": "tools/continue_finetune_experiments.py",
+      "bytes": 7906,
+      "sha256": "5644275a2b96ae2f0cb8819fd4e5e63da9289ea0f901738ca0b5b1e5fe5da70d"
+    },
+    {
+      "path": "tools/diagnose_ddi_focal.py",
+      "bytes": 8497,
+      "sha256": "af7e23f5c0f9a6069156af35d84c1bf3e017d4604ec3ac8bed2b5803ed4d637e"
+    },
+    {
+      "path": "tools/diagnose_ddi_readouts.py",
+      "bytes": 6862,
+      "sha256": "f634625d23434e378e27113dd9f621ed77acc4c7ef72ad93846ba2ea1d166666"
+    },
+    {
+      "path": "tools/diagnose_finetune_validation.py",
+      "bytes": 8238,
+      "sha256": "cf116d3516df4901ca2c7f20304f07046be7064afa8861923bdb6795ed2cf2de"
+    },
+    {
+      "path": "tools/diagnose_motif_checkpoint.py",
+      "bytes": 24909,
+      "sha256": "44bb91c9a14f426e92db4d3cb00790ff9b1e155b627e521e1323c57e77f7f230"
+    },
+    {
+      "path": "tools/download_inventory_sources.py",
+      "bytes": 2364,
+      "sha256": "50b4ff52bb6ddae1f628dd63ed53f2d89418d4d034183056e84f0b1e2e2b75e5"
+    },
+    {
+      "path": "tools/download_multispecies_test_sources.py",
+      "bytes": 2866,
+      "sha256": "e4d9fabce79c9baf34ff01f309a488a64efbfc70583d98e2f0bb03ae829ad500"
+    },
+    {
+      "path": "tools/prepare_motif_coverage.py",
+      "bytes": 12786,
+      "sha256": "32103a5a66bca0a727db6613a7fa175878ff83e0baa12b7f3ccbc2906625187b"
+    },
+    {
+      "path": "tools/prepare_server_bundle.py",
+      "bytes": 4856,
+      "sha256": "26203205843c7bbde300f17174461dbdb7639e4e5c68a10d8009249a037d1cf4"
+    },
+    {
+      "path": "tools/prepare_unique_negative_continuation.py",
+      "bytes": 14693,
+      "sha256": "51723c2fb230807ab90228157d3acca5db427aaee6cdeebd69107865a2d1e6b6"
+    },
+    {
+      "path": "tools/recover_inventory_sequences.py",
+      "bytes": 3187,
+      "sha256": "6172954eca6125fe43ea91f4ff6b178ceb3de7cda615432e3952cc45b809e642"
+    },
+    {
+      "path": "tools/report_model_improvements.py",
+      "bytes": 14533,
+      "sha256": "ecc532b9f95bf66276e65481778c763018a301927baffda24cda127fa28e7ff6"
+    },
+    {
+      "path": "tools/report_motif_diagnostics.py",
+      "bytes": 18821,
+      "sha256": "ca7af598fd69144944586bad8d525e05425223328281fc33b1295d413a6fd66f"
+    },
+    {
+      "path": "tools/run_finetune_round.py",
+      "bytes": 7222,
+      "sha256": "d641f222a19ed9fe115afe2ed64ef1edb317098fe9f094f1f4a27cde2bcbf6c7"
+    },
+    {
+      "path": "tools/run_lora_comparison.py",
+      "bytes": 7810,
+      "sha256": "12c8581d8f0e6e217455edce16a1733f5ebaaa610d9e417563288378fc0d59a0"
+    },
+    {
+      "path": "tools/run_model_improvement_plan.py",
+      "bytes": 3565,
+      "sha256": "788c22643c113d5958d1b1c13ea048aed866a56ac4e1ad65d1ff00951b563226"
+    },
+    {
+      "path": "tools/run_motif_experiment.py",
+      "bytes": 10412,
+      "sha256": "b39a3f7f99e49a97e3692fcd6fc5b69c32413dce7dc6b8a0e0d10d516036794c"
+    },
+    {
+      "path": "tools/run_motif_training.py",
+      "bytes": 11169,
+      "sha256": "8b307abb512d50fa07c576c3b495012e6226f4f7244fcf4aca6c086e6899b9c7"
+    },
+    {
+      "path": "tools/summarize_finetune_experiments.py",
+      "bytes": 12431,
+      "sha256": "24a6462e9105706fdfaf7f70ad0678b40c1fd326b7c794645c400ad458657044"
+    },
+    {
+      "path": "tools/verify_improvement_heads.py",
+      "bytes": 5688,
+      "sha256": "944a90d09a7e3feae4d8227991a59918a81b96d93389e193cd5b2209998edb6d"
+    },
+    {
+      "path": "tools/audit_ddi_preparation.py",
+      "bytes": 7322,
+      "sha256": "7157affb0ddb48795c9c0eebe47ce5069cfe13c581b4ad64f55b3c424ff1d0dc"
+    },
+    {
+      "path": "tools/build_ddi_validation.py",
+      "bytes": 41893,
+      "sha256": "d8ab0e7a7fa7641915d7ec364e35d1741f1fe30bd1403afb47485bc65b2f3895"
+    },
+    {
+      "path": "tools/build_multispecies_test.py",
+      "bytes": 45062,
+      "sha256": "2b16bc91462bce2b80922b17ddec68fe950376bc40e38c9e0f7adb07b45d3c77"
+    },
+    {
+      "path": "tools/finish_ddi_preparation.py",
+      "bytes": 4450,
+      "sha256": "2576cd1a72d225db20203be981db864e4e658a16131c11dd5e5d64a76cf9416c"
+    },
+    {
+      "path": "tools/inventory_nine_species.py",
+      "bytes": 20232,
+      "sha256": "cc11cd3c25b57db6fa381be057a2ebef67c03f8354e5245e528080bd7713e798"
+    },
+    {
+      "path": "tools/pilot_clip_improvements.py",
+      "bytes": 17440,
+      "sha256": "65524fe6a7e590ac0dc5e7ba6ede7f9cc307aa0cdf925ebc18bc3124335e69fc"
+    },
+    {
+      "path": "tools/pilot_contact_improvements.py",
+      "bytes": 10910,
+      "sha256": "a1e4e6153f8ce471588a272544adc422aaffa5c631b3b4afc04532c120de6eef"
+    },
+    {
+      "path": "tools/preflight_ddi.py",
+      "bytes": 9386,
+      "sha256": "cdfb1918d3c14894866d938c9d11781e1cb9148041da2f2948b62a2210c3a8d1"
+    },
+    {
+      "path": "tools/prepare_finetune_validation.py",
+      "bytes": 11449,
+      "sha256": "d8064de273e412854f1c7ee73b4962b0c7700894edc8ca4c3ba27afddd4b4481"
+    },
+    {
+      "path": "tools/start_ddi_when_ready.py",
+      "bytes": 7252,
+      "sha256": "200afb7e2def9a030be7e84f9ef59a28acf42f534a6431ecdfec5f6ebc090cbe"
+    },
+    {
+      "path": "tools/diagnose_model_improvements.py",
+      "bytes": 14426,
+      "sha256": "b1479283d046cfbffcbeda26fb1be2cd87fa7437d680f0a6cd64cc0ffff4565d"
+    },
+    {
+      "path": "tests/test_ddi_homology.py",
+      "bytes": 6279,
+      "sha256": "83bb009499eca7a73382c09142b489a2b9a9f6a8f092b80f2f876a2366254fac"
+    },
+    {
+      "path": "tests/test_ddi_validation_builder.py",
+      "bytes": 6242,
+      "sha256": "2fe7e0967dac43000742b0d25c0f592c2a1f0a07b09ce228ea6aa2a5773fa8c2"
+    },
+    {
+      "path": "tests/test_multispecies_test_builder.py",
+      "bytes": 2888,
+      "sha256": "bffe9d54300589723db556ae64ee5df65b4a9f7bfbe6262b38e96ac7209f724f"
+    },
+    {
+      "path": "tests/test_ddi_launch.py",
+      "bytes": 3775,
+      "sha256": "cf24efed45359c764f5ffd9626c3bb4d17b8b663804ee7924c9441acc1a2a39c"
+    },
+    {
+      "path": "tests/test_contact_improvement_pilot.py",
+      "bytes": 1448,
+      "sha256": "a89f606a57b9beace145dc1dd5c76aa30a239b455591d94dae40b79bf565ef96"
+    },
+    {
+      "path": "configs_data/expanded_conglab_pinder_teddymer_v1.json",
+      "bytes": 1005,
+      "sha256": "9e722c0aa8d8bd516824d9d8a4a529ee28e6a026f5da28e1d73f12b2c4cb3012"
+    }
+  ],
+  "retained": [
+    "tools/audit_conglab_ecoli.py",
+    "tools/audit_expanded_index_split.py",
+    "tools/build_ppi_distance_archives.py",
+    "tools/check_original_glm2.py",
+    "tools/check_research_model.py",
+    "tools/check_research_replay.py",
+    "tools/compare_ddi_contact_readouts.py",
+    "tools/download_esmc_for_fusion.py",
+    "tools/download_official_flashppi.py",
+    "tools/download_original_glm2.py",
+    "tools/evaluate_ddi_checkpoint.py",
+    "tools/evaluate_ddi_validation.py",
+    "tools/evaluate_official_ecoli.py",
+    "tools/evaluate_research_checkpoint.py",
+    "tools/evaluate_rf2ppi.py",
+    "tools/prepare_conglab_ecoli.py",
+    "tools/prepare_conglab_mixture.py",
+    "tools/prepare_ddi_pretrain.py",
+    "tools/prepare_expanded_index_split.py",
+    "tools/prepare_ppi_finetune_split.py",
+    "tools/run_server_training.sh",
+    "tools/server_preflight.py",
+    "tools/setup_server_env.sh"
+  ],
+  "recovery_archive": "artifacts/cleanup/tools_retired_20261022.tar.gz",
+  "recovery_archive_sha256": "4ce4e3674a178b5626db6235d0b2aa6fff20d94cb576de925b3ae087550d4b44",
+  "protected_original_scripts": [
+    "tools/audit_conglab_ecoli.py",
+    "tools/prepare_conglab_ecoli.py",
+    "tools/prepare_conglab_mixture.py",
+    "tools/prepare_ppi_finetune_split.py"
+  ],
+  "core_model_tests_removed": 0,
+  "removed_generated_tool_bytecode_bytes": 484534,
+  "verification": {
+    "remaining_references_to_deleted_scripts": 0,
+    "original_locked_baseline_files_unchanged": 12,
+    "cpu_checks_passed": 34,
+    "cpu_checks_deselected": 1,
+    "deselected_reason": "Unchanged LoRA optimizer test outside this task",
+    "shell_syntax": "passed"
+  }
+}

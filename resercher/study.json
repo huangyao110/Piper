@@ -1,0 +1,24 @@
+{
+  "name": "clip_residue_gate_v1",
+  "seed": 20261023,
+  "top_fraction": 0.1,
+  "gate_shuffles": 20,
+  "annotation_permutations": 100,
+  "bootstrap_replicates": 1000,
+  "minimum_free_gpu_mib": 18000,
+  "snapshot_fallback": "experiments/frozen_encoder_speedup_20261022/runtime/flashppi",
+  "checkpoints": {
+    "before_1616": "experiments/contact_gap_diagnosis_20261018/b_twoepochs_20261020/train_after_test_001413_20261022_084327_001413/checkpoints/step_001616",
+    "after_2182": "experiments/frozen_length_bucket_trial_20261022/train_prefix_bucket_001711/checkpoints/step_002182"
+  },
+  "inputs": {
+    "structures": {
+      "path": "data/conglab_ecoli_v1/validation.parquet",
+      "sha256": "2e51dd085e7b5df5a88e13b82d6d2893d77cdabd0614ded9f73958adeaf04fd4"
+    },
+    "interactions": {
+      "path": "data/conglab_ecoli_v1/interaction.parquet",
+      "sha256": "b7f8a41ff0b4c2ee250892927d2daffe3ec45ded262a1ac2b18102319801f42d"
+    }
+  }
+}

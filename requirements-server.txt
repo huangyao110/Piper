@@ -1,0 +1,2 @@
+# Compatibility alias for historical environment commands.
+-r requirements.txt

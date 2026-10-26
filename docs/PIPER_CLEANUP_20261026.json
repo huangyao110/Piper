@@ -1,0 +1,436 @@
+{
+  "date": "2026-10-26",
+  "project": "Piper",
+  "scope": "Retire standalone DDI prototype, manual superseded probes and old pilot configs. No active runtime, data membership, checkpoint or locked filtering change.",
+  "archive": "artifacts/cleanup/piper_reorganization_20261026/retired.tar.gz",
+  "retired": [
+    {
+      "path": "flashppi/ddi_data.py",
+      "sha256": "cd2558f83aefaa8e20c7e2b489019547ed3a7a1821326155c70310a4b6ac641a",
+      "bytes": 7315
+    },
+    {
+      "path": "flashppi/ddi_engine.py",
+      "sha256": "0c12c292541f503c0aba16a923d597d7907071577a6cd6e78f59d31989985329",
+      "bytes": 4702
+    },
+    {
+      "path": "flashppi/ddi_eval.py",
+      "sha256": "a7c58a4fc171a34636f425c5c1f9610bc77b4f8f70144ea836cd6e082893c953",
+      "bytes": 5445
+    },
+    {
+      "path": "flashppi/ddi_model.py",
+      "sha256": "59b07f8fd1fd17d85a3a93cc05b83cfdc037f42c3c366b2cc1d054036c1b05a5",
+      "bytes": 6831
+    },
+    {
+      "path": "flashppi/ddi_objectives.py",
+      "sha256": "ba1e96161a1c9b20cd5e34138400f73f9e1eb87efd2743b2cdbeca2278cba0fc",
+      "bytes": 2994
+    },
+    {
+      "path": "flashppi/ddi_train.py",
+      "sha256": "9d9a0eabae2dd66533dd1a4753f62862c03d4665452bb9de5c115ee63b2c295b",
+      "bytes": 11472
+    },
+    {
+      "path": "tools/prepare_ddi_pretrain.py",
+      "sha256": "974d9e8e942b674b07370760b6521e8c754b48becf5deb92865ccd573eee933e",
+      "bytes": 17264
+    },
+    {
+      "path": "tools/compare_ddi_contact_readouts.py",
+      "sha256": "6b19bc85ed369054bf91cd61e0970824ed9702788e9482796d4e38a488f9043d",
+      "bytes": 14250
+    },
+    {
+      "path": "tools/evaluate_ddi_checkpoint.py",
+      "sha256": "593088b28d90f82c76bc1dcb6e332c21210caebe731e25c184b7751ab5ef5618",
+      "bytes": 1253
+    },
+    {
+      "path": "tools/evaluate_ddi_validation.py",
+      "sha256": "b410f1fbcfdaaa83ed25f823c20699616c63dd3dadc6b7737e19b6bd7134eda2",
+      "bytes": 10249
+    },
+    {
+      "path": "tools/evaluate_rf2ppi.py",
+      "sha256": "09f79b697dc7967f0f7a84202521f709d130d7db7733b9fd0282e035abb6a4d6",
+      "bytes": 7754
+    },
+    {
+      "path": "tools/check_original_glm2.py",
+      "sha256": "055c452a959b904d594e9e1165bac8540febbd615be0857054b1733fc6a12d37",
+      "bytes": 2815
+    },
+    {
+      "path": "tools/check_research_model.py",
+      "sha256": "c764fb76af22179a18eaf524e2a2867cf8e6a8850ba4c4e9d08f4f91c71e4e60",
+      "bytes": 5949
+    },
+    {
+      "path": "tests/test_ddi_pretraining.py",
+      "sha256": "fd5830dbb6df7db801a923238c2ef364321fed40f6859a444adac5500bcc6f28",
+      "bytes": 13344
+    },
+    {
+      "path": "tests/test_ddi_contact_readouts.py",
+      "sha256": "375816731386e8bd2338d59430e3a43e5c11cd4dc0285390d944d0ed74a267a3",
+      "bytes": 1998
+    },
+    {
+      "path": "configs_train/conglab_ecoli_motif16_s4_lora16_2epochs_v1.json",
+      "sha256": "86985484562e9e0d148de84abc273b019559f841b83bb571652706c47df3b73b",
+      "bytes": 1647
+    },
+    {
+      "path": "configs_train/conglab_motif_patch16_s4_pilot_v1.json",
+      "sha256": "39eeeee3fe4e46e50057e6347206fac92b5eb98872406b7ee7843eb61af6cedc",
+      "bytes": 1462
+    },
+    {
+      "path": "configs_train/server_glm_esmc300_glmlora.json",
+      "sha256": "07b1c305e8dbdc78f8ffecdc54ce8bd226b1aea1d9c366c1b83e45d240ca11f0",
+      "bytes": 1322
+    },
+    {
+      "path": "configs_train/expanded_esmc_prott5_gated_v1.json",
+      "sha256": "1289e659a1400155c82937a9e7a6b420d7fe58498746e286981b0ef25b3d8bbd",
+      "bytes": 2714
+    },
+    {
+      "path": "configs_train/sequence_masking_v1.json",
+      "sha256": "11c92963b0473b151537ae4f60b1715a9ed47a199820c2569a9bd43d04bba9fe",
+      "bytes": 56
+    },
+    {
+      "path": "configs_train/finetune_head_control_bs1024_micro32_v1.json",
+      "sha256": "9951b33c5aefa20794dc3b13a326c1abccabab739d4f9f35c6022571557a87b2",
+      "bytes": 883
+    },
+    {
+      "path": "configs_train/finetune_head_control_bs1024_micro16_v1.json",
+      "sha256": "9772fffe4c91706a3fdb6d628d9b85428099c5c8884bb244edae6378bf5a08cb",
+      "bytes": 883
+    },
+    {
+      "path": "configs_train/conglab_motif_residue_pilot_v1.json",
+      "sha256": "f99328469143481901b902271b01c3e0e40030bf6bcb4ac5f697360fc4d393a2",
+      "bytes": 1427
+    },
+    {
+      "path": "configs_train/conglab_ecoli_motif16_s4_lora16_coverage_unique_negatives_v3.json",
+      "sha256": "7a43b2437f5da5f3c44208b8573159cc76d61562a460ff8c22841bb4f7fcafa8",
+      "bytes": 2175
+    },
+    {
+      "path": "configs_train/server_glm_fusion_control.json",
+      "sha256": "5f533c19d2817a6dd00cbec93072aae9b784a71bf8f8c8ad07806562cb49ad02",
+      "bytes": 1298
+    },
+    {
+      "path": "configs_train/contact_improvement_pilot_v1.json",
+      "sha256": "a90bb55af60d25d8c7f6d91ae6a99fea8d73a5f5d6833b0c524a42622df06a78",
+      "bytes": 365
+    },
+    {
+      "path": "configs_train/motif_patch16_s4_pilot_v1.json",
+      "sha256": "b645a1cc68569cc0aae736a702ade6a41762bc1458f163e34960416a675f6c61",
+      "bytes": 1405
+    },
+    {
+      "path": "configs_train/motif_residue_pilot_v1.json",
+      "sha256": "7d0dcc80c465a590d2ebaaac61e62f4b6b23cb8258122b9f5c047c760aeb064a",
+      "bytes": 1370
+    },
+    {
+      "path": "configs_train/ddi_esmc300_v1.json",
+      "sha256": "0d57e03570d1a1564e7606c7e6452ee86acfd615796f08ff26dd5e9d7df8d641",
+      "bytes": 1210
+    },
+    {
+      "path": "configs_train/finetune_lora_bs1024_micro16_v1.json",
+      "sha256": "998a215cb645e6c25a072fcce5f1fcc61fd3345be630462d9c0d4d1221d7d4aa",
+      "bytes": 969
+    },
+    {
+      "path": "configs_train/server_glm_head.json",
+      "sha256": "497369e1eb7aba0871e936e92421219a1fd4317d971054915596857e7f83093e",
+      "bytes": 1291
+    },
+    {
+      "path": "configs_train/finetune_head_v1.json",
+      "sha256": "a4665feb31cb665ee45f7192344f0c5303272653a335c1660dabfec65ba85afd",
+      "bytes": 748
+    },
+    {
+      "path": "configs_train/clip_improvement_pilot_v1.json",
+      "sha256": "0353e3c1dff66f59af6b522df45ea99e71ea518fb8e66c0b5d16e388d0650ce0",
+      "bytes": 642
+    },
+    {
+      "path": "configs_train/finetune_lora_bs1024_micro16_interface_v2.json",
+      "sha256": "ed63aa8e96341e97d869400dfe79dbd9e7b0436574cdbc12d79b3f0f6436c46d",
+      "bytes": 1123
+    },
+    {
+      "path": "configs_train/conglab_ecoli_residue_fresh_lora_v1.json",
+      "sha256": "7eedcc7a89bd13bc1d5714a4d789a99a87efc5d31d601b10698691ccd157c634",
+      "bytes": 1613
+    },
+    {
+      "path": "configs_train/conglab_ecoli_motif16_s4_lora16_coverage_2epochs_v2.json",
+      "sha256": "f819545e3b8447e2758eb5a5dbfff9661eb6afa79d29a08fa18d7d74cb934aec",
+      "bytes": 1871
+    },
+    {
+      "path": "configs_train/finetune_head_bs1024_v1.json",
+      "sha256": "714d30d099dff71c88e2cc928061ab021a2b71af79ec7e89f1f27d9da5b9775c",
+      "bytes": 751
+    },
+    {
+      "path": "configs_train/server_glm_esmc300_frozen.json",
+      "sha256": "423c78a2fbf8388799f2fcbd35ad48bc95d38486168ee18637deda6fafee6a90",
+      "bytes": 1327
+    },
+    {
+      "path": "configs_train/finetune_lora_bs1024_micro32_v1.json",
+      "sha256": "6d1aa49f760b66ee6e7b95adcd252edd2011a418497a288052252c2bfe0e6e21",
+      "bytes": 969
+    },
+    {
+      "path": "configs_train/server_glm_lora.json",
+      "sha256": "5944cdd9f19d2a74aedceee332eb0e9bd040028bb4ce03a79d64f7affb177858",
+      "bytes": 1286
+    },
+    {
+      "path": "configs_train/finetune_head_control_bs1024_micro16_interface_v2.json",
+      "sha256": "fd4a26f4134f7c10c5f611330def866d206f2d2c5eb8035cd0a902b91cdfae3e",
+      "bytes": 1037
+    },
+    {
+      "path": "configs_train/conglab_ecoli_patch16_s4_fresh_lora_v1.json",
+      "sha256": "03cac9cd52942811cc01c3c5e6b278cc23a2de8eebe6727c7b456b5d2af3b6b3",
+      "bytes": 1648
+    },
+    {
+      "path": "resercher/execute_with_resume.py",
+      "sha256": "894b12e741e958d85557a6b437d6dd7a60d5bbb3f2552cea5517a08b7077cb32",
+      "bytes": 10376,
+      "archive": "artifacts/cleanup/piper_reorganization_20261026/research_controller_retired.tar.gz",
+      "reason": "Completed one-off stop/extract/resume controller for the historical study; no active callers"
+    }
+  ],
+  "protected_before": {
+    "configs_data/conglab_distilled_ecoli_rf2ppi_v3.json": "6e8a6e12b6dae6fd89f977e6f804ef2e1a94aa025a8a72c1ee6467392b17ef3f",
+    "configs_data/conglab_distilled_ecoli_rf2ppi_v3.lock.json": "c7b87860e08c17a911eae7a01f13b973c34dcd60ff36ffd5998ef9c731f7f7b0",
+    "configs_data/conglab_distilled_ecoli_strict_v2.json": "2bb3ac743e8cbb37b5cf04847a855c81cc0a8741a247e0620f34114ce12d24dc",
+    "configs_data/conglab_distilled_ecoli_strict_v2.lock.json": "b8a3a133238ac99c09a817241d77fade696d91266b67b4c0fab9b373b10b5a4f",
+    "configs_data/conglab_ecoli_audit_v1.json": "20696862157ed8c725f979b6dae85adc800b452d03ab2a166d717a8bd4456101",
+    "configs_data/conglab_ecoli_filter.lock.json": "125e80a50007beeea0bd987dd843c4fc94fdcda81b51456264847e05004b4fea",
+    "configs_data/conglab_ecoli_v1.json": "5d977349f429f0716aa3e6af38ea7e734c868bbf7a5144cfbf386672242e16a3",
+    "configs_data/conglab_mixture_v1.json": "da18f72966590cd87e0f85f4bdf04ed942e636be5d1034a6ee1a991a24593422",
+    "configs_data/ddi_pretrain_v1.json": "85749b5045519eac133b5b02db2e9d952a62d71472790cbbfccaefd99456b6ce",
+    "configs_data/ddi_validation_v1.json": "ba3a2aacbc56aaa38130e0ab68cbacf1d346d25d270f532464f04ac4d464a3a8",
+    "configs_data/expanded_conglab_pinder_teddymer_legacy_v1.json": "180f6a717bd80972dd610c73908d58917a2c966360d71ff87ceece9c3fd8b839",
+    "configs_data/multispecies_test_v1.json": "5696716812f8c496e30a5103d996efe27cf1397cf3faeda80238094dbbbddcf4",
+    "data/conglab_ecoli_audit_v1/audit.json": "9e2cc85eff6aada65578d3ec19e7b931a09fdda5ae88efcbbf830f37ec49cd65",
+    "data/conglab_ecoli_audit_v1/ddi_ecoli_hits.json": "db0c65c3faec731dee71b64207430b7ecfd78765973e5abe87e9bef32a1f3822",
+    "data/conglab_ecoli_audit_v1/ppi_ecoli_hits.json": "aa11788797e12ae263fafca0bbe34e973e712265b333c1a9638d2acdf7739f0f",
+    "data/conglab_ecoli_v1/ddi_val_hits.json": "6474590b63039dd30b7b82f0084224eb90b1266735488375493cfcb91312305d",
+    "data/conglab_ecoli_v1/manifest.json": "86f325cd1325a391ca4e0ef48378ec74727e1948de91e42d0a66271de389fc7d",
+    "data/conglab_ecoli_v1/ppi_val_hits.json": "24b35a93f622b82a17a754085b7c2882e786b93d6159c5a7bf08178fb6a542d3",
+    "experiments/rf2ppi_v3_fresh_4epochs_20261024/config.json": "87b21cad3aca627bc5777db5f7a0a723580e90e21254440f1e831952192604ba",
+    "experiments/rf2ppi_v3_fresh_4epochs_20261024/control.py": "64b5c0079b621e2674080fe97bb5a80f7b32a2658f33af84c4c48e6565bc912d",
+    "experiments/rf2ppi_v3_fresh_4epochs_20261024/runtime_sha256.json": "04ca417642b2c99102b7a2647d50062cab106a558914064205a73e38aa17ce88",
+    "flashppi/coverage_migration.py": "6eab5bd15595fd75049ae3a4601c2d9da5af08c2700a104f9a2679298d256027",
+    "flashppi/cropping.py": "64a7f914601beb6b71aa82a9ba11f98423ac8a933ddb29e6b4a58553b4cf95e5",
+    "flashppi/data_protocol.py": "3e4584d304fba16b9676ab08692147f592fa3ad162ff2708d6d2c34fd9efb28e",
+    "flashppi/dataset.py": "a5a60793e55043194445d2992ea9f2b0d42b75b1d9f555475418e8519624e0a3",
+    "flashppi/finetune.py": "d0640ddc42304319f184964ecafa8732158d04e8e079036354a8ece773e3df4b",
+    "flashppi/frozen_embedding_cache.py": "09b8a1a69881e77fa78cbdae00deea151aeae54a5fea66aa3a0b47b8cebb7a26",
+    "flashppi/frozen_prefix_cache.py": "243aba046afb1231c1be0e5af5ce2d36d314fe6cc9dca56fce2d4177ed1566dc",
+    "flashppi/frozen_prott5.py": "cd83bd69b0aa6eb325e9ec52fce337b33c2d3e3fd447be7ce9687e190a8fccc7",
+    "flashppi/full_finetune.py": "406562edf5d5a91a59a7bfd1cc7ce613b12ebe8913abbf2f5443119c8bc4c883",
+    "flashppi/gated_modules.py": "7aea46f2ba86b304d7d27f043039a49e548519dd026364ac49f4e34b0d1cb4d9",
+    "flashppi/gated_warm_start.py": "1e6ec868d061c0b8ea6e526e3bf21bae3674ee067d392dadad45d780f54994fb",
+    "flashppi/glm_initialization.py": "3675bb81a09b078609895c041bc12eaca735ab89dd546bb63041911031979cd0",
+    "flashppi/indexed_data.py": "caa2baa03b257d87b4c009c2b14ca484287cbab20fdf43fcc84888025af3e3cd",
+    "flashppi/indexed_training.py": "2326aae4d9c7ea6f0d27ebaf7cca97d174fdfeca60698218209e1ecf48141aa2",
+    "flashppi/layers.py": "e3490ca26e51edf92bd8b7d3aac1eb8c2118d4f40a4906070927f797dc3f6984",
+    "flashppi/lora.py": "e72c9a10acce7354d399ac077c072d9debea81d4a99e6dc30a85e4425543dc18",
+    "flashppi/loss.py": "4581542b871ec4b27536af0b98d1a4e495af770966a6606036383b96b73715e2",
+    "flashppi/mixed_sampling.py": "d3f41cda492bfd00e769573f48b6f084e318c369f88c716822460b2ac17445a1",
+    "flashppi/model.py": "44455ac0e9d779ac2cae10de715358ee1bfe7dc1e6be2d2aaaf0ee6da64b924e",
+    "flashppi/negative_sampling.py": "d4070b438da2dd8c4cba217229c5aff9fd73ac3551ee4b2a80688af4a13131fd",
+    "flashppi/patch_contact.py": "fcb16a825caced297d2edb528789cc62a77436a42dbbe319aadb7ebc91d1e031",
+    "flashppi/research_distributed.py": "ec63066e80a7fca9043fc14a7d9ad6b7d80d7e882b17ea75e44e5ed3e3ee77a5",
+    "flashppi/research_eval.py": "10b1b2f122b7884650f39ef80598686aed85d3233b85798b45fa35c1950d9ec1",
+    "flashppi/research_model.py": "592f06fbd90a094924305252df0546082472a472a0255dabcabe3b55bc628e21",
+    "flashppi/research_train.py": "9b532e7ab7508ceb7fc33f430cb10ba879f41eb308b41ff485e520926e9b46f5",
+    "flashppi/residue_warm_start.py": "e80a46d7b03a2959c054f24fff6a1249fe420297af79ab24f3b11a8bf3e11d8f",
+    "flashppi/sequence_masking.py": "1f1db9fc9f5ac45c6c0a380e76931df14407b5e112266986e38512fce578ed42",
+    "tools/audit_conglab_ecoli.py": "e47fffdc7bc08097e2abf3a393c015676a1391ce8d53abf034e4ab23f5954373",
+    "tools/check_research_replay.py": "1db976f406a03f74dbef78c0ed86d9fdb9c0a74b5f891afe70a31866a2b24ab1",
+    "tools/evaluate_official_ecoli.py": "09bffe945a6f896633dd54a26aa35620353404787cc3c10a3a8dff3d398ab5c4",
+    "tools/evaluate_research_checkpoint.py": "3278a6773b38f5e26188c4fb78f3fe055b731f20ee1dceb65b32755b97073571",
+    "tools/prepare_conglab_ecoli.py": "427be55939152690a4de604764ac982987d5d781d17e5ab0cc6c7e4fa46a1b2d",
+    "tools/prepare_conglab_mixture.py": "ee734d190518afe3de888b1f4293631f99861f41c08ade9f4428079b9fa5378a",
+    "tools/prepare_ppi_finetune_split.py": "5bd816d3d36b182c48fc57f6e20b8d86d87541a1a5ab9e5a8b0059a74fdbe24c"
+  },
+  "relocated": [
+    {
+      "source": "docs/ESMC_PROTT5_RESIDUE_GATED_20261015.md",
+      "destination": "docs/history/ESMC_PROTT5_RESIDUE_GATED_20261015.md"
+    },
+    {
+      "source": "docs/CONTACT_GAP_DIAGNOSIS_PLAN_20261018.md",
+      "destination": "docs/history/CONTACT_GAP_DIAGNOSIS_PLAN_20261018.md"
+    },
+    {
+      "source": "docs/INTERFACE_CROPPING.md",
+      "destination": "docs/history/INTERFACE_CROPPING.md"
+    },
+    {
+      "source": "docs/CONTACT_GAP_B600_CONTINUATION_20261020.md",
+      "destination": "docs/history/CONTACT_GAP_B600_CONTINUATION_20261020.md"
+    },
+    {
+      "source": "docs/MODEL_IMPROVEMENT_PLAN_20261011.md",
+      "destination": "docs/history/MODEL_IMPROVEMENT_PLAN_20261011.md"
+    },
+    {
+      "source": "docs/FOCAL_LOSS_AUDIT_20261013.md",
+      "destination": "docs/history/FOCAL_LOSS_AUDIT_20261013.md"
+    },
+    {
+      "source": "docs/ADVANCED_MODEL_EXPERIMENTS_20261011.md",
+      "destination": "docs/history/ADVANCED_MODEL_EXPERIMENTS_20261011.md"
+    },
+    {
+      "source": "docs/MOTIF_COVERAGE_20261013.md",
+      "destination": "docs/history/MOTIF_COVERAGE_20261013.md"
+    },
+    {
+      "source": "docs/DDI_VALIDATION_V1_20261013.md",
+      "destination": "docs/history/DDI_VALIDATION_V1_20261013.md"
+    },
+    {
+      "source": "docs/FROZEN_CACHE_PRODUCTION.md",
+      "destination": "docs/history/FROZEN_CACHE_PRODUCTION.md"
+    },
+    {
+      "source": "docs/GLM2_FULL16_PRODUCTION_20261017.md",
+      "destination": "docs/history/GLM2_FULL16_PRODUCTION_20261017.md"
+    },
+    {
+      "source": "docs/DDI_VALIDATION_STEP1800_20261013.md",
+      "destination": "docs/history/DDI_VALIDATION_STEP1800_20261013.md"
+    },
+    {
+      "source": "docs/MULTISPECIES_TEST_V1_20261012.md",
+      "destination": "docs/history/MULTISPECIES_TEST_V1_20261012.md"
+    },
+    {
+      "source": "docs/FROZEN_EMBEDDING_REUSE_AND_TUNING.md",
+      "destination": "docs/history/FROZEN_EMBEDDING_REUSE_AND_TUNING.md"
+    },
+    {
+      "source": "docs/CONTACT_OBJECTIVE_DIAGNOSTICS_20261017.md",
+      "destination": "docs/history/CONTACT_OBJECTIVE_DIAGNOSTICS_20261017.md"
+    },
+    {
+      "source": "docs/SEQUENCE_MASKING.md",
+      "destination": "docs/history/SEQUENCE_MASKING.md"
+    },
+    {
+      "source": "docs/CONTACT_READOUT_DIAGNOSTIC_20261013.md",
+      "destination": "docs/history/CONTACT_READOUT_DIAGNOSTIC_20261013.md"
+    },
+    {
+      "source": "docs/FROZEN_ENCODER_SPEEDUP_20261022.md",
+      "destination": "docs/history/FROZEN_ENCODER_SPEEDUP_20261022.md"
+    },
+    {
+      "source": "docs/CONGLAB_MOTIF_2EPOCHS_20261013.md",
+      "destination": "docs/history/CONGLAB_MOTIF_2EPOCHS_20261013.md"
+    },
+    {
+      "source": "docs/FINETUNING.md",
+      "destination": "docs/history/FINETUNING.md"
+    },
+    {
+      "source": "docs/CONTACT_GAP_DIAGNOSIS_RESULTS_20261018.md",
+      "destination": "docs/history/CONTACT_GAP_DIAGNOSIS_RESULTS_20261018.md"
+    },
+    {
+      "source": "docs/FROZEN_LENGTH_BUCKET_TRIAL_20261022.md",
+      "destination": "docs/history/FROZEN_LENGTH_BUCKET_TRIAL_20261022.md"
+    },
+    {
+      "source": "docs/NINE_SPECIES_TEST_AVAILABILITY_20261012.md",
+      "destination": "docs/history/NINE_SPECIES_TEST_AVAILABILITY_20261012.md"
+    },
+    {
+      "source": "docs/TRAINING_RUNTIME_PROFILE_20261020.md",
+      "destination": "docs/history/TRAINING_RUNTIME_PROFILE_20261020.md"
+    },
+    {
+      "source": "docs/MOTIF_PATCH_PILOT_20261013.md",
+      "destination": "docs/history/MOTIF_PATCH_PILOT_20261013.md"
+    },
+    {
+      "source": "docs/SERVER_RESEARCH_SETUP.md",
+      "destination": "docs/history/SERVER_RESEARCH_SETUP.md"
+    },
+    {
+      "source": "docs/DDI_PRETRAINING.md",
+      "destination": "docs/history/DDI_PRETRAINING.md"
+    },
+    {
+      "source": "docs/CONGLAB_ECOLI_FRESH_LORA_20261013.md",
+      "destination": "docs/history/CONGLAB_ECOLI_FRESH_LORA_20261013.md"
+    },
+    {
+      "source": "docs/CONTACT_GAP_B_TWO_EPOCHS_20261020.md",
+      "destination": "docs/history/CONTACT_GAP_B_TWO_EPOCHS_20261020.md"
+    },
+    {
+      "source": "docs/GLM2_FULL16_MEMORY_PROBE_20261017.md",
+      "destination": "docs/history/GLM2_FULL16_MEMORY_PROBE_20261017.md"
+    },
+    {
+      "source": "docs/MOTIF_UNIQUE_NEGATIVES_20261014.md",
+      "destination": "docs/history/MOTIF_UNIQUE_NEGATIVES_20261014.md"
+    },
+    {
+      "source": "docs/CONTACT_GAP_B_EXTENSION_20261019.md",
+      "destination": "docs/history/CONTACT_GAP_B_EXTENSION_20261019.md"
+    },
+    {
+      "source": "docs/superpowers",
+      "destination": "docs/history/superpowers"
+    },
+    {
+      "source": "esmc-protT5-glm2-gated.md",
+      "destination": "docs/history/esmc-protT5-glm2-gated.md"
+    },
+    {
+      "source": "predict_proteome.py",
+      "destination": "examples/upstream/predict_proteome.py"
+    },
+    {
+      "source": "predict_cross_proteome.py",
+      "destination": "examples/upstream/predict_cross_proteome.py"
+    },
+    {
+      "source": "configs_train/flashppi_esm_small.yaml",
+      "destination": "examples/upstream/flashppi_esm_small.yaml"
+    },
+    {
+      "source": "configs_train/flashppi.yaml",
+      "destination": "examples/upstream/flashppi.yaml"
+    }
+  ]
+}

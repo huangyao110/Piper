@@ -1,0 +1,18 @@
+{
+  "release": "/media/zlab/lexar4t/ppidb/distributions/ppidb-training-20261009_101259",
+  "audit": "data/conglab_ecoli_audit_v1",
+  "output": "data/conglab_ecoli_v1",
+  "test": "artifacts/flashppi_official/ecoli_pdb_benchmark/data/train-00000-of-00001.parquet",
+  "ddi_clusters": "/media/zlab/lexar4t/ppidb/distributions/ppidb-ddi-clusters-20261009_101259/ddi_sequence_clusters.tsv",
+  "mapping_benchmark": "data/ppi_finetune_validation_v1/interaction.parquet",
+  "ppi_test_coverage_rule": "both_coverage_50",
+  "ddi_test_coverage_rule": "candidate_coverage_80",
+  "ppi_val_coverage_rule": "both_coverage_50",
+  "ddi_val_coverage_rule": "candidate_coverage_80",
+  "test_exclusion": "both_chains",
+  "val_exclusion": "either_chain",
+  "validation_positives": 100,
+  "seed": 20261013,
+  "mmseqs": "/home/zlab/miniconda3/bin/mmseqs",
+  "threads": 8
+}

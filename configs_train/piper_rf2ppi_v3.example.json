@@ -1,0 +1,92 @@
+{
+  "mode": "full_last_layers",
+  "model": "artifacts/flashppi_official/flashppi_noecoli",
+  "train": "data/conglab_distilled_ecoli_rf2ppi_v3/train.index.parquet",
+  "seed": 20261024,
+  "max_len": 512,
+  "batch_size": 1024,
+  "chunk_size": 16,
+  "steps": 4216,
+  "learning_rate": 0.0001,
+  "weight_decay": 0.1,
+  "warmup_steps": 200,
+  "max_grad_norm": 1.0,
+  "clip_loss_weight": 0.1,
+  "contact_loss_weight": 1.0,
+  "contact_hard_neg_ratio": 2.0,
+  "contact_random_neg_ratio": 0.0,
+  "contact_self_neg_ratio": 0.0,
+  "swap_self_negative": true,
+  "eval_interval": 200,
+  "epochs": 4,
+  "deterministic": true,
+  "recovery_interval": 100,
+  "early_eval_steps": [],
+  "crop": {
+    "mode": "interface",
+    "candidates": 16,
+    "near_best_fraction": 0.9
+  },
+  "eligible_train_rows": 1078413,
+  "cpu_threads_per_rank": 4,
+  "test": "artifacts/flashppi_official/ecoli_pdb_benchmark/data/train-00000-of-00001.parquet",
+  "fusion": {
+    "source": "esmc_prott5",
+    "esmc_model": "artifacts/esmc_300m",
+    "prott5_model": "artifacts/prot_t5_xl_half_uniref50_enc"
+  },
+  "evaluate_initial": false,
+  "eval_pair_batch": 16,
+  "patch_evaluation": {
+    "window": 3,
+    "stride": 2
+  },
+  "sequence_masking": {
+    "probability": 0.15
+  },
+  "balanced_ppi_ddi": true,
+  "cluster_multiplier": 13658157,
+  "initialization": {
+    "source": "original_glm2",
+    "backbone": "artifacts/glm2_650m_ur50"
+  },
+  "learning_rate_schedule": "cosine",
+  "contact_negative_sampling": {
+    "policy": "unique_heteroprotein_v1",
+    "budget": "legacy_presentations",
+    "legacy_self_budget_ratio": 1.0,
+    "deduplication": "unordered_full_sequence_pair_per_microbatch",
+    "fill": "clip_rank_round_robin",
+    "shortfall": "use_all_unique_and_report"
+  },
+  "clip_pooling": {
+    "type": "residue_gated",
+    "hidden_dim": 64
+  },
+  "residue_contact_gating": {
+    "type": "residual_channel",
+    "hidden_dim": 128
+  },
+  "smoke": false,
+  "frozen_embedding_cache": "cpu",
+  "full_finetune": {
+    "last_layers": 16
+  },
+  "backbone_learning_rate": 1e-05,
+  "indexed_split": "data/conglab_distilled_ecoli_rf2ppi_v3",
+  "indexed_sampling": "balanced_sequence_clusters_source_quota_v3",
+  "phase_start_step": 0,
+  "checkpoint_retention": {
+    "keep_last": 2,
+    "keep_epochs": true
+  },
+  "indexed_source_quota": {
+    "ddi/conglab": 0.5,
+    "ppi/conglab": 0.25,
+    "ppi/distilled": 0.25
+  },
+  "minimum_lr_ratio": 0.1,
+  "evaluation_split": "test",
+  "frozen_prefix_cache": "cpu",
+  "frozen_length_bucket_size": 32
+}

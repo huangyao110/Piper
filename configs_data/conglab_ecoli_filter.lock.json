@@ -1,0 +1,59 @@
+{
+  "protocol_id": "conglab_ecoli_v1_locked",
+  "authority": "User instruction 2026-10-22: use the original filtering conditions; no changes without explicit user approval",
+  "baseline_files": {
+    "tools/audit_conglab_ecoli.py": "e47fffdc7bc08097e2abf3a393c015676a1391ce8d53abf034e4ab23f5954373",
+    "tools/prepare_conglab_ecoli.py": "427be55939152690a4de604764ac982987d5d781d17e5ab0cc6c7e4fa46a1b2d",
+    "tools/prepare_conglab_mixture.py": "ee734d190518afe3de888b1f4293631f99861f41c08ade9f4428079b9fa5378a",
+    "tools/prepare_ppi_finetune_split.py": "5bd816d3d36b182c48fc57f6e20b8d86d87541a1a5ab9e5a8b0059a74fdbe24c",
+    "data/conglab_ecoli_v1/manifest.json": "86f325cd1325a391ca4e0ef48378ec74727e1948de91e42d0a66271de389fc7d",
+    "data/conglab_ecoli_audit_v1/audit.json": "9e2cc85eff6aada65578d3ec19e7b931a09fdda5ae88efcbbf830f37ec49cd65",
+    "configs_data/conglab_ecoli_v1.json": "5d977349f429f0716aa3e6af38ea7e734c868bbf7a5144cfbf386672242e16a3",
+    "configs_data/conglab_ecoli_audit_v1.json": "20696862157ed8c725f979b6dae85adc800b452d03ab2a166d717a8bd4456101",
+    "data/conglab_ecoli_audit_v1/ppi_ecoli_hits.json": "aa11788797e12ae263fafca0bbe34e973e712265b333c1a9638d2acdf7739f0f",
+    "data/conglab_ecoli_audit_v1/ddi_ecoli_hits.json": "db0c65c3faec731dee71b64207430b7ecfd78765973e5abe87e9bef32a1f3822",
+    "data/conglab_ecoli_v1/ppi_val_hits.json": "24b35a93f622b82a17a754085b7c2882e786b93d6159c5a7bf08178fb6a542d3",
+    "data/conglab_ecoli_v1/ddi_val_hits.json": "6474590b63039dd30b7b82f0084224eb90b1266735488375493cfcb91312305d"
+  },
+  "classification": {
+    "identity": "strictly >0.30",
+    "ppi": "both_coverage_strictly_above_0.50",
+    "ddi": "candidate_domain_coverage_at_least_0.80",
+    "test_exclusion": "both_chains",
+    "val_exclusion": "either_chain"
+  },
+  "search": {
+    "mmseqs_version": "18.8cc5c",
+    "kmer_length": 6,
+    "kmer_score": 96,
+    "sensitivity": 7.5,
+    "mask": 0,
+    "shuffle": 0,
+    "prefilter_mode": 0,
+    "alignment_mode": 3,
+    "seq_id_mode": 0,
+    "backtrace": 1,
+    "evalue": 1000000,
+    "threads": 8,
+    "split_memory_limit": "16G",
+    "query_target": "heldout_to_candidate",
+    "references": "test_and_val_searched_separately",
+    "known_sequences": "reuse_original_positive_and_negative_decisions",
+    "novel_sequences": "original_command_with_explicit_observed_k6_score96"
+  },
+  "frozen_outputs": {
+    "train.parquet": {
+      "sha256": "05e540632c5975665cf00842420650bf1402f9b9839ff9c1c7212c04bee21538",
+      "rows": 827305
+    },
+    "validation.parquet": {
+      "sha256": "2e51dd085e7b5df5a88e13b82d6d2893d77cdabd0614ded9f73958adeaf04fd4",
+      "rows": 100
+    },
+    "interaction.parquet": {
+      "sha256": "b7f8a41ff0b4c2ee250892927d2daffe3ec45ded262a1ac2b18102319801f42d",
+      "rows": 228
+    }
+  },
+  "test_sha256": "07dace691cac67561d264fbbcd8deb862ad6356998b129ae57dee7d983de7f6c"
+}

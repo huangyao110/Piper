@@ -5,6 +5,7 @@ from transformers import AutoTokenizer
 from typing import List
 from torch.utils.data import Sampler
 from collections import defaultdict
+from .cropping import interface_crop
 
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
@@ -168,7 +169,7 @@ def create_contact_targets(
         
         if contacts:
             contacts_tensor = torch.tensor(contacts, dtype=torch.long)
-            valid_mask = (contacts_tensor[:, 0] < seq1_len) & (contacts_tensor[:, 1] < seq2_len)
+            valid_mask = (contacts_tensor[:, 0] >= 0) & (contacts_tensor[:, 1] >= 0) & (contacts_tensor[:, 0] < seq1_len) & (contacts_tensor[:, 1] < seq2_len)
             valid_contacts = contacts_tensor[valid_mask]
             
             if len(valid_contacts) > 0:
@@ -192,17 +193,23 @@ class DataCollatorForPPI:
     - Creates the 2D contact map target tensor.
     - Optionally swaps query/target with 50% probability.
     """
-    def __init__(self, tokenizer: AutoTokenizer, max_len: int, swap_augment: bool = True, adds_special_tokens: bool = True):
+    def __init__(self, tokenizer: AutoTokenizer, max_len: int, swap_augment: bool = True, adds_special_tokens: bool = True, crop_config=None, sequence_identity=False):
         self.tokenizer = tokenizer
         self.max_len = max_len
         self.swap_augment = swap_augment
         self.adds_special_tokens = adds_special_tokens  # ESM adds CLS/SEP, gLM2 does not
+        self.crop_config = crop_config
+        self.sequence_identity = sequence_identity
+        if crop_config and crop_config.get('mode') != 'interface':
+            raise ValueError('Unknown crop mode')
 
     def __call__(self, batch: list[dict]):
         # Randomly swap query/target for augmentation
         if self.swap_augment:
             batch = [
-                {'seq1': item['seq2'],
+                {**item, 'seq1': item['seq2'],
+                 'valid1': item.get('valid2'),
+                 'valid2': item.get('valid1'),
                  'seq2': item['seq1'], 
                  'contacts': [(j, i) for i, j in item.get('contacts', [])],
                  'seq1_cluster': item.get('seq2_cluster'),
@@ -212,6 +219,19 @@ class DataCollatorForPPI:
                 for item in batch
             ]
         
+        identity = {}
+        if self.sequence_identity:
+            # Exact local IDs use complete sequences after swap but BEFORE crop
+            # and masking. Different crops of the same protein stay one identity.
+            unique = {s: i for i, s in enumerate(sorted({item[k] for item in batch for k in ('seq1', 'seq2')}))}
+            identity = {f'seq{side}_identity': torch.tensor([unique[item[f'seq{side}']] for item in batch])
+                        for side in (1, 2)}
+        if self.crop_config:
+            residue_budget = self.max_len - 2 if self.adds_special_tokens else self.max_len
+            batch = [interface_crop(item, residue_budget,
+                                    self.crop_config['candidates'], self.crop_config['near_best_fraction'])
+                     for item in batch]
+
         # Extract sequences
         seqs1 = [item['seq1'] for item in batch]
         seqs2 = [item['seq2'] for item in batch]
@@ -247,7 +267,24 @@ class DataCollatorForPPI:
         contacts_list = [item.get('contacts', []) for item in batch]
         contact_targets = create_contact_targets(seq1_lens, seq2_lens, contacts_list, target_map_size)
 
+        validity = []
+        for item in batch:
+            masks = []
+            for side in (1, 2):
+                sequence = item[f'seq{side}']
+                values = item.get(f'valid{side}')
+                values = [True] * len(sequence) if values is None else values
+                if len(values) != len(sequence):
+                    raise ValueError('Structural validity must match sequence length')
+                mask = torch.zeros(target_map_size, dtype=torch.bool)
+                n = min(len(values), target_map_size)
+                mask[:n] = torch.tensor(values[:n], dtype=torch.bool)
+                masks.append(mask)
+            validity.append(masks[0][:, None] & masks[1][None, :])
         return {
+            **identity,
+            'crop_metadata': [item.get('crop_metadata') for item in batch],
+            'contact_target_valid_mask': torch.stack(validity),
             'seq1_tokens': batch1_tokens,
             'seq2_tokens': batch2_tokens,
             'contact_target': contact_targets,

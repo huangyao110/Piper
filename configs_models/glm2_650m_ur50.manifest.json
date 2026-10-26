@@ -1,0 +1,16 @@
+{
+  "repository": "tattabio/gLM2_650M_UR50",
+  "revision": "a5937fbb770bd8bae65e3034aacd823b041dcba3",
+  "weights_sha256": "0ebe7894868bebbe5859f4ccccf38eec1a9f2e8b84b811992c64dfa14b8c29c2",
+  "size": 2682482800,
+  "files": {
+    "special_tokens_map.json": "6abc3f2fe29ea77edacdb356f151ae93898d31aec82b1be4636485d7023e2ccc",
+    "tokenizer_config.json": "beadc8517f5e82bad0657789c83e70a7b84087640dbfa92afbd73ba48f1f66b5",
+    "glm_tokenizer.py": "ea4c47e392f51a1924e93eeedd4396ec2102dc52ba87c468ba90bc6dab214f31",
+    "config.json": "9b922ca06c12c7ee0cbc0fe679ab07b664ac30201a8bef0fe21b3e76c3b182e0",
+    "configuration_glm2.py": "987df0584a9df63d6027ff75a0f1f9dbdbf4eda1a81ef56643cf40367efa083a",
+    "tokenizer.json": "8d4e6820328144a5309e5bece47fa3ffe01771f14ba602be16273bfd34b50ac3",
+    "model.safetensors": "0ebe7894868bebbe5859f4ccccf38eec1a9f2e8b84b811992c64dfa14b8c29c2",
+    "modeling_glm2.py": "8d026554a0bd96f893de9c5b473a54e9ed2af497fa74963d569ec47f736b5b49"
+  }
+}

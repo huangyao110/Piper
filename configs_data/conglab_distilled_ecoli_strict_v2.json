@@ -1,0 +1,38 @@
+{
+  "filter_protocol": "conglab_distilled_ecoli_strict_v2",
+  "test_exclusion": "either_chain",
+  "validation": "none",
+  "coverage_basis": "release_fasta_before_training_crop",
+  "identity": "nident_over_alnlen_gt_30",
+  "ppi_coverage": "both_coverage_gte_50",
+  "ddi_coverage": "training_domain_coverage_gte_50",
+  "preserve_all_legacy": false,
+  "allowed_sources": {
+    "ppi": [
+      "conglab",
+      "conglab_pred",
+      "afdb_complexs_pred",
+      "complex_atlas_pred",
+      "huintaf2_pred",
+      "yeast_core_pred",
+      "endomap_pred",
+      "predictomes_pred",
+      "gwyre_pred"
+    ],
+    "ddi": [
+      "conglab"
+    ]
+  },
+  "threads": 8,
+  "test_sha256": "07dace691cac67561d264fbbcd8deb862ad6356998b129ae57dee7d983de7f6c",
+  "contact_cutoff_angstrom": 12,
+  "quality_policy": "reuse_release_source_admission_no_additional_quality_filters",
+  "version": "conglab_distilled_ecoli_strict_v2",
+  "release": "/media/zlab/lexar4t/ppidb/distributions/ppidb-2026.10.3",
+  "legacy_directory": "/media/zlab/lexar4t/FlashPPI/data/conglab_ecoli_v1",
+  "test": "/media/zlab/lexar4t/FlashPPI/artifacts/flashppi_official/ecoli_pdb_benchmark/data/train-00000-of-00001.parquet",
+  "output": "/media/zlab/lexar4t/FlashPPI/data/conglab_distilled_ecoli_strict_v2",
+  "mmseqs": "/home/zlab/miniconda3/bin/mmseqs",
+  "duckdb_memory_limit": "24GB",
+  "seed": 20261024
+}

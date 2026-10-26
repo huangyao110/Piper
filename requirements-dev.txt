@@ -1,0 +1,3 @@
+-r requirements-data-index.txt
+pytest==8.4.2
+gemmi==0.7.5

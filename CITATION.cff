@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "Please cite the Piper repository and exact commit, and acknowledge the upstream FlashPPI publication."
+type: software
+title: "Piper: gated protein language model fusion for residue contact prediction"
+version: 0.1.0
+date-released: 2026-10-26
+authors:
+  - name: "Piper contributors"
+    email: "1647721078@qq.com"
+repository-code: "https://github.com/huangyao110/Piper"
+license: CC-BY-NC-4.0
+abstract: "Research code extending FlashPPI with gLM2, frozen ESM C and ProtT5 fusion, residue-gated contrastive pooling, and residue-level contact gating."

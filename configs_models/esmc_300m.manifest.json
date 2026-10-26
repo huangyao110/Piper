@@ -1,0 +1,11 @@
+{
+  "repo": "biohub/esmc-300m-2024-12",
+  "revision": "7f10b20ae75017b2dbc884070e03434515709a8d",
+  "source_file": "data/weights/esmc_300m_2024_12_v0.pth",
+  "sha256": "323dff9fbf3fef297a74f4f18b6528e6f2e599b0bcf72b6927516804015becea",
+  "filename": "weights.pth",
+  "d_model": 960,
+  "n_heads": 15,
+  "n_layers": 30,
+  "software": "esm==3.2.3"
+}
