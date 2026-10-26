@@ -2,7 +2,7 @@
 
 ## Scope and release status
 
-Piper predicts residue contacts between protein sequences and contrastive representations for interaction scoring. This is a research code release, not a released final weight set. Performance, calibration and biological interpretation require separate evaluation. The name Piper is provisional. The original implementation derives from FlashPPI; its package names and source history are preserved.
+Piper predicts residue contacts between protein sequences and contrastive representations for interaction scoring. Its design combines three protein language models with residue-gated contrastive pooling and residual channel gating for contact prediction. This is a research code release; a final weight set has not yet been released. Performance, calibration and biological interpretation require separate evaluation. The name Piper is provisional.
 
 ## Representation and heads
 
@@ -48,3 +48,7 @@ Different cutoffs may have different eligible sets; always retain `evaluable_pos
 - Existing research checkpoints store only trainable tensors. Reproduction also requires frozen model assets, architecture code, configuration, and exact data/source manifests.
 
 No clinical, experimental binding-validation, calibrated probability or state-of-the-art claim is made by this source release.
+
+## Implementation provenance
+
+Piper incorporates and adapts FlashPPI code for the residue concat contact head and contrastive training components. The three-encoder fusion and two gating paths described above are project-specific design additions. Internal module names and upstream history remain intact for checkpoint compatibility and attribution. See the [acknowledgments and license](../README.md#acknowledgments-and-license) for source credit and licensing.

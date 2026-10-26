@@ -9,4 +9,4 @@ authors:
     email: "1647721078@qq.com"
 repository-code: "https://github.com/huangyao110/Piper"
 license: CC-BY-NC-4.0
-abstract: "Research code extending FlashPPI with gLM2, frozen ESM C and ProtT5 fusion, residue-gated contrastive pooling, and residue-level contact gating."
+abstract: "Piper integrates gLM2, frozen ESM C and ProtT5 representations through residual fusion, residue-gated contrastive pooling, and residue-level channel gating for protein interaction and contact prediction."

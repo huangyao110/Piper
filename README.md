@@ -4,9 +4,9 @@
 
 [中文说明](README.zh-CN.md) · [Model card](docs/MODEL_CARD.md) · [Data protocol](docs/DATA_PROTOCOL.md) · [Reproducibility](docs/REPRODUCIBILITY.md) · [Contributing](CONTRIBUTING.md)
 
-Piper is a research extension of [FlashPPI](https://github.com/TattaBio/FlashPPI). It combines gLM2 residue representations with frozen ESM C 300M and ProtT5 XL representations, learns residue gates for contrastive pooling, and applies a residual channel gate before the residue-level concat contact head. The primary evaluation target is **residue Contact P@K**, reported separately at 12 Å and 8 Å.
+Piper is a protein interaction and residue contact prediction model that integrates three protein language models through gated residue representations. It combines gLM2 with frozen ESM C 300M and ProtT5 XL, uses learned residue weights for contrastive pooling, and applies residual channel gating before the residue-level concat contact head. The primary evaluation target is **residue Contact P@K**, reported separately at 12 Å and 8 Å.
 
-**Status:** research code, version 0.1.0. Training is ongoing; this repository does not distribute a final Piper checkpoint or claim a validated improvement over FlashPPI. The internal `flashppi` module names are retained for checkpoint and source-hash compatibility. Piper is an independent derivative, not an official FlashPPI release.
+**Status:** research code, version 0.1.0. Training is ongoing; a final Piper checkpoint has not yet been released.
 
 ## Architecture
 
@@ -125,7 +125,7 @@ This entry point scores full sequences one pair at a time, keeps the input orien
 
 ```text
 piper/             Public CLI and pair inference
-flashppi/          Model, gates, losses, sampling and training implementation
+flashppi/          Model, gates, losses and training; internal name kept for checkpoint compatibility
 configs_train/    Current original config and portable example
 configs_data/     Versioned isolation configurations and immutable locks
 configs_models/   Pretrained artifact manifests and preparation instructions
@@ -148,8 +148,8 @@ python -m unittest discover -s resercher/tests -v
 
 The CPU suite checks residue alignment, masks, gates, gradients, cache replay, negative sampling, split boundaries, source quotas, checkpoint handling and CLI behavior. Integration tests require local historical evidence or runtime files and are excluded from CI. The standalone upstream padding check requires a GPU and downloads an upstream checkpoint; it is not a Piper weight-release test. Validation details and limitations are recorded in [the release verification](docs/RELEASE_VERIFICATION.md).
 
-## Attribution and license
+## Acknowledgments and license
 
-Piper extends [FlashPPI](https://github.com/TattaBio/FlashPPI); upstream authorship and history are retained. This repository carries the original **CC BY-NC 4.0** [LICENSE](LICENSE). Pretrained models and datasets have their own licenses and access terms. No weights or data are redistributed here.
+The implementation incorporates and adapts code from [FlashPPI](https://github.com/TattaBio/FlashPPI), including the residue concat contact head and contrastive training components. The Piper design adds three-encoder residual fusion, residue-gated contrastive pooling and residual channel gating for contact prediction, with the training and data protocols documented above. Upstream authorship and modification history are retained. This repository carries the original **CC BY-NC 4.0** [LICENSE](LICENSE). Pretrained models and datasets have their own licenses and access terms. No weights or data are redistributed here.
 
 For upstream methodology, cite Cornman et al., *Linear-time prediction of proteome-scale microbial protein interactions*, PNAS (2026), [doi:10.1073/pnas.2610619123](https://doi.org/10.1073/pnas.2610619123). For Piper code, cite this repository and the exact commit used; [CITATION.cff](CITATION.cff) contains software citation metadata. Piper has no associated paper or DOI at this stage.

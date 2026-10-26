@@ -1,8 +1,8 @@
 # Piper
 
-Piper 是基于 FlashPPI 的蛋白质互作与残基接触预测研究项目，融合 **gLM2、ESM C 300M 和 ProtT5 XL**，增加 CLIP 残基门控池化与接触头的残差通道门控。当前核心指标为 **12 Å / 8 Å 的残基 Contact P@K**。
+Piper 是本项目设计的蛋白质互作与残基接触预测模型，融合 **gLM2、ESM C 300M 和 ProtT5 XL**，通过 CLIP 残基门控加权池化与接触头的残差通道门控学习互作和接触表示。当前核心指标为 **12 Å / 8 Å 的残基 Contact P@K**。
 
-完整安装、训练、恢复、评估及预测命令见 [主 README](README.md)。本次发布为科研代码整理，训练尚在进行，没有发布最终模型权重，也不声称已经证明优于 FlashPPI。
+完整安装、训练、恢复、评估及预测命令见 [主 README](README.md)。当前发布研究代码，训练尚在进行，最终模型权重尚未发布。
 
 ## 当前方案
 
@@ -41,4 +41,6 @@ Interaction AP 衡量整对蛋白能否判为互作；Contact P@K 衡量接触�
 
 清理详情见 [清单](docs/PIPER_CLEANUP_20261026.json)，测试结果见 [验证报告](docs/RELEASE_VERIFICATION.md)。大型数据、checkpoint、训练日志、旧运行快照与服务器副本不上传 GitHub。
 
-沿用上游 CC BY-NC 4.0 许可证及署名。Piper 为独立衍生研究项目，不是 FlashPPI 官方版本。
+## 致谢与许可证
+
+实现复用并修改了 [FlashPPI](https://github.com/TattaBio/FlashPPI) 的部分代码，包括残基 concat 接触头和对比训练组件。本项目设计了三编码器残差融合、CLIP 残基门控池化与接触预测的残差通道门控，并制定了文中记录的训练与数据方案。保留上游作者署名、修改记录和 **CC BY-NC 4.0** [许可证](LICENSE)；预训练模型与数据集各自遵循其来源条款。
